@@ -11,6 +11,6 @@ FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/portfolio-backend-1.0.0.jar app.jar
 
-# A Koyeb define a variável PORT; o application.yml já lê ${PORT:8080}.
+# A Render (e outras PaaS) injeta PORT; o application.yml lê ${PORT:8080}.
 EXPOSE 8080
 ENTRYPOINT ["java", "-XX:MaxRAMPercentage=75", "-jar", "app.jar"]

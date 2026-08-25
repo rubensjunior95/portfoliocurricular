@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * "/" e "/api/health" respondem 200 rapidamente — é a URL que o
  * cron-job.org deve "pingar" a cada 5-10 minutos para impedir que a
- * instância da Koyeb seja suspensa por inatividade.
+ * instância free da Render durma por inatividade.
  */
 @RestController
 public class HealthController {

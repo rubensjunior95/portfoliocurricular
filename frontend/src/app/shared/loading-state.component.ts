@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { PortfolioService } from '../core/portfolio.service';
 
 /**
- * Estado de carregamento/erro exibido enquanto a API na Koyeb responde
+ * Estado de carregamento/erro exibido enquanto a API na Render responde
  * (a instância free pode levar alguns segundos para "acordar").
  */
 @Component({

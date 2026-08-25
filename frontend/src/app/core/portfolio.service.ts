@@ -14,7 +14,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
 
 /**
  * Estado central do portfólio: idioma selecionado + conteúdo carregado da API
- * Spring Boot (Koyeb). Cache por idioma para trocas instantâneas.
+ * Spring Boot (Render). Cache por idioma para trocas instantâneas.
  */
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {

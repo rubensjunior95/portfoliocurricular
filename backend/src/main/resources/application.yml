@@ -1,5 +1,5 @@
 server:
-  # A Koyeb injeta a porta via variável de ambiente PORT (padrão 8000 na plataforma).
+  # A Render injeta a porta via variável de ambiente PORT (em geral 10000).
   port: ${PORT:8080}
   compression:
     enabled: true

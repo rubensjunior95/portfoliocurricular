@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy frontend
 
 on:
   push:
@@ -12,105 +12,30 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  KOYEB_APP: ${{ vars.KOYEB_APP_NAME || 'portfolio-curricular' }}
-  KOYEB_SERVICE: ${{ vars.KOYEB_SERVICE_NAME || 'backend' }}
-
 jobs:
-  backend:
-    name: Backend → Koyeb
-    runs-on: ubuntu-latest
-    outputs:
-      api_url: ${{ steps.api-url.outputs.url }}
-    steps:
-      - name: Instalar Koyeb CLI
-        uses: koyeb-community/koyeb-actions@v2
-        with:
-          api_token: ${{ secrets.KOYEB_API_TOKEN }}
-
-      - name: Publicar Spring Boot na Koyeb
-        uses: koyeb/action-git-deploy@v1
-        with:
-          app-name: ${{ env.KOYEB_APP }}
-          service-name: ${{ env.KOYEB_SERVICE }}
-          service-instance-type: free
-          git-url: github.com/${{ github.repository }}
-          git-branch: ${{ github.ref_name }}
-          git-sha: ${{ github.sha }}
-          git-workdir: backend
-          git-builder: docker
-          git-docker-dockerfile: Dockerfile
-          service-env: "${{ format('PORT=8080,CORS_ALLOWED_ORIGINS={0}', vars.CORS_ALLOWED_ORIGINS || '*') }}"
-          service-ports: '8080:http'
-          service-routes: '/:8080'
-          service-checks: '8080:http:/api/health'
-          service-checks-grace-period: '8080=180'
-          build-timeout: '900'
-          healthy-timeout: '900'
-
-      - name: Resolver URL pública da API
-        id: api-url
-        env:
-          CONFIGURED_URL: ${{ vars.API_BASE_URL }}
-        run: |
-          set -euo pipefail
-
-          normalize() {
-            local value="$1"
-            value="${value%/}"
-            case "$value" in
-              http://*|https://*) ;;
-              *) value="https://${value}" ;;
-            esac
-            printf '%s' "$value"
-          }
-
-          if [ -n "${CONFIGURED_URL:-}" ]; then
-            URL="$(normalize "$CONFIGURED_URL")"
-            echo "url=${URL}" >> "$GITHUB_OUTPUT"
-            echo "Usando API_BASE_URL configurada: ${URL}"
-            echo "### Backend (Koyeb)" >> "$GITHUB_STEP_SUMMARY"
-            echo "- URL: ${URL}" >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-
-          JSON="$(koyeb domains list -o json)"
-          echo "$JSON"
-
-          URL="$(printf '%s' "$JSON" | jq -r '
-            def names:
-              .. | objects | (.name // .hostname // .cname // empty);
-            [names]
-            | map(select(type == "string" and test("koyeb\\.app$")))
-            | .[0] // empty
-          ')"
-
-          if [ -z "$URL" ]; then
-            echo "Não foi possível descobrir a URL da Koyeb."
-            echo "Defina a variável de repositório API_BASE_URL (ex.: https://SEU-APP.koyeb.app) e rode o workflow de novo."
-            exit 1
-          fi
-
-          URL="$(normalize "$URL")"
-          echo "url=${URL}" >> "$GITHUB_OUTPUT"
-          echo "URL descoberta: ${URL}"
-          echo "### Backend (Koyeb)" >> "$GITHUB_STEP_SUMMARY"
-          echo "- URL: ${URL}" >> "$GITHUB_STEP_SUMMARY"
-
   frontend:
     name: Frontend → Vercel
-    needs: backend
     runs-on: ubuntu-latest
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      API_BASE_URL: ${{ needs.backend.outputs.api_url }}
+      API_BASE_URL: ${{ vars.API_BASE_URL }}
     defaults:
       run:
         working-directory: frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Conferir URL da API
+        run: |
+          set -euo pipefail
+          if [ -z "${API_BASE_URL:-}" ]; then
+            echo "Defina a variável de repositório API_BASE_URL com a URL da Render (ex.: https://seu-app.onrender.com)."
+            echo "Painel Render → o serviço → copiar o domínio *.onrender.com"
+            exit 1
+          fi
+          echo "API_BASE_URL=${API_BASE_URL}"
 
       - name: Node.js 20
         uses: actions/setup-node@v4
@@ -132,11 +57,9 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Publicar produção
-        id: deploy
         run: |
           set -euo pipefail
           URL="$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})"
-          echo "url=${URL}" >> "$GITHUB_OUTPUT"
           echo "### Frontend (Vercel)" >> "$GITHUB_STEP_SUMMARY"
           echo "- URL: ${URL}" >> "$GITHUB_STEP_SUMMARY"
           echo "- API: ${API_BASE_URL}" >> "$GITHUB_STEP_SUMMARY"

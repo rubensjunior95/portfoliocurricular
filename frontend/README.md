@@ -1,6 +1,6 @@
 # Portfolio Frontend — Angular
 
-SPA em Angular 18 (standalone components + signals) que replica o portfólio curricular de Rubens Florentino. Consome o conteúdo (pt-BR / en-US / es-ES) do backend Spring Boot hospedado na Koyeb.
+SPA em Angular 18 (standalone components + signals) que replica o portfólio curricular de Rubens Florentino. Consome o conteúdo (pt-BR / en-US / es-ES) do backend Spring Boot hospedado na Render.
 
 ## Rodar localmente
 
@@ -21,14 +21,14 @@ Em desenvolvimento a API é `http://localhost:8080` (`src/environments/environme
 npm run build
 # saída em dist/portfolio-frontend/browser
 
-# build igual ao CI, exigindo a URL real da Koyeb
-set API_BASE_URL=https://SEU-APP.koyeb.app
+# build igual ao CI, exigindo a URL real da Render
+set API_BASE_URL=https://SEU-APP.onrender.com
 npm run build:ci
 ```
 
 ## Deploy
 
-O deploy de produção é automático no push para `main` (veja o README da raiz). O `vercel.json` define `build:ci`, o output SPA e o rewrite `/* → /index.html` para `/` e `/services`.
+O deploy de produção é automático no push para `main` (veja o README da raiz). O GitHub Actions usa a variável `API_BASE_URL` (URL da Render). O `vercel.json` define o output SPA e o rewrite `/* → /index.html`.
 
 ## Estrutura
 

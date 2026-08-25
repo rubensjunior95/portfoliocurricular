@@ -24,31 +24,29 @@ Ou via Docker:
 
 ```bash
 docker build -t portfolio-backend .
-docker run -p 8080:8080 portfolio-backend
+docker run -p 8080:8080 -e PORT=8080 portfolio-backend
 ```
 
-## Deploy na Koyeb
+## Deploy na Render
 
-O push em `main` publica este serviço automaticamente via GitHub Actions (`.github/workflows/deploy.yml` na raiz do monorepo): Dockerfile em `backend/`, instância **free**, porta `8080`, health check `/api/health`.
+O `render.yaml` na raiz do monorepo define o Web Service Docker. Passo a passo completo no README da raiz.
 
-Configuração aplicada pelo workflow:
+Resumo:
 
-- `PORT=8080` (a aplicação já lê `${PORT:8080}`).
-- `CORS_ALLOWED_ORIGINS` — variável de repositório no GitHub; padrão `*`.
-- Work directory: `backend`.
-
-A conta Koyeb permite **um** serviço free. Se já existir outro, pause-o ou use um nome de app/serviço diferente (`KOYEB_APP_NAME` / `KOYEB_SERVICE_NAME`).
+1. [Dashboard Render](https://dashboard.render.com) → **New** → **Blueprint** → este repositório.
+2. Plano **Free**, Dockerfile `backend/Dockerfile`, health `/api/health`.
+3. A Render injeta `PORT`. Opcional: `CORS_ALLOWED_ORIGINS` = URL da Vercel (padrão no Blueprint: `*`).
 
 ## Keep-alive com cron-job.org
 
-A instância free da Koyeb pode "adormecer" sem tráfego. Para evitar:
+A instância free da Render dorme após **15 minutos** sem tráfego ([docs](https://render.com/docs/free#spinning-down-on-idle)). Para evitar:
 
-1. Crie conta em https://cron-job.org (gratuito).
+1. Conta em https://cron-job.org (gratuito).
 2. **Create cronjob**:
-   - URL: `https://SEU-APP.koyeb.app/api/health`
-   - Schedule: a cada **5 ou 10 minutos** (ex.: `*/5 * * * *`).
-   - Method: GET. Ative notificação de falha se quiser monitoramento.
-3. Pronto — o ping periódico mantém a máquina acordada e ainda funciona como monitor de uptime.
+   - URL: `https://SEU-APP.onrender.com/api/health`
+   - Schedule: a cada **10 minutos**.
+   - Method: GET.
+3. Lembrete: 750 horas free/mês. Cron 24h esgota o quota no fim do mês.
 
 ## Editar o conteúdo do portfólio
 
