@@ -1,0 +1,253 @@
+{
+  "locale": "pt-BR",
+  "profile": {
+    "firstNames": "Rubens Florentino",
+    "surname": "Freitas Junior",
+    "fullName": "Rubens Florentino Freitas Junior",
+    "email": "rubensjr.me@gmail.com",
+    "phone": "+5527996939025",
+    "phoneDisplay": "(27) 99693-9025",
+    "whatsappNumber": "5527996939025",
+    "linkedin": "https://www.linkedin.com/in/rubens-junior-996696193",
+    "linkedinHandle": "rubens-junior"
+  },
+  "meta": {
+    "homeTitle": "Rubens Florentino — Líder de TI, Engenheiro & Dev Fullstack",
+    "homeDescription": "Portfólio de Rubens Florentino: Líder de TI, Engenheiro Eletricista e Desenvolvedor Fullstack. IA, automação e Indústria 4.0.",
+    "servicesTitle": "Serviços — Rubens Florentino",
+    "servicesDescription": "Serviços tecnológicos oferecidos por Rubens Florentino: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI."
+  },
+  "nav": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "experience": "Experiência",
+    "impact": "Impacto",
+    "education": "Formação",
+    "contact": "Contato",
+    "home": "Início",
+    "talk": "Conversar",
+    "language": "Idioma da página",
+    "openMenu": "Abrir menu de navegação"
+  },
+  "hero": {
+    "location": "Americana, SP",
+    "role": "Líder de TI · Engenheiro Eletricista · Fullstack",
+    "subtitle": "Transformo processos com",
+    "ai": "Inteligência Artificial",
+    "connector": ", automação e",
+    "industry": "Indústria 4.0",
+    "proof": "10+ anos em tech · WEG Indústria 4.0 · ganhos operacionais mensuráveis",
+    "ctaTalk": "Falar no WhatsApp",
+    "ctaServices": "Ver serviços",
+    "stats": [
+      { "k": "10+", "v": "Anos em tech" },
+      { "k": "2", "v": "Pós-graduações" },
+      { "k": "WEG", "v": "Indústria 4.0" }
+    ],
+    "photoAlt": "Rubens Florentino Freitas Junior, Líder de TI"
+  },
+  "about": {
+    "eyebrow": "Sobre",
+    "title": "Não é só código. É resultado operacional.",
+    "bodyBefore": "Profissional com formação dupla em",
+    "cs": "Ciência da Computação",
+    "and": "e",
+    "ee": "Engenharia Elétrica",
+    "bodyAfter": ", MBA em Data Science pela USP-Esalq e experiência sólida em ambientes industriais de alta complexidade como a WEG. Hoje, como Líder de TI, ajudo empresas e empresários a digitalizar processos, implantar IA e construir ecossistemas tecnológicos que aumentam eficiência e competitividade."
+  },
+  "servicesSection": {
+    "eyebrow": "Serviços",
+    "title": "Do diagnóstico à execução.",
+    "lead": "Combino liderança de TI, engenharia e desenvolvimento fullstack para entregar soluções que reduzem custo, aceleram operação e geram vantagem competitiva.",
+    "seeFullPage": "Ver página completa",
+    "items": [
+      {
+        "title": "Implantação de IA",
+        "description": "Diagnóstico, estratégia e implantação de soluções de Inteligência Artificial para otimizar processos e gerar valor real ao negócio."
+      },
+      {
+        "title": "Desenvolvimento Fullstack",
+        "description": "Aplicações web e APIs sob medida com Node.js, NestJS, Next.js e Angular — e 10+ anos de experiência multilinguagem (Java, Python, C#, PHP, Flutter e mais) para entregar com a stack certa do negócio."
+      },
+      {
+        "title": "Mentoria & Gestão",
+        "description": "Mentoria para empresários em Mapa do Negócio, Gestão de Processos e adoção de tecnologia como vantagem competitiva."
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Experiência",
+    "title": "Trajetória em operação real.",
+    "items": [
+      {
+        "role": "Líder de TI",
+        "company": "Legacy Eco Group",
+        "location": "Americana — SP",
+        "period": "03/2025 — Atual",
+        "paragraphs": [
+          "Lidero a estruturação e evolução do departamento de TI do grupo, conduzindo a digitalização ponta a ponta de processos críticos e a implantação de Inteligência Artificial como alavanca de produtividade, redução de custos e tomada de decisão orientada por dados.",
+          "Além das mentorias conduzidas com gestores e equipes, a consolidação de sistemas e a centralização de processos e dados geraram uma redução estimada de R$ 125 mil por ano em licenças de software, junto à digitalização de diversas etapas da empresa."
+        ],
+        "featuredHighlight": "≈ R$ 125 mil/ano economizados em licenças",
+        "highlights": [
+          "Sistemas consolidados e dados centralizados",
+          "Digitalização de etapas da empresa",
+          "Mentorias para gestores e equipes"
+        ]
+      },
+      {
+        "role": "Analista de Processos de Engenharia",
+        "company": "WEG Equipamentos Elétricos",
+        "location": "Linhares — ES",
+        "period": "01/2022 — 02/2025",
+        "paragraphs": [
+          "Como Analista de Processos de Engenharia no time de Indústria 4.0, participei do desenvolvimento de diversos projetos voltados à centralização dos dados de produção das máquinas e departamentos da empresa.",
+          "As soluções integraram informações de 48 linhas de produção, distribuídas em quatro fábricas — Bluffton (Estados Unidos), Belém/PA e duas unidades em Linhares/ES —, disponibilizando dados operacionais em tempo real para a gestão da fábrica, equipes administrativas, filiais e matriz, com expansão em andamento para Argentina, Argélia e China.",
+          "Essa centralização eliminou etapas manuais e a espera dos gestores pelo fechamento dos dados ao fim do dia para reporte à matriz. Com números periódicos centralizados, as equipes passaram a estimar ganhos de produtividade, ajustar metas e antecipar manutenções — ganhos estimados em aproximadamente R$ 300 mil por ano, somando redução de processos, assertividade na produção, centralização dos dados e redução de custos com manutenção."
+        ],
+        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados",
+        "highlights": [
+          "48 linhas de produção em 4 fábricas",
+          "Redução de processos manuais",
+          "Assertividade na produção",
+          "Centralização dos dados",
+          "Redução de custos com manutenção",
+          "Expansão para Argentina, Argélia e China"
+        ]
+      },
+      {
+        "role": "Estagiário — Engenharia de Processos",
+        "company": "WEG Equipamentos Elétricos",
+        "location": "Linhares — ES",
+        "period": "02/2021 — 12/2021",
+        "paragraphs": [
+          "Iniciei minha atuação no time de Indústria 4.0 participando de projetos de digitalização do chão de fábrica. Contribuí para o desenvolvimento de aplicações, automações e dashboards responsáveis pela coleta, organização e visualização dos dados de produção das máquinas.",
+          "Essas soluções começaram a substituir controles descentralizados e processos manuais, oferecendo às equipes uma visão mais confiável e atualizada da operação industrial."
+        ]
+      },
+      {
+        "role": "Analista Técnico",
+        "company": "RCM Cabos Elétricos",
+        "location": "Porto União — SC",
+        "period": "03/2019 — 02/2021",
+        "paragraphs": [
+          "Durante minha atuação nas áreas de Tecnologia e Logística, desenvolvi uma aplicação para análise e previsão dos custos de frete da empresa. A solução comparava automaticamente as tabelas de preços das transportadoras e considerava variáveis como destino, peso, volume, tipo de carga, taxas adicionais e condições comerciais.",
+          "Com essas informações, a equipe conseguia identificar a transportadora com melhor custo-benefício para cada operação antes da contratação do frete, aumentando a precisão das decisões logísticas e reduzindo despesas.",
+          "Em nove meses de utilização, a solução contribuiu para uma redução superior a R$ 1,2 milhão nos custos de transporte da empresa."
+        ],
+        "featuredHighlight": "R$ 1,2 milhão+ economizados",
+        "highlights": [
+          "9 meses de resultado analisado",
+          "Comparação automatizada de transportadoras",
+          "Maior previsibilidade dos custos logísticos"
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "Impacto",
+    "title": "Resultado em operação real.",
+    "subtitle": "Projetos desenvolvidos para reduzir custos, centralizar informações e transformar dados operacionais em decisões mais rápidas e assertivas.",
+    "cards": [
+      {
+        "company": "RCM Cabos Elétricos",
+        "title": "Otimização inteligente de fretes",
+        "metric": "R$ 1,2 milhão+",
+        "metricNote": "em redução de custos logísticos durante nove meses",
+        "description": "Aplicação desenvolvida para analisar tabelas, condições e variáveis de transporte, indicando a opção de melhor custo-benefício para cada operação."
+      },
+      {
+        "company": "WEG Equipamentos Elétricos",
+        "title": "Centralização de dados industriais",
+        "metric": "≈ R$ 300 mil/ano",
+        "metricNote": "em ganhos estimados com redução de processos, assertividade na produção e manutenção",
+        "description": "Aplicações e integrações que centralizaram os dados de 48 linhas de produção em 4 fábricas, no Brasil e nos Estados Unidos, antecipando manutenções e liberando a gestão do fechamento manual de dados ao fim do dia. Projeto em expansão para Argentina, Argélia e China."
+      }
+    ]
+  },
+  "education": {
+    "eyebrow": "Formação",
+    "title": "Base acadêmica sólida.",
+    "skillsEyebrow": "Stack",
+    "skillsTitle": "Núcleo em produção.",
+    "languagesLabel": "Idiomas",
+    "languages": [
+      { "name": "Português", "level": "(Nativo)" },
+      { "name": "Inglês", "level": "(Intermediário)" }
+    ],
+    "items": [
+      { "title": "MBA em Data Science & Analytics", "school": "USP-Esalq — Piracicaba/SP", "period": "2021 — 2023" },
+      { "title": "Pós-Graduação em Docência no Ensino Superior", "school": "UniCesumar — União da Vitória/PR", "period": "2019 — 2021" },
+      { "title": "Bacharel em Engenharia Elétrica", "school": "UNIGUAÇU — União da Vitória/PR", "period": "2017 — 2021" },
+      { "title": "Bacharel em Ciência da Computação", "school": "UnC — Porto União/SC", "period": "2013 — 2016" }
+    ],
+    "skillGroups": [
+      { "title": "Fullstack JavaScript", "skills": ["Node.js", "NestJS", "Next.js", "Angular.js", "APIs REST"] },
+      { "title": "Linguagens & Frameworks", "skills": ["Java", "Python / Django", "C#", "PHP / Laravel", "Dart / Flutter", "Delphi (Object Pascal)", "C / C++"] },
+      { "title": "Arquitetura & Qualidade", "skills": ["Clean Architecture", "SOLID", "Domain-Driven Design — DDD", "Test-Driven Development — TDD"] },
+      { "title": "Integrações, Cloud & DevOps", "skills": ["Kafka", "RabbitMQ", "Integração de Sistemas", "Docker", "Cloud Computing", "Administração de VPS"] },
+      { "title": "IA, Dados & Indústria 4.0", "skills": ["Implantação de Inteligência Artificial", "Data Science & Analytics", "Indústria 4.0", "Automação Industrial"] },
+      { "title": "Liderança & Estratégia", "skills": ["Liderança de TI", "Gestão de Processos", "Mentoria de Empresários", "Engenharia Elétrica"] }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Vamos construir algo juntos?",
+    "body": "Disponível para oportunidades CLT ou contratos PJ de serviços tecnológicos. Entre em contato pelo canal que preferir.",
+    "email": "E-mail",
+    "location": "Localização",
+    "locationValue": "Americana — SP",
+    "whatsappCta": "Falar no WhatsApp",
+    "qrHint": "Aponte a câmera para falar no WhatsApp",
+    "qrAlt": "QR Code para WhatsApp de Rubens Florentino"
+  },
+  "whatsapp": {
+    "floatingAria": "Conversar no WhatsApp",
+    "plainMsg": "Olá, Rubens Florentino!\n\nEncontrei seu portfólio profissional e fiquei impressionado(a) com seu perfil de Líder de TI, Engenheiro Eletricista e Desenvolvedor Fullstack — especialmente sua atuação com IA, automação e Indústria 4.0.\n\nGostaria de conversar sobre uma oportunidade de contratação (CLT ou PJ) alinhada ao seu perfil. Quando você teria disponibilidade para uma conversa rápida esta semana?"
+  },
+  "footer": {
+    "rights": "Rubens Florentino Freitas Junior."
+  },
+  "servicesPage": {
+    "back": "Voltar ao portfólio",
+    "eyebrow": "Serviços",
+    "titleBefore": "Soluções tecnológicas",
+    "titleAccent": "sob medida",
+    "intro": "Da estratégia à execução. Combino visão de negócio, engenharia e desenvolvimento para entregar resultados reais — em projetos pontuais ou parcerias de longo prazo.",
+    "ctaTitle": "Vamos conversar sobre seu projeto?",
+    "ctaBody": "Conte um pouco sobre o desafio do seu negócio e em poucos dias retorno com uma proposta clara e objetiva.",
+    "otherContacts": "Outros contatos",
+    "items": [
+      {
+        "title": "Implantação de Inteligência Artificial",
+        "description": "Diagnóstico, estratégia e implantação de soluções de IA para otimizar processos, reduzir custos operacionais e gerar vantagem competitiva.",
+        "bullets": ["Mapeamento de oportunidades com IA", "Integração de LLMs em fluxos internos", "Automação de tarefas repetitivas", "Treinamento de equipes para uso de IA"]
+      },
+      {
+        "title": "Desenvolvimento Fullstack",
+        "description": "Aplicações web e APIs sob medida com foco em Node.js, NestJS, Next.js e Angular — além de 10+ anos em outras stacks quando o negócio exige.",
+        "bullets": ["Sistemas internos, dashboards e portais", "APIs, integrações e webhooks", "Stack JS moderna (Node, Nest, Next, Angular)", "Polyglot sob demanda (Java, Python, C#, PHP, Flutter…)", "Aplicações industriais (Indústria 4.0)", "Manutenção evolutiva e refatoração"]
+      },
+      {
+        "title": "Mentoria & Gestão",
+        "description": "Mentoria para empresários e gestores em Mapa do Negócio, Gestão de Processos e adoção de tecnologia como vantagem estratégica.",
+        "bullets": ["Mapeamento e redesenho de processos", "Plano de transformação digital", "Mentoria 1:1 com empresários", "Capacitação de times de TI"]
+      },
+      {
+        "title": "Automação Industrial",
+        "description": "Projetos de automação e Indústria 4.0 com base sólida em Engenharia Elétrica e experiência prática na WEG.",
+        "bullets": ["Coleta e telemetria de chão de fábrica", "Dashboards de OEE e indicadores", "Integração entre sistemas legados", "Documentação técnica de processos"]
+      },
+      {
+        "title": "Data Science & Analytics",
+        "description": "Transformação de dados em decisões. Pipelines, modelagem e visualização aplicadas ao seu negócio (MBA USP-Esalq).",
+        "bullets": ["Modelos preditivos e classificatórios", "Pipelines de dados e ETL", "Dashboards executivos", "Análises ad-hoc para tomada de decisão"]
+      },
+      {
+        "title": "Liderança & Estruturação de TI",
+        "description": "Estruturação completa do departamento de TI: pessoas, processos e tecnologia para empresas em crescimento.",
+        "bullets": ["Definição de stack e arquitetura", "Governança e segurança da informação", "Implantação de metodologias ágeis", "Contratação e desenvolvimento de time"]
+      }
+    ]
+  }
+}

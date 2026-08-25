@@ -1,0 +1,16 @@
+server:
+  # A Koyeb injeta a porta via variável de ambiente PORT (padrão 8000 na plataforma).
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+    mime-types: application/json
+
+spring:
+  application:
+    name: portfolio-backend
+
+app:
+  cors:
+    # Em produção, defina CORS_ALLOWED_ORIGINS com a URL da Vercel,
+    # ex.: https://seu-portfolio.vercel.app
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:*}

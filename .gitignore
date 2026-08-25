@@ -1,0 +1,15 @@
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+.angular/
+.vercel/
+
+target/

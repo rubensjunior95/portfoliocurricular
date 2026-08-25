@@ -1,0 +1,59 @@
+@if (portfolio.content(); as c) {
+  <app-header mode="services" />
+
+  <section class="hero services-hero">
+    <div class="page-container">
+      <a routerLink="/" class="link-primary">← {{ c.servicesPage.back }}</a>
+      <p class="eyebrow services-eyebrow">{{ c.servicesPage.eyebrow }}</p>
+      <h1 class="hero-title">
+        {{ c.servicesPage.titleBefore }}
+        <span class="text-gradient">{{ c.servicesPage.titleAccent }}</span>
+      </h1>
+      <p class="hero-subtitle">{{ c.servicesPage.intro }}</p>
+    </div>
+  </section>
+
+  <section class="section-y">
+    <div class="page-container">
+      <div class="cards-grid two">
+        @for (s of c.servicesPage.items; track s.title; let i = $index) {
+          <article class="editorial-card service-card">
+            <span class="card-index">{{ pad(i) }}</span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.description }}</p>
+            <ul class="service-bullets">
+              @for (b of s.bullets; track b) {
+                <li>{{ b }}</li>
+              }
+            </ul>
+            <span class="editorial-rule" aria-hidden="true"></span>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-y section-alt">
+    <div class="page-container narrow center">
+      <div class="section-heading center">
+        <h2>{{ c.servicesPage.ctaTitle }}</h2>
+        <p class="section-description">{{ c.servicesPage.ctaBody }}</p>
+      </div>
+      <div class="contact-ctas">
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
+          {{ c.contact.whatsappCta }}
+        </a>
+      </div>
+      <p class="muted other-contacts">
+        {{ c.servicesPage.otherContacts }}:
+        <a [href]="'mailto:' + c.profile.email" class="link-primary">{{ c.profile.email }}</a>
+        ·
+        <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="link-primary">LinkedIn</a>
+      </p>
+    </div>
+  </section>
+
+  <app-footer />
+} @else {
+  <app-loading-state />
+}

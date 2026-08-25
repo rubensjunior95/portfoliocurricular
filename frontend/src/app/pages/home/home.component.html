@@ -1,0 +1,247 @@
+@if (portfolio.content(); as c) {
+  <app-header mode="home" />
+
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="page-container hero-grid">
+      <div>
+        <p class="hero-location">{{ c.hero.location }}</p>
+        <p class="hero-role">{{ c.hero.role }}</p>
+        <h1 class="hero-title">
+          {{ c.profile.firstNames }}
+          <span class="text-gradient">{{ c.profile.surname }}</span>
+        </h1>
+        <p class="hero-subtitle">
+          {{ c.hero.subtitle }} <strong>{{ c.hero.ai }}</strong>{{ c.hero.connector }}
+          <strong>{{ c.hero.industry }}</strong>.
+        </p>
+        <p class="hero-proof">{{ c.hero.proof }}</p>
+
+        <div class="hero-ctas">
+          <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
+            {{ c.hero.ctaTalk }}
+          </a>
+          <a routerLink="/services" class="btn btn-outline">{{ c.hero.ctaServices }}</a>
+        </div>
+
+        <div class="hero-stats">
+          @for (s of c.hero.stats; track s.v) {
+            <div class="hero-stat">
+              <div class="hero-stat-k">{{ s.k }}</div>
+              <div class="hero-stat-v">{{ s.v }}</div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-glow" aria-hidden="true"></div>
+        <div class="photo-ring">
+          <img src="assets/rubens.jpeg" [alt]="c.hero.photoAlt" class="hero-photo" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section-y">
+    <div class="page-container narrow">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <p class="eyebrow">{{ c.about.eyebrow }}</p>
+        <h2>{{ c.about.title }}</h2>
+        <p class="section-description">
+          {{ c.about.bodyBefore }} <strong>{{ c.about.cs }}</strong> {{ c.about.and }}
+          <strong>{{ c.about.ee }}</strong>{{ c.about.bodyAfter }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS (resumo) -->
+  <section id="servicos" class="section-y section-alt">
+    <div class="page-container">
+      <div class="section-heading-row">
+        <div class="section-heading no-margin">
+          <span class="section-number">02</span>
+          <p class="eyebrow">{{ c.servicesSection.eyebrow }}</p>
+          <h2>{{ c.servicesSection.title }}</h2>
+          <p class="section-description">{{ c.servicesSection.lead }}</p>
+        </div>
+        <a routerLink="/services" class="link-primary">{{ c.servicesSection.seeFullPage }} →</a>
+      </div>
+
+      <div class="cards-grid three">
+        @for (s of c.servicesSection.items; track s.title; let i = $index) {
+          <a routerLink="/services" class="editorial-card">
+            <span class="card-index">{{ pad(i) }}</span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.description }}</p>
+            <span class="editorial-rule" aria-hidden="true"></span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA -->
+  <section id="experiencia" class="section-y">
+    <div class="page-container narrow">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <p class="eyebrow">{{ c.experience.eyebrow }}</p>
+        <h2>{{ c.experience.title }}</h2>
+      </div>
+
+      <div class="timeline">
+        @for (exp of c.experience.items; track exp.role + exp.company) {
+          <article class="exp-card">
+            <div class="exp-head">
+              <div>
+                <h3>{{ exp.role }}</h3>
+                <p class="exp-company">{{ exp.company }}</p>
+                <p class="exp-location">{{ exp.location }}</p>
+              </div>
+              <span class="pill mono">{{ exp.period }}</span>
+            </div>
+            @for (p of exp.paragraphs; track p) {
+              <p class="exp-paragraph">{{ p }}</p>
+            }
+            @if (exp.featuredHighlight || exp.highlights?.length) {
+              <ul class="highlights">
+                @if (exp.featuredHighlight) {
+                  <li class="pill featured">{{ exp.featuredHighlight }}</li>
+                }
+                @for (h of exp.highlights ?? []; track h) {
+                  <li class="pill">{{ h }}</li>
+                }
+              </ul>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACTO -->
+  <section id="impacto" class="section-y">
+    <div class="page-container">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <p class="eyebrow">{{ c.impact.eyebrow }}</p>
+        <h2>{{ c.impact.title }}</h2>
+        <p class="section-description">{{ c.impact.subtitle }}</p>
+      </div>
+
+      <div class="cards-grid two">
+        @for (card of c.impact.cards; track card.title) {
+          <article class="impact-card">
+            <span class="pill mono">{{ card.company }}</span>
+            <h3>{{ card.title }}</h3>
+            <p class="impact-metric">{{ card.metric }}</p>
+            <p class="impact-metric-note">{{ card.metricNote }}</p>
+            <p class="impact-description">{{ card.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAÇÃO + STACK -->
+  <section id="formacao" class="section-y section-alt">
+    <div class="page-container education-grid">
+      <div>
+        <div class="section-heading">
+          <span class="section-number">05</span>
+          <p class="eyebrow">{{ c.education.eyebrow }}</p>
+          <h2>{{ c.education.title }}</h2>
+        </div>
+        <div class="education-list">
+          @for (e of c.education.items; track e.title) {
+            <div class="editorial-card edu-card">
+              <h3>{{ e.title }}</h3>
+              <p class="edu-school">{{ e.school }}</p>
+              <p class="edu-period mono">{{ e.period }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <div class="section-heading">
+          <span class="section-number">06</span>
+          <p class="eyebrow">{{ c.education.skillsEyebrow }}</p>
+          <h2>{{ c.education.skillsTitle }}</h2>
+        </div>
+        <div class="cards-grid two compact">
+          @for (group of c.education.skillGroups; track group.title) {
+            <article class="editorial-card">
+              <h3 class="skill-group-title">{{ group.title }}</h3>
+              <ul class="skill-pills">
+                @for (skill of group.skills; track skill) {
+                  <li class="pill">{{ skill }}</li>
+                }
+              </ul>
+              <span class="editorial-rule" aria-hidden="true"></span>
+            </article>
+          }
+        </div>
+        <div class="languages-card">
+          <p class="languages-label">{{ c.education.languagesLabel }}</p>
+          @for (lang of c.education.languages; track lang.name) {
+            <p><strong>{{ lang.name }}</strong> <span class="muted">{{ lang.level }}</span></p>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section-y contact-section">
+    <div class="page-container narrow center">
+      <div class="section-heading center">
+        <span class="section-number">07</span>
+        <p class="eyebrow">{{ c.contact.eyebrow }}</p>
+        <h2>{{ c.contact.title }}</h2>
+        <p class="section-description">{{ c.contact.body }}</p>
+      </div>
+
+      <div class="contact-grid">
+        <a [href]="'mailto:' + c.profile.email" class="contact-card">
+          <p class="contact-label">{{ c.contact.email }}</p>
+          <p class="contact-value">{{ c.profile.email }}</p>
+        </a>
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="contact-card">
+          <p class="contact-label">WhatsApp</p>
+          <p class="contact-value">{{ c.profile.phoneDisplay }}</p>
+        </a>
+        <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="contact-card">
+          <p class="contact-label">LinkedIn</p>
+          <p class="contact-value">{{ c.profile.linkedinHandle }}</p>
+        </a>
+        <div class="contact-card static">
+          <p class="contact-label">{{ c.contact.location }}</p>
+          <p class="contact-value">{{ c.contact.locationValue }}</p>
+        </div>
+      </div>
+
+      <div class="contact-ctas">
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
+          {{ c.contact.whatsappCta }}
+        </a>
+      </div>
+
+      <div class="qr-block">
+        <p class="qr-hint">{{ c.contact.qrHint }}</p>
+        <div class="qr-frame">
+          <img [src]="portfolio.qrSrc()" [alt]="c.contact.qrAlt" width="200" height="200" loading="lazy" />
+        </div>
+        <p class="muted">wa.me/{{ c.profile.whatsappNumber }}</p>
+      </div>
+    </div>
+  </section>
+
+  <app-footer />
+} @else {
+  <app-loading-state />
+}
