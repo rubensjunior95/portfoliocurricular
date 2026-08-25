@@ -13,7 +13,7 @@ Cada `git push` em `main` dispara o GitHub Actions: o backend sobe na Koyeb e, e
 ## Como funciona
 
 1. O **backend** serve todo o conteúdo do portfólio (3 idiomas) em JSON:
-   `GET /api/portfolio/{pt-BR|en-US|es-ES}` + `GET /api/health`.
+   `GET /api/portfolio/{pt-BR|en-US|es-ES}` + `GET /api/health`
 2. O **frontend** busca o conteúdo na API conforme o idioma escolhido (seletor PT/EN/ES no header, com cache e persistência em localStorage) e renderiza as mesmas seções do site original: hero, sobre, serviços, experiência, impacto, formação e contato (com QR code do WhatsApp).
 3. O **cron-job.org** pinga `https://SEU-APP.koyeb.app/api/health` a cada 5–10 min para a instância free da Koyeb não dormir.
 
