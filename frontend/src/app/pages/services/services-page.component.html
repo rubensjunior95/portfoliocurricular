@@ -2,9 +2,12 @@
   <app-header mode="services" />
 
   <section class="hero services-hero">
-    <div class="page-container">
+    <div class="page-container hero-copy">
       <a routerLink="/" class="link-primary">← {{ c.servicesPage.back }}</a>
-      <p class="eyebrow services-eyebrow">{{ c.servicesPage.eyebrow }}</p>
+      <div class="section-kicker services-kicker">
+        <span class="section-kicker-rule" aria-hidden="true"></span>
+        <p class="eyebrow">{{ c.servicesPage.eyebrow }}</p>
+      </div>
       <h1 class="hero-title">
         {{ c.servicesPage.titleBefore }}
         <span class="text-gradient">{{ c.servicesPage.titleAccent }}</span>
@@ -17,7 +20,7 @@
     <div class="page-container">
       <div class="cards-grid two">
         @for (s of c.servicesPage.items; track s.title; let i = $index) {
-          <article class="editorial-card service-card">
+          <article class="editorial-card service-card" appReveal [style.--i]="i">
             <span class="card-index">{{ pad(i) }}</span>
             <h3>{{ s.title }}</h3>
             <p>{{ s.description }}</p>
@@ -34,12 +37,12 @@
   </section>
 
   <section class="section-y section-alt">
-    <div class="page-container narrow center">
-      <div class="section-heading center">
+    <div class="page-container contact-cta-band">
+      <div class="section-heading" appReveal="settle">
         <h2>{{ c.servicesPage.ctaTitle }}</h2>
         <p class="section-description">{{ c.servicesPage.ctaBody }}</p>
       </div>
-      <div class="contact-ctas">
+      <div class="contact-ctas" appReveal>
         <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
           {{ c.contact.whatsappCta }}
         </a>

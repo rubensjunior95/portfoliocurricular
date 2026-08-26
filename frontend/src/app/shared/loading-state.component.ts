@@ -17,6 +17,7 @@ import { PortfolioService } from '../core/portfolio.service';
           Tentar novamente
         </button>
       } @else {
+        <span class="loading-mark">Rubens<span class="text-primary">.</span></span>
         <span class="spinner" aria-hidden="true"></span>
         <p class="loading-sub">Carregando…</p>
       }

@@ -1,12 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MotionService } from './core/motion.service';
 import { PortfolioService } from './core/portfolio.service';
+import { AmbientFieldComponent } from './shared/ambient-field.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AmbientFieldComponent],
   template: `
+    <div class="grain-overlay" aria-hidden="true"></div>
+    <app-ambient-field />
+    <div class="scroll-progress" aria-hidden="true"></div>
     <router-outlet />
 
     @if (portfolio.content(); as c) {
@@ -27,4 +32,8 @@ import { PortfolioService } from './core/portfolio.service';
 })
 export class AppComponent {
   readonly portfolio = inject(PortfolioService);
+
+  constructor() {
+    inject(MotionService);
+  }
 }
