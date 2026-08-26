@@ -19,7 +19,8 @@ jobs:
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      API_BASE_URL: ${{ vars.API_BASE_URL }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      API_BASE_URL: ${{ vars.API_BASE_URL || secrets.API_BASE_URL || 'https://portfolio-curricular-api.onrender.com' }}
     defaults:
       run:
         working-directory: frontend
@@ -32,10 +33,49 @@ jobs:
           set -euo pipefail
           if [ -z "${API_BASE_URL:-}" ]; then
             echo "Defina a variável de repositório API_BASE_URL com a URL da Render (ex.: https://seu-app.onrender.com)."
-            echo "Painel Render → o serviço → copiar o domínio *.onrender.com"
             exit 1
           fi
           echo "API_BASE_URL=${API_BASE_URL}"
+
+      - name: Validar secrets da Vercel
+        run: |
+          set -euo pipefail
+          ORG="$(printf '%s' "${VERCEL_ORG_ID:-}" | tr -d '[:space:]')"
+          PRJ="$(printf '%s' "${VERCEL_PROJECT_ID:-}" | tr -d '[:space:]')"
+          echo "VERCEL_ORG_ID length=${#ORG} prefix=${ORG:0:5}"
+          echo "VERCEL_PROJECT_ID length=${#PRJ} prefix=${PRJ:0:4}"
+
+          if [ -z "${VERCEL_TOKEN:-}" ]; then
+            echo "Falta o secret VERCEL_TOKEN."
+            exit 1
+          fi
+          if [[ ! "$PRJ" =~ ^prj_ ]]; then
+            echo "VERCEL_PROJECT_ID deve começar com prj_ (projeto → Settings → General)."
+            exit 1
+          fi
+          if [[ ! "$ORG" =~ ^team_ ]]; then
+            echo "VERCEL_ORG_ID deve ser o Team ID (começa com team_), inclusive no Hobby."
+            echo "Não use o User ID da Account Settings."
+            echo "No topo da Vercel, clique no time → Settings → General → Team ID."
+            exit 1
+          fi
+
+          CODE="$(curl -sS -o /tmp/vercel-project.json -w '%{http_code}' \
+            -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+            "https://api.vercel.com/v9/projects/${PRJ}?teamId=${ORG}")"
+          echo "GET /v9/projects → HTTP ${CODE}"
+          if [ "$CODE" != "200" ]; then
+            echo "A Vercel não aceitou este token + Team ID + Project ID (HTTP ${CODE})."
+            echo "1. VERCEL_ORG_ID = Team ID (team_…), Settings do TIME, não User ID."
+            echo "2. VERCEL_PROJECT_ID = prj_… do mesmo projeto."
+            echo "3. Token com scope Full Account ou o mesmo Team — não scope de um único projeto"
+            echo "   (vercel pull quebra com project-scoped token)."
+            echo "Crie de novo em https://vercel.com/account/tokens"
+            exit 1
+          fi
+
+          mkdir -p .vercel
+          printf '{"orgId":"%s","projectId":"%s"}\n' "$ORG" "$PRJ" > .vercel/project.json
 
       - name: Node.js 20
         uses: actions/setup-node@v4
@@ -50,16 +90,10 @@ jobs:
       - name: Gravar URL da API no environment de produção
         run: node scripts/write-prod-env.mjs
 
-      - name: Puxar configuração de produção
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
       - name: Publicar produção
         run: |
           set -euo pipefail
-          URL="$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})"
+          URL="$(vercel deploy --prod --yes --token="${VERCEL_TOKEN}")"
           echo "### Frontend (Vercel)" >> "$GITHUB_STEP_SUMMARY"
           echo "- URL: ${URL}" >> "$GITHUB_STEP_SUMMARY"
           echo "- API: ${API_BASE_URL}" >> "$GITHUB_STEP_SUMMARY"

@@ -61,27 +61,79 @@ Em **Settings → Secrets and variables → Actions → Variables**, crie:
 |---|---|
 | `API_BASE_URL` | A URL `https://….onrender.com` do passo 2, **sem** barra no final |
 
-### 4. Secrets da Vercel no GitHub
+### 4. Colocar o frontend na Vercel (passo a passo)
 
-Ainda em **Actions → Secrets**:
+Faça **primeiro** o projeto na Vercel. Só depois existem o **Project ID** e o **Org ID**. O token é da sua conta, não do projeto.
 
-| Secret | Onde obter |
+#### 4.1 Conta e GitHub
+
+1. Abra [vercel.com](https://vercel.com/) → **Sign Up** com o mesmo GitHub do repositório (`rubensjunior95`).
+2. Autorize a Vercel a ver o repo `portfoliocurricular`.
+
+#### 4.2 Criar o projeto
+
+1. Abra [vercel.com/new](https://vercel.com/new) → **Import** no repositório `portfoliocurricular`.
+2. Em **Root Directory**, clique em **Edit** e escolha **`frontend`** (obrigatório: o Angular não está na raiz).
+3. Confira (o `frontend/vercel.json` já define isso; se a tela pedir, use os mesmos valores):
+   - Framework Preset: **Other**
+   - Build Command: `npm run build`
+   - Output Directory: `dist/portfolio-frontend/browser`
+   - Install Command: `npm ci`
+4. **Não** precisa de variável de ambiente na Vercel (`API_BASE_URL` fica no GitHub; o Actions grava no build).
+5. Clique em **Deploy**. O primeiro deploy pode sair com API errada — isso se corrige no passo 4.5. Anote a URL `https://….vercel.app`.
+
+#### 4.3 Evitar deploy duplicado
+
+1. No projeto: **Settings → Git**.
+2. Em **Ignored Build Step**, coloque `exit 0` e salve.  
+   Assim a Vercel **não** publica no push; quem publica é o GitHub Actions.
+
+#### 4.4 Onde copiar Token, Org ID e Project ID
+
+Coloque os três em GitHub → o repositório → **Settings → Secrets and variables → Actions → Secrets**.
+
+**1. `VERCEL_TOKEN`** ([documentação](https://vercel.com/docs/accounts/access-tokens))
+
+1. Abra [vercel.com/account/tokens](https://vercel.com/account/tokens).
+2. **Create** → nome `github-actions-portfolio`.
+3. **Scope: Full Account** ou o **Team** dono do projeto. **Não** escolha um único projeto — o CLI falha com token só de projeto (`Could not retrieve Project Settings`).
+4. **Create** e **copie na hora** — a Vercel **não mostra de novo**.
+
+**2. `VERCEL_ORG_ID`** — sempre o **Team ID** (`team_…`), também no plano Hobby
+
+O Hobby tem um time pessoal. **Não use o User ID** da Account Settings (é isso que quebra o `vercel pull`).
+
+1. No canto superior esquerdo da Vercel, clique no **nome do time** (o workspace do projeto, não “Account Settings”).
+2. **Settings → General → Team ID** (começa com `team_`).
+3. Ou, **dentro do projeto**, olhe a URL / o time no topo e abra as settings **desse** time.
+
+**3. `VERCEL_PROJECT_ID`**
+
+1. Abra o projeto que você importou.
+2. **Settings → General**.
+3. Role até **Project ID** (começa com `prj_`) e copie.
+
+| Secret no GitHub | O que colar | Onde está |
+|---|---|---|
+| `VERCEL_TOKEN` | token (uma vez só na tela) | [vercel.com/account/tokens](https://vercel.com/account/tokens) — scope **Full Account** ou **Team** |
+| `VERCEL_ORG_ID` | `team_…` | Time do projeto → **Settings → General → Team ID** |
+| `VERCEL_PROJECT_ID` | `prj_…` | Projeto → **Settings → General** |
+
+Depois de corrigir os secrets, rode de novo **Actions → Deploy frontend → Run workflow**.
+
+#### 4.5 Ligar a API no frontend
+
+No GitHub, **Settings → Secrets and variables → Actions → Variables**:
+
+| Variable | Valor |
 |---|---|
-| `VERCEL_TOKEN` | [Vercel → Tokens](https://vercel.com/account/tokens) |
-| `VERCEL_ORG_ID` | Vercel → Team Settings → **Team ID** |
-| `VERCEL_PROJECT_ID` | Vercel → Project Settings → **Project ID** |
+| `API_BASE_URL` | URL da Render, sem `/` no final (`https://….onrender.com`) |
 
-### 5. Projeto na Vercel (uma vez)
+Rode o workflow **Deploy frontend** (push em `main` ou **Actions → Run workflow**). O site na Vercel passa a chamar a API certa.
 
-1. [vercel.com/new](https://vercel.com/new) → importe este repositório.
-2. **Root Directory** = `frontend`.
-3. Framework: Other (o `vercel.json` já define build e output).
-4. Em **Settings → Git**, Ignored Build Step = `exit 0` (quem publica é o Actions).
-5. Copie o **Project ID** para o secret `VERCEL_PROJECT_ID`.
+Opcional na Render: `CORS_ALLOWED_ORIGINS` = `https://seu-projeto.vercel.app` e um **Manual Deploy**.
 
-Opcional na Render: depois que o site da Vercel existir, edite `CORS_ALLOWED_ORIGINS` para `https://seu-projeto.vercel.app` e faça um **Manual Deploy**.
-
-### 6. Push
+### 5. Push
 
 ```bash
 git add .
@@ -91,7 +143,7 @@ git push origin main
 
 A Render sobe o backend; o Actions sobe o frontend apontando para `API_BASE_URL`.
 
-### 7. cron-job.org (obrigatório no plano Free)
+### 6. cron-job.org (obrigatório no plano Free)
 
 A instância free **dorme após 15 minutos** sem tráfego; o próximo acesso demora ~1 min. Para manter acordada:
 

@@ -3,7 +3,11 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const raw = (process.env.API_BASE_URL || '').trim().replace(/\/+$/, '');
+const raw = (
+  process.env.API_BASE_URL || 'https://portfolio-curricular-api.onrender.com'
+)
+  .trim()
+  .replace(/\/+$/, '');
 
 if (!raw) {
   console.error('API_BASE_URL is required for the production build.');
