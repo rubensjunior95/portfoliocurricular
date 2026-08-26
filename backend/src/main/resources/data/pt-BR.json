@@ -183,7 +183,7 @@
     ],
     "skillGroups": [
       { "title": "Fullstack JavaScript", "skills": ["Node.js", "NestJS", "Next.js", "Angular.js", "APIs REST"] },
-      { "title": "Linguagens & Frameworks", "skills": ["Java", "Python / Django", "C#", "PHP / Laravel", "Dart / Flutter", "Delphi (Object Pascal)", "C / C++"] },
+      { "title": "Linguagens & Frameworks", "skills": ["Java / Spring Boot", "Python / Django", "C#", "PHP / Laravel", "Dart / Flutter", "Delphi (Object Pascal)", "C / C++"] },
       { "title": "Arquitetura & Qualidade", "skills": ["Clean Architecture", "SOLID", "Domain-Driven Design — DDD", "Test-Driven Development — TDD"] },
       { "title": "Integrações, Cloud & DevOps", "skills": ["Kafka", "RabbitMQ", "Integração de Sistemas", "Docker", "Cloud Computing", "Administração de VPS"] },
       { "title": "IA, Dados & Indústria 4.0", "skills": ["Implantação de Inteligência Artificial", "Data Science & Analytics", "Indústria 4.0", "Automação Industrial"] },
