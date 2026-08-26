@@ -12,7 +12,7 @@ type CvUiDefaults = {
 };
 
 const LINKEDIN_DISPLAY = 'linkedin.com/in/rubens-junior-996696193';
-const SITE_DISPLAY = 'rubensportifolio.vercel.app';
+const SITE_DISPLAY = 'portfoliocurricular.vercel.app';
 
 const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
   'pt-BR': {
