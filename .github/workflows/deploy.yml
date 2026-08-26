@@ -21,9 +21,6 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       API_BASE_URL: ${{ vars.API_BASE_URL || secrets.API_BASE_URL || 'https://portfolio-curricular-api.onrender.com' }}
-    defaults:
-      run:
-        working-directory: frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -68,8 +65,7 @@ jobs:
             echo "A Vercel não aceitou este token + Team ID + Project ID (HTTP ${CODE})."
             echo "1. VERCEL_ORG_ID = Team ID (team_…), Settings do TIME, não User ID."
             echo "2. VERCEL_PROJECT_ID = prj_… do mesmo projeto."
-            echo "3. Token com scope Full Account ou o mesmo Team — não scope de um único projeto"
-            echo "   (vercel pull quebra com project-scoped token)."
+            echo "3. Token com scope Full Account ou o mesmo Team — não scope de um único projeto."
             echo "Crie de novo em https://vercel.com/account/tokens"
             exit 1
           fi
@@ -88,6 +84,7 @@ jobs:
         run: npm install -g vercel@48
 
       - name: Gravar URL da API no environment de produção
+        working-directory: frontend
         run: node scripts/write-prod-env.mjs
 
       - name: Publicar produção
