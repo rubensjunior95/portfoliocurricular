@@ -12,7 +12,7 @@ npm start
 # http://localhost:4200 (backend precisa estar rodando em :8080)
 ```
 
-Em desenvolvimento a API é `http://localhost:8080` (`src/environments/environment.ts`). Em produção o GitHub Actions grava `API_BASE_URL` em `environment.prod.ts` no momento do build.
+Em desenvolvimento a API é `http://localhost:8080` (`src/environments/environment.ts`). Em produção o build usa `src/environments/environment.prod.ts` (`https://portfolio-curricular-api.onrender.com`).
 
 ## Build de produção (local)
 
@@ -28,7 +28,7 @@ npm run build:ci
 
 ## Deploy
 
-O deploy de produção é automático no push para `main` (veja o README da raiz). O GitHub Actions usa a variável `API_BASE_URL` (URL da Render). O `vercel.json` define o output SPA e o rewrite `/* → /index.html`.
+O deploy de produção é **um por push** em `main`, pela integração Git da Vercel (Root Directory = `frontend`). Não use GitHub Actions para publicar — duplica o deploy. O `vercel.json` define o output SPA e o rewrite `/* → /index.html`.
 
 ## Estrutura
 
