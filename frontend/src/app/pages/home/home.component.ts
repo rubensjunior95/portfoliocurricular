@@ -5,11 +5,12 @@ import { HeaderComponent } from '../../shared/header.component';
 import { FooterComponent } from '../../shared/footer.component';
 import { LoadingStateComponent } from '../../shared/loading-state.component';
 import { RevealDirective } from '../../shared/reveal.directive';
+import { DownloadCvMenuComponent } from '../../shared/download-cv-menu.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeaderComponent, FooterComponent, LoadingStateComponent, RevealDirective],
+  imports: [RouterLink, HeaderComponent, FooterComponent, LoadingStateComponent, RevealDirective, DownloadCvMenuComponent],
   templateUrl: './home.component.html',
   host: { class: 'site-main' },
 })

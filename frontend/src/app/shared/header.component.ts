@@ -1,12 +1,12 @@
 import { Component, Input, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PortfolioService, LOCALE_LABELS } from '../core/portfolio.service';
-import { Locale } from '../core/portfolio.models';
+import { DownloadCvMenuComponent } from './download-cv-menu.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DownloadCvMenuComponent],
   template: `
     @if (portfolio.content(); as c) {
       <header class="site-header">
@@ -21,8 +21,14 @@ import { Locale } from '../core/portfolio.models';
               <a href="#impacto" (click)="close()">{{ c.nav.impact }}</a>
               <a href="#formacao" (click)="close()">{{ c.nav.education }}</a>
               <a href="#contato" (click)="close()">{{ c.nav.contact }}</a>
+              <div class="header-nav-cv" (click)="close()">
+                <app-download-cv-menu variant="stack" />
+              </div>
             } @else {
               <a routerLink="/" (click)="close()">{{ c.servicesPage.back }}</a>
+              <div class="header-nav-cv" (click)="close()">
+                <app-download-cv-menu variant="stack" />
+              </div>
             }
           </nav>
 
@@ -37,6 +43,9 @@ import { Locale } from '../core/portfolio.models';
                   {{ labels[l] }}
                 </button>
               }
+            </div>
+            <div class="hide-mobile">
+              <app-download-cv-menu variant="compact" />
             </div>
             <a
               [href]="portfolio.whatsappHref()"

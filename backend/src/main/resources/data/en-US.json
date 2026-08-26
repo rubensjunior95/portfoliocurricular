@@ -9,7 +9,9 @@
     "phoneDisplay": "(27) 99693-9025",
     "whatsappNumber": "5527996939025",
     "linkedin": "https://www.linkedin.com/in/rubens-junior-996696193",
-    "linkedinHandle": "rubens-junior"
+    "linkedinHandle": "rubens-junior",
+    "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
+    "siteDisplay": "rubensportifolio.vercel.app"
   },
   "meta": {
     "homeTitle": "Rubens Florentino — IT Leader, Engineer & Fullstack Dev",
@@ -27,6 +29,9 @@
     "home": "Home",
     "talk": "Let's talk",
     "language": "Page language",
+    "downloadCv": "Download CV",
+    "downloadCvAria": "Download CV — choose language",
+    "chooseCvLanguage": "CV language",
     "openMenu": "Open navigation menu"
   },
   "hero": {
@@ -198,8 +203,21 @@
     "location": "Location",
     "locationValue": "Americana — SP, Brazil",
     "whatsappCta": "Chat on WhatsApp",
+    "downloadPdf": "Download CV (PDF)",
+    "downloadPdfAria": "Download CV — choose language to print",
     "qrHint": "Point your camera to chat on WhatsApp",
     "qrAlt": "QR Code for Rubens Florentino's WhatsApp"
+  },
+  "cv": {
+    "headline": "IT Leader · Electrical Engineer · Fullstack Developer",
+    "profileLabel": "Profile",
+    "resultsLabel": "Key results",
+    "summary": "IT Leader with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), AI implementation, fullstack development, and process digitalization with measurable financial impact.",
+    "emailLabel": "Email",
+    "phoneLabel": "Tel",
+    "locationLabel": "Location",
+    "linkedinLabel": "LinkedIn",
+    "webLabel": "Web"
   },
   "whatsapp": {
     "floatingAria": "Chat on WhatsApp",

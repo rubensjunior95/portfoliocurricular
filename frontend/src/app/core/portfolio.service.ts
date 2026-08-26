@@ -1,6 +1,8 @@
 import { Injectable, computed, effect, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { firstValueFrom, map } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { hydrateContent } from './cv-defaults';
 import { Locale, PortfolioContent } from './portfolio.models';
 
 const STORAGE_KEY = 'portfolio.locale';
@@ -10,6 +12,12 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   'pt-BR': 'PT',
   'en-US': 'EN',
   'es-ES': 'ES',
+};
+
+export const LOCALE_NATIVE: Record<Locale, string> = {
+  'pt-BR': 'Português (Brasil)',
+  'en-US': 'English (US)',
+  'es-ES': 'Español',
 };
 
 /**
@@ -62,6 +70,20 @@ export class PortfolioService {
     this.fetch(this.locale());
   }
 
+  awaitLocale(locale: Locale): Promise<PortfolioContent> {
+    const cached = this.cache.get(locale);
+    if (cached) return Promise.resolve(cached);
+    return firstValueFrom(
+      this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).pipe(
+        map((data) => {
+          const hydrated = hydrateContent(data);
+          this.cache.set(locale, hydrated);
+          return hydrated;
+        }),
+      ),
+    );
+  }
+
   private fetch(locale: Locale): void {
     const cached = this.cache.get(locale);
     if (cached) {
@@ -74,16 +96,30 @@ export class PortfolioService {
     this.error.set(false);
     this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).subscribe({
       next: (data) => {
-        this.cache.set(locale, data);
-        this.content.set(data);
+        const hydrated = hydrateContent(data);
+        this.cache.set(locale, hydrated);
+        this.content.set(hydrated);
         this.loading.set(false);
-        document.title = data.meta.homeTitle;
+        document.title = hydrated.meta.homeTitle;
+        this.prefetchOthers(locale);
       },
       error: () => {
         this.loading.set(false);
         this.error.set(true);
       },
     });
+  }
+
+  private prefetchOthers(current: Locale): void {
+    for (const locale of LOCALES) {
+      if (locale === current || this.cache.has(locale)) continue;
+      this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).subscribe({
+        next: (data) => this.cache.set(locale, hydrateContent(data)),
+        error: () => {
+          /* prefetch opcional — o download busca de novo se precisar */
+        },
+      });
+    }
   }
 
   private initialLocale(): Locale {

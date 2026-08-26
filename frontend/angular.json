@@ -22,7 +22,16 @@
               { "glob": "**/*", "input": "src/assets", "output": "assets" }
             ],
             "styles": ["src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "html2canvas",
+              "jspdf",
+              "canvg",
+              "core-js",
+              "raf",
+              "rgbcolor",
+              "dompurify"
+            ]
           },
           "configurations": {
             "production": {

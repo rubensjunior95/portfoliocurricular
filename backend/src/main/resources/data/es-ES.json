@@ -9,7 +9,9 @@
     "phoneDisplay": "(27) 99693-9025",
     "whatsappNumber": "5527996939025",
     "linkedin": "https://www.linkedin.com/in/rubens-junior-996696193",
-    "linkedinHandle": "rubens-junior"
+    "linkedinHandle": "rubens-junior",
+    "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
+    "siteDisplay": "rubensportifolio.vercel.app"
   },
   "meta": {
     "homeTitle": "Rubens Florentino — Líder de TI, Ingeniero y Dev Fullstack",
@@ -27,6 +29,9 @@
     "home": "Inicio",
     "talk": "Hablemos",
     "language": "Idioma de la página",
+    "downloadCv": "Descargar CV",
+    "downloadCvAria": "Descargar Curriculum Vitae — elegir idioma",
+    "chooseCvLanguage": "Idioma del currículum",
     "openMenu": "Abrir menú de navegación"
   },
   "hero": {
@@ -198,8 +203,21 @@
     "location": "Ubicación",
     "locationValue": "Americana — SP, Brasil",
     "whatsappCta": "Hablar por WhatsApp",
+    "downloadPdf": "Descargar CV (PDF)",
+    "downloadPdfAria": "Descargar Curriculum Vitae — elegir idioma para imprimir",
     "qrHint": "Apunte la cámara para hablar por WhatsApp",
     "qrAlt": "Código QR para el WhatsApp de Rubens Florentino"
+  },
+  "cv": {
+    "headline": "Líder de TI · Ingeniero Eléctrico · Desarrollador Fullstack",
+    "profileLabel": "Perfil",
+    "resultsLabel": "Resultados destacados",
+    "summary": "Líder de TI con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.",
+    "emailLabel": "Correo",
+    "phoneLabel": "Tel",
+    "locationLabel": "Local",
+    "linkedinLabel": "LinkedIn",
+    "webLabel": "Web"
   },
   "whatsapp": {
     "floatingAria": "Conversar por WhatsApp",

@@ -22,6 +22,7 @@
             {{ c.hero.ctaTalk }}
           </a>
           <a routerLink="/services" class="btn btn-outline">{{ c.hero.ctaServices }}</a>
+          <app-download-cv-menu />
         </div>
       </div>
 
@@ -257,6 +258,7 @@
           <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
             {{ c.contact.whatsappCta }}
           </a>
+          <app-download-cv-menu />
         </div>
       </div>
 

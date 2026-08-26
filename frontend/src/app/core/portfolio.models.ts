@@ -10,6 +10,8 @@ export interface Profile {
   whatsappNumber: string;
   linkedin: string;
   linkedinHandle: string;
+  linkedinDisplay: string;
+  siteDisplay: string;
 }
 
 export interface Nav {
@@ -22,6 +24,9 @@ export interface Nav {
   home: string;
   talk: string;
   language: string;
+  downloadCv: string;
+  downloadCvAria: string;
+  chooseCvLanguage: string;
   openMenu: string;
 }
 
@@ -105,8 +110,22 @@ export interface Contact {
   location: string;
   locationValue: string;
   whatsappCta: string;
+  downloadPdf: string;
+  downloadPdfAria: string;
   qrHint: string;
   qrAlt: string;
+}
+
+export interface CvCopy {
+  headline: string;
+  profileLabel: string;
+  resultsLabel: string;
+  summary: string;
+  emailLabel: string;
+  phoneLabel: string;
+  locationLabel: string;
+  linkedinLabel: string;
+  webLabel: string;
 }
 
 export interface ServicesPage {
@@ -138,6 +157,7 @@ export interface PortfolioContent {
   impact: Impact;
   education: Education;
   contact: Contact;
+  cv: CvCopy;
   whatsapp: { floatingAria: string; plainMsg: string };
   footer: { rights: string };
   servicesPage: ServicesPage;
