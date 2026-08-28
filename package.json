@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-curricular",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c cyan,magenta \"npm run backend\" \"npm run frontend\"",
+    "backend": "docker compose up backend",
+    "frontend": "npm --prefix frontend start",
+    "postinstall": "npm --prefix frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

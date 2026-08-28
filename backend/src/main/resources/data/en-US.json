@@ -187,12 +187,14 @@
       { "title": "B.Sc. in Computer Science", "school": "UnC — Porto União/SC", "period": "2013 — 2016" }
     ],
     "skillGroups": [
-      { "title": "Fullstack JavaScript", "skills": ["Node.js", "NestJS", "Next.js", "Angular.js", "REST APIs"] },
-      { "title": "Languages & Frameworks", "skills": ["Java / Spring Boot", "Python / Django", "C#", "PHP / Laravel", "Dart / Flutter", "Delphi (Object Pascal)", "C / C++"] },
-      { "title": "Architecture & Quality", "skills": ["Clean Architecture", "SOLID", "Domain-Driven Design — DDD", "Test-Driven Development — TDD"] },
-      { "title": "Integrations, Cloud & DevOps", "skills": ["Kafka", "RabbitMQ", "System Integration", "Docker", "Cloud Computing", "VPS Administration"] },
-      { "title": "AI, Data & Industry 4.0", "skills": ["Artificial Intelligence Implementation", "Data Science & Analytics", "Industry 4.0", "Industrial Automation"] },
-      { "title": "Leadership & Strategy", "skills": ["IT Leadership", "Process Management", "Entrepreneur Mentoring", "Electrical Engineering"] }
+      { "title": "Languages & Frameworks — Back-end", "skills": ["Java / Spring Boot", "Node.js / NestJS", "Python / Django", "C#", "PHP / Laravel", "Delphi (Object Pascal)", "C / C++"] },
+      { "title": "Languages & Frameworks — Front-end & Mobile", "skills": ["Angular.js", "Next.js", "Dart / Flutter"] },
+      { "title": "Architecture & System Design", "skills": ["Clean Architecture", "Domain-Driven Design — DDD", "SOLID & Design Patterns", "Domain Modeling", "API & Integration Contract Design"] },
+      { "title": "Asynchronous Systems & Scalability", "skills": ["Event-Driven Architecture", "Asynchronous Processing & Messaging", "System Scalability", "Resilience & High Availability", "Heterogeneous System Integration", "Real-Time Operational Data"] },
+      { "title": "Software Quality & Reliability", "skills": ["Test-Driven Development — TDD", "Test Automation", "Maintainability & Refactoring", "Observability & Monitoring"] },
+      { "title": "Cloud, Infrastructure & Operations", "skills": ["Cloud Architecture", "Application Containerization", "Deployment Automation & Continuous Delivery", "Server & VPS Administration"] },
+      { "title": "AI, Data & Industry 4.0", "skills": ["Artificial Intelligence Implementation", "Data Science & Analytics", "Data Engineering & KPIs", "Industry 4.0 & Industrial IoT", "Industrial Automation"] },
+      { "title": "Leadership & Strategy", "skills": ["IT Leadership", "Process Management", "Process Digitalization", "Entrepreneur Mentoring", "Electrical Engineering"] }
     ]
   },
   "contact": {

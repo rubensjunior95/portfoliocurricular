@@ -14,6 +14,20 @@ Cada `git push` em `main` gera **um** deploy de cada lado:
 
 Não use GitHub Actions para publicar na Vercel — isso duplicava o deploy.
 
+## Rodar localmente
+
+Requisitos: Node 18.19+ e [Docker Desktop](https://www.docker.com/products/docker-desktop/). O backend sobe no Docker com Java 21 (Maven não precisa estar instalado na máquina).
+
+```bash
+npm install
+npm run dev
+```
+
+- Frontend: [http://localhost:4200](http://localhost:4200)
+- Backend: [http://localhost:8080](http://localhost:8080) (`GET /api/portfolio/pt-BR`)
+
+Na primeira vez o Maven baixa as dependências dentro do container; as seguintes ficam em cache. Para subir só um dos lados: `npm run backend` ou `npm run frontend`.
+
 ## Como funciona
 
 1. O **backend** serve o conteúdo (3 idiomas) em JSON:

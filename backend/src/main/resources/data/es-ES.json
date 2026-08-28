@@ -187,12 +187,14 @@
       { "title": "Licenciatura en Ciencias de la Computación", "school": "UnC — Porto União/SC", "period": "2013 — 2016" }
     ],
     "skillGroups": [
-      { "title": "Fullstack JavaScript", "skills": ["Node.js", "NestJS", "Next.js", "Angular.js", "APIs REST"] },
-      { "title": "Lenguajes y Frameworks", "skills": ["Java / Spring Boot", "Python / Django", "C#", "PHP / Laravel", "Dart / Flutter", "Delphi (Object Pascal)", "C / C++"] },
-      { "title": "Arquitectura y Calidad", "skills": ["Clean Architecture", "SOLID", "Domain-Driven Design — DDD", "Test-Driven Development — TDD"] },
-      { "title": "Integraciones, Cloud y DevOps", "skills": ["Kafka", "RabbitMQ", "Integración de Sistemas", "Docker", "Cloud Computing", "Administración de VPS"] },
-      { "title": "IA, Datos e Industria 4.0", "skills": ["Implantación de Inteligencia Artificial", "Data Science & Analytics", "Industria 4.0", "Automatización Industrial"] },
-      { "title": "Liderazgo y Estrategia", "skills": ["Liderazgo de TI", "Gestión de Procesos", "Mentoría de Empresarios", "Ingeniería Eléctrica"] }
+      { "title": "Lenguajes y Frameworks — Back-end", "skills": ["Java / Spring Boot", "Node.js / NestJS", "Python / Django", "C#", "PHP / Laravel", "Delphi (Object Pascal)", "C / C++"] },
+      { "title": "Lenguajes y Frameworks — Front-end y Mobile", "skills": ["Angular.js", "Next.js", "Dart / Flutter"] },
+      { "title": "Arquitectura y Diseño de Sistemas", "skills": ["Clean Architecture", "Domain-Driven Design — DDD", "SOLID y Patrones de Diseño", "Modelado de Dominio", "Diseño de APIs y Contratos de Integración"] },
+      { "title": "Sistemas Asíncronos y Escalabilidad", "skills": ["Arquitectura Orientada a Eventos", "Procesamiento Asíncrono y Mensajería", "Escalabilidad de Sistemas", "Resiliencia y Alta Disponibilidad", "Integración entre Sistemas Heterogéneos", "Datos Operativos en Tiempo Real"] },
+      { "title": "Calidad y Confiabilidad del Software", "skills": ["Test-Driven Development — TDD", "Automatización de Pruebas", "Mantenibilidad y Refactorización", "Observabilidad y Monitoreo"] },
+      { "title": "Cloud, Infraestructura y Operación", "skills": ["Arquitectura en la Nube", "Contenerización de Aplicaciones", "Automatización de Despliegue y Entrega Continua", "Administración de Servidores y VPS"] },
+      { "title": "IA, Datos e Industria 4.0", "skills": ["Implantación de Inteligencia Artificial", "Data Science & Analytics", "Ingeniería de Datos e Indicadores", "Industria 4.0 e IoT Industrial", "Automatización Industrial"] },
+      { "title": "Liderazgo y Estrategia", "skills": ["Liderazgo de TI", "Gestión de Procesos", "Digitalización de Procesos", "Mentoría de Empresarios", "Ingeniería Eléctrica"] }
     ]
   },
   "contact": {

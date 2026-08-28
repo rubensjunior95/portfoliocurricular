@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: maven:3.9-eclipse-temurin-21
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+      - maven-cache:/root/.m2
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      CORS_ALLOWED_ORIGINS: http://localhost:4200
+    command: mvn -q spring-boot:run
+
+volumes:
+  maven-cache:
