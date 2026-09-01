@@ -37,16 +37,11 @@ Resumo:
 2. Plano **Free**, Dockerfile `backend/Dockerfile`, health `/api/health`.
 3. A Render injeta `PORT`. Opcional: `CORS_ALLOWED_ORIGINS` = URL da Vercel (padrão no Blueprint: `*`).
 
-## Keep-alive com cron-job.org
+## Keep-alive (Render Free)
 
-A instância free da Render dorme após **15 minutos** sem tráfego ([docs](https://render.com/docs/free#spinning-down-on-idle)). Para evitar:
+A instância free da Render dorme após **15 minutos** sem tráfego ([docs](https://render.com/docs/free#spinning-down-on-idle)). O workflow `.github/workflows/keep-alive.yml` pinga `/api/health` a cada 5 min, esperando o cold start.
 
-1. Conta em https://cron-job.org (gratuito).
-2. **Create cronjob**:
-   - URL: `https://SEU-APP.onrender.com/api/health`
-   - Schedule: a cada **10 minutos**.
-   - Method: GET.
-3. Lembrete: 750 horas free/mês. Cron 24h esgota o quota no fim do mês.
+Não use só o cron-job.org: o timeout gratuito é 30s e o job é desativado após falhas seguidas. 750 horas free/mês; keep-alive 24h esgota o quota no fim do mês.
 
 ## Editar o conteúdo do portfólio
 

@@ -1,0 +1,36 @@
+# Mantém a instância Free da Render acordada.
+# O cron-job.org desliga o job após ~15 falhas seguidas; o cold start da Render
+# passa de 30s (limite deles) e isso desativa o keep-alive externo.
+#
+# GitHub pode atrasar o schedule alguns minutos — por isso o intervalo é 5 min
+# (a Render dorme após 15 min sem tráfego).
+# Workflows agendados param após 60 dias sem atividade no repositório.
+
+name: Keep Render awake
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Ping /api/health until the API is up
+        env:
+          HEALTH_URL: https://portfolio-curricular-api.onrender.com/api/health
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 8); do
+            body="$(curl -fsS --max-time 90 "$HEALTH_URL" || true)"
+            if printf '%s' "$body" | grep -q '"status"[[:space:]]*:[[:space:]]*"UP"'; then
+              echo "API is UP"
+              exit 0
+            fi
+            echo "Attempt $i: still waking, retrying in 10s..."
+            sleep 10
+          done
+          echo "API did not become healthy in time"
+          exit 1

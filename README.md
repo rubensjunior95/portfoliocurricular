@@ -34,7 +34,7 @@ Na primeira vez o Maven baixa as dependências dentro do container; as seguintes
    `GET /api/portfolio/{pt-BR|en-US|es-ES}` + `GET /api/health`
 2. O **frontend** busca a API conforme o idioma (PT/EN/ES) e monta as seções.
 3. A URL de produção da API está em `frontend/src/environments/environment.prod.ts`.
-4. O **cron-job.org** pinga `https://portfolio-curricular-api.onrender.com/api/health` a cada 10 min para a instância free da Render não dormir.
+4. O workflow **Keep Render awake** (`.github/workflows/keep-alive.yml`) pinga `/api/health` a cada 5 min para a instância free da Render não dormir.
 
 ## Passo a passo
 
@@ -60,11 +60,13 @@ Em **Settings → Git**:
 
 Não precisa de `VERCEL_TOKEN` / Org ID / Project ID no GitHub.
 
-### 3. cron-job.org
+### 3. Keep-alive (Render Free)
 
-GET a cada **10 minutos**: `https://portfolio-curricular-api.onrender.com/api/health`
+A instância free dorme após **15 min** sem tráfego. O GitHub Actions `Keep Render awake` faz GET em `/api/health` a cada **5 min**, com timeout de 90s — o bastante para o cold start (~1 min).
 
-A instância free dorme após 15 min sem tráfego. Cron 24h consome as 750 h/mês até o fim do mês.
+O **cron-job.org** sozinho não serve: o timeout gratuito é 30s, o wake da Render passa disso, e após ~15 falhas seguidas o job é desativado.
+
+Keep-alive 24h consome as 750 h/mês até o fim do mês. Workflows agendados do GitHub param após 60 dias sem atividade no repositório — um push ou **Run workflow** reativa.
 
 ## Editar conteúdo
 
