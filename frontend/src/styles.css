@@ -883,6 +883,10 @@ p {
 }
 
 @media (max-width: 860px) {
+  .site-header {
+    padding-top: 0.55rem;
+    background: var(--background);
+  }
   .header-nav {
     position: fixed;
     top: 4.4rem;
@@ -890,7 +894,7 @@ p {
     right: 0.75rem;
     flex-direction: column;
     gap: 0;
-    background: oklch(0.13 0.018 160 / 0.97);
+    background: oklch(0.145 0.02 160);
     border: 1px solid var(--border);
     border-radius: 1rem;
     overflow: hidden;
@@ -924,11 +928,81 @@ p {
   .hide-mobile { display: none; }
   .section-y { padding: 3.5rem 0; }
   .header-inner {
-    margin-top: 0.55rem;
+    margin-top: 0;
     border-radius: 1.1rem;
   }
-  .hero-stat { padding: 1.15rem 0.75rem 1.25rem; }
-  .hero-metrics { margin-top: 2.5rem; }
+  .hero {
+    padding-top: 7.25rem;
+  }
+  .hero-grid {
+    gap: 2rem;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title {
+    font-size: clamp(2.05rem, 10.5vw, 2.85rem);
+  }
+  .hero-subtitle,
+  .hero-proof {
+    max-width: none;
+  }
+  .hero-ctas,
+  .contact-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas > .btn,
+  .contact-ctas > .btn,
+  .hero-ctas > app-download-cv-menu,
+  .contact-ctas > app-download-cv-menu {
+    display: block;
+    width: 100%;
+  }
+  .hero-ctas .cv-menu,
+  .contact-ctas .cv-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-ctas .btn-cv,
+  .contact-ctas .btn-cv {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-photo-wrap {
+    z-index: 1;
+    max-width: 22rem;
+    margin-top: 0.25rem;
+  }
+  .hero-stat { padding: 1.15rem 0.5rem 1.25rem; }
+  .hero-stat-v {
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+  .hero-metrics { margin-top: 2rem; }
+  .exp-card,
+  .impact-card {
+    padding: 1.25rem;
+  }
+  .section-heading-row {
+    margin-bottom: 2rem;
+  }
+  .contact-section { padding-bottom: 6.5rem; }
+  .qr-frame img {
+    width: min(200px, 72vw);
+    height: auto;
+  }
+  .whatsapp-fab {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .site-main {
@@ -1031,6 +1105,22 @@ p {
   letter-spacing: 0.02em;
   background: oklch(0.78 0.18 155 / 0.18);
   color: var(--primary);
+}
+
+@media (max-width: 860px) {
+  .cv-menu-panel {
+    position: static;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0.55rem;
+  }
+  .cv-menu-panel .cv-menu-item {
+    border: 1px solid var(--border);
+    background: oklch(0.13 0.018 160 / 0.85);
+  }
 }
 
 /* Documento de CV: invisível na tela, visível na impressão / captura PDF. */
