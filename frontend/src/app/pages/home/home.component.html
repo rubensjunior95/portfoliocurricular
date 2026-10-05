@@ -187,6 +187,28 @@
             </div>
           }
         </div>
+        <div class="courses-block">
+          <p class="courses-label">{{ c.education.coursesLabel }}</p>
+          <div class="education-list">
+            @for (course of c.education.courses; track course.title; let i = $index) {
+              <div class="editorial-card edu-card" appReveal="left" [style.--i]="i">
+                <h3>{{ course.title }}</h3>
+                <p class="edu-school">{{ course.school }}</p>
+                <p class="edu-period mono">{{ course.period }}</p>
+                @if (course.parts?.length) {
+                  <ul class="course-parts">
+                    @for (part of course.parts; track part.title) {
+                      <li>
+                        <span>{{ part.title }}</span>
+                        <span class="mono">{{ part.period }}</span>
+                      </li>
+                    }
+                  </ul>
+                }
+              </div>
+            }
+          </div>
+        </div>
       </div>
 
       <div>

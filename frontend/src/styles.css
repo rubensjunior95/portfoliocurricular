@@ -666,6 +666,35 @@ p {
   gap: 0.4rem;
 }
 
+.courses-block { margin-top: 2.25rem; }
+.courses-label {
+  margin: 0 0 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.course-parts {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.course-parts li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid oklch(0.78 0.18 155 / 0.45);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+.course-parts li span:last-child {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
 .languages-card {
   margin-top: 2rem;
   border: 1px solid var(--border);
@@ -1300,6 +1329,12 @@ p {
   color: #4b5563;
 }
 .cv-print .cv-edu-period { font-size: 7pt; color: #6b7280; }
+.cv-print .cv-course-part {
+  margin: 1px 0 0 8px;
+  font-size: 7pt;
+  line-height: 1.35;
+  color: #4b5563;
+}
 .cv-print .cv-langs {
   margin-top: 6px;
   font-size: 8pt;

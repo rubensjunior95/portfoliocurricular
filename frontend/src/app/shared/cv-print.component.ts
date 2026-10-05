@@ -131,6 +131,24 @@ import { ExperienceItem } from '../core/portfolio.models';
 
             <section>
               <div class="cv-section-label">
+                <p class="cv-section-title">{{ c.education.coursesLabel }}</p>
+              </div>
+              <div class="cv-aside-list">
+                @for (course of c.education.courses; track course.title) {
+                  <div class="cv-avoid-break">
+                    <h3>{{ course.title }}</h3>
+                    <p>{{ course.school }}</p>
+                    <p class="cv-edu-period">{{ course.period }}</p>
+                    @for (part of course.parts ?? []; track part.title) {
+                      <p class="cv-course-part">{{ part.title }} · {{ part.period }}</p>
+                    }
+                  </div>
+                }
+              </div>
+            </section>
+
+            <section>
+              <div class="cv-section-label">
                 <p class="cv-section-title">{{ c.education.languagesLabel }}</p>
               </div>
               <div class="cv-langs">

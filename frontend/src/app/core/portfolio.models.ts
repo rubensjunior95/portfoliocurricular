@@ -98,6 +98,13 @@ export interface Education {
   skillsTitle: string;
   languagesLabel: string;
   languages: { name: string; level: string }[];
+  coursesLabel: string;
+  courses: {
+    title: string;
+    school: string;
+    period: string;
+    parts?: { title: string; period: string }[];
+  }[];
   items: { title: string; school: string; period: string }[];
   skillGroups: { title: string; skills: string[] }[];
 }
