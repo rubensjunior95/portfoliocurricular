@@ -176,6 +176,7 @@
     "skillsEyebrow": "Stack",
     "skillsTitle": "Núcleo en producción.",
     "languagesLabel": "Idiomas",
+    "coursesLabel": "Cursos complementarios",
     "languages": [
       { "name": "Portugués", "level": "(Nativo)" },
       { "name": "Inglés", "level": "(Intermedio)" }
@@ -185,6 +186,26 @@
       { "title": "Posgrado en Docencia en Educación Superior", "school": "UniCesumar — União da Vitória/PR", "period": "2019 — 2021" },
       { "title": "Licenciatura en Ingeniería Eléctrica", "school": "UNIGUAÇU — União da Vitória/PR", "period": "2017 — 2021" },
       { "title": "Licenciatura en Ciencias de la Computación", "school": "UnC — Porto União/SC", "period": "2013 — 2016" }
+    ],
+    "courses": [
+      {
+        "title": "Especialización en Machine Learning",
+        "school": "Stanford Online · DeepLearning.AI",
+        "period": "04/2024 — 06/2024",
+        "parts": [
+          { "title": "Supervised Machine Learning: Regression and Classification", "period": "abr 2024" },
+          { "title": "Advanced Learning Algorithms", "period": "may 2024" },
+          { "title": "Unsupervised Learning, Recommenders, Reinforcement Learning", "period": "jun 2024" }
+        ]
+      },
+      { "title": "Deep Learning and Reinforcement Learning", "school": "IBM · Coursera", "period": "jul 2024" },
+      { "title": "Exploratory Data Analysis for Machine Learning", "school": "IBM · Coursera", "period": "abr 2024" },
+      { "title": "Managing Machine Learning Projects", "school": "Duke University · Coursera", "period": "abr 2024" },
+      { "title": "Generative AI for Everyone", "school": "DeepLearning.AI · Coursera", "period": "mar 2024" },
+      { "title": "Digital Business Models", "school": "Lund University · Coursera", "period": "abr 2024" },
+      { "title": "Lean Six Sigma Green Belt", "school": "MF Treinamentos", "period": "60 horas · 01/2022" },
+      { "title": "Lean Six Sigma Yellow Belt", "school": "MF Treinamentos", "period": "20 horas · 12/2021 — 01/2022" },
+      { "title": "Lean Six Sigma White Belt", "school": "MF Treinamentos", "period": "4 horas · 01/2021" }
     ],
     "skillGroups": [
       { "title": "Lenguajes y Frameworks — Back-end", "skills": ["Java / Spring Boot", "Node.js / NestJS", "Python / Django", "C#", "PHP / Laravel", "Delphi (Object Pascal)", "C / C++"] },
