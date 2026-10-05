@@ -214,7 +214,7 @@
       { "title": "Sistemas Assíncronos & Escalabilidade", "skills": ["Arquitetura Orientada a Eventos", "Processamento Assíncrono & Mensageria", "Escalabilidade de Sistemas", "Resiliência & Alta Disponibilidade", "Integração entre Sistemas Heterogêneos", "Dados Operacionais em Tempo Real"] },
       { "title": "Qualidade & Confiabilidade de Software", "skills": ["Test-Driven Development — TDD", "Automação de Testes", "Manutenibilidade & Refatoração", "Observabilidade & Monitoramento"] },
       { "title": "Cloud, Infraestrutura & Operação", "skills": ["Arquitetura em Nuvem", "Containerização de Aplicações", "Automação de Deploy & Entrega Contínua", "Administração de Servidores & VPS"] },
-      { "title": "IA, Dados & Indústria 4.0", "skills": ["Implantação de Inteligência Artificial", "Data Science & Analytics", "Engenharia de Dados & Indicadores", "Indústria 4.0 & IoT Industrial", "Automação Industrial"] },
+      { "title": "IA, Dados & Indústria 4.0", "skills": ["Inteligência Artificial", "Implantação de Inteligência Artificial", "Data Science & Analytics", "Engenharia de Dados & Indicadores", "Indústria 4.0 & IoT Industrial", "Automação Industrial"] },
       { "title": "Liderança & Estratégia", "skills": ["Liderança de TI", "Gestão de Processos", "Digitalização de Processos", "Mentoria de Empresários", "Engenharia Elétrica"] }
     ]
   },

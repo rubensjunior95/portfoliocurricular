@@ -3,6 +3,11 @@ import { CvDownloadService } from '../core/cv-download.service';
 import { PortfolioService } from '../core/portfolio.service';
 import { ExperienceItem } from '../core/portfolio.models';
 
+interface CoursePart {
+  title: string;
+  period: string;
+}
+
 @Component({
   selector: 'app-cv-print',
   standalone: true,
@@ -122,8 +127,7 @@ import { ExperienceItem } from '../core/portfolio.models';
                 @for (item of c.education.items; track item.title) {
                   <div class="cv-avoid-break">
                     <h3>{{ item.title }}</h3>
-                    <p>{{ item.school }}</p>
-                    <p class="cv-edu-period">{{ item.period }}</p>
+                    <p>{{ item.school }} · {{ item.period }}</p>
                   </div>
                 }
               </div>
@@ -137,10 +141,9 @@ import { ExperienceItem } from '../core/portfolio.models';
                 @for (course of c.education.courses; track course.title) {
                   <div class="cv-avoid-break">
                     <h3>{{ course.title }}</h3>
-                    <p>{{ course.school }}</p>
-                    <p class="cv-edu-period">{{ course.period }}</p>
-                    @for (part of course.parts ?? []; track part.title) {
-                      <p class="cv-course-part">{{ part.title }} · {{ part.period }}</p>
+                    <p>{{ course.school }} · {{ course.period }}</p>
+                    @if (course.parts?.length) {
+                      <p class="cv-course-part">{{ coursePartLine(course.parts) }}</p>
                     }
                   </div>
                 }
@@ -171,6 +174,10 @@ export class CvPrintComponent {
   private readonly cv = inject(CvDownloadService);
 
   readonly data = computed(() => this.cv.printContent() ?? this.portfolio.content());
+
+  coursePartLine(parts: CoursePart[] | undefined): string {
+    return (parts ?? []).map((part) => part.title).join(' · ');
+  }
 
   readonly results = computed<ExperienceItem[]>(() => {
     const items = this.data()?.experience.items ?? [];
