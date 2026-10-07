@@ -1347,16 +1347,6 @@ p {
   line-height: 1.34;
   color: #3c4a59;
 }
-.cv-print .cv-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 2.4mm 8mm;
-  background: var(--cv-navy);
-  color: #e7eef6;
-  font-size: 7pt;
-  font-weight: 600;
-}
 
 .cv-print.cv-print-capture {
   display: flex !important;

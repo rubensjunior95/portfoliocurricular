@@ -127,11 +127,6 @@ import { PortfolioService } from '../core/portfolio.service';
             </section>
           </main>
         </div>
-
-        <footer class="cv-footer">
-          <span>{{ c.profile.fullName }}</span>
-          <span>{{ c.profile.siteDisplay }}</span>
-        </footer>
       </div>
     }
   `,
