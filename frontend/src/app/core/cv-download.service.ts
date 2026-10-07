@@ -65,13 +65,25 @@ export class CvDownloadService {
       const imgWidth = A4_WIDTH_MM;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-      if (imgHeight <= A4_HEIGHT_MM) {
-        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
-      } else {
-        const scale = A4_HEIGHT_MM / imgHeight;
+      const fitsOnePage = imgHeight <= A4_HEIGHT_MM * 1.04;
+      if (fitsOnePage) {
+        const scale = Math.min(1, A4_HEIGHT_MM / imgHeight);
         const fittedWidth = imgWidth * scale;
+        const fittedHeight = imgHeight * scale;
         const offsetX = (A4_WIDTH_MM - fittedWidth) / 2;
-        pdf.addImage(imgData, 'PNG', offsetX, 0, fittedWidth, A4_HEIGHT_MM, undefined, 'FAST');
+        pdf.addImage(imgData, 'PNG', offsetX, 0, fittedWidth, fittedHeight, undefined, 'FAST');
+      } else {
+        let heightLeft = imgHeight;
+        let position = 0;
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+        heightLeft -= A4_HEIGHT_MM;
+
+        while (heightLeft > 1) {
+          position = heightLeft - imgHeight;
+          pdf.addPage();
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight, undefined, 'FAST');
+          heightLeft -= A4_HEIGHT_MM;
+        }
       }
 
       pdf.save(`Rubens-Florentino-CV-${locale}.pdf`);

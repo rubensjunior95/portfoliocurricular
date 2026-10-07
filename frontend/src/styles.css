@@ -1154,116 +1154,166 @@ p {
 
 /* Documento de CV: invisível na tela, visível na impressão / captura PDF. */
 .cv-print {
+  --cv-navy: #0c2744;
+  --cv-navy-deep: #0a2139;
+  --cv-cyan: #2ad4e6;
+  --cv-ink: #243140;
+  --cv-muted: #5c6b7a;
   display: none;
   font-family: var(--font-sans), system-ui, sans-serif;
-  color: #111827;
+  color: var(--cv-ink);
+  background: #ffffff;
 }
 .cv-print .cv-header {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  padding-bottom: 6px;
-  border-bottom: 2px solid #047857;
+  align-items: center;
+  gap: 14px;
+  padding: 7mm 8mm;
+  background: var(--cv-navy);
+  color: #ffffff;
 }
-.cv-print .cv-header-copy { min-width: 0; flex: 1; padding-right: 12px; }
+.cv-print .cv-header-copy { min-width: 0; flex: 1; }
 .cv-print h1 {
   margin: 0;
-  font-size: 15pt;
+  font-size: 16.5pt;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: #111827;
+  color: #ffffff;
 }
 .cv-print .cv-headline {
-  margin: 2px 0 0;
-  font-size: 8.5pt;
+  margin: 3px 0 0;
+  font-size: 8pt;
   font-weight: 600;
-  line-height: 1.25;
-  color: #065f46;
+  line-height: 1.3;
+  color: #d5e4f2;
 }
 .cv-print .cv-contacts {
-  margin: 6px 0 0;
+  margin: 7px 0 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px 8px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3px 14px;
   font-size: 7pt;
   line-height: 1.3;
-  color: #4b5563;
+  color: #e7eef6;
 }
-.cv-print .cv-contacts strong { color: #1f2937; }
+.cv-print .cv-contacts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  min-width: 0;
+}
+.cv-print .cv-contacts svg {
+  width: 10px;
+  height: 10px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: var(--cv-cyan);
+}
+.cv-print .cv-contacts span {
+  overflow-wrap: anywhere;
+}
 .cv-print .cv-photo {
-  width: 22mm;
-  height: 22mm;
+  width: 24mm;
+  height: 24mm;
   object-fit: cover;
   object-position: center top;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  border: 2px solid var(--cv-cyan);
   flex-shrink: 0;
-  background: #f3f4f6;
+  background: #12304f;
 }
 .cv-print .cv-body {
   display: grid;
-  grid-template-columns: 1.28fr 1fr;
-  gap: 10px;
-  margin-top: 8px;
+  grid-template-columns: 62mm 1fr;
+  align-items: stretch;
+  flex: 1;
 }
 .cv-print .cv-aside {
-  padding-left: 12px;
-  border-left: 1px solid #e5e7eb;
+  padding: 5.5mm 5mm 6mm;
+  background: var(--cv-navy-deep);
+  color: #e7eef6;
 }
-.cv-print .cv-section-label {
-  padding-bottom: 3px;
-  border-bottom: 1px solid #d1fae5;
-}
+.cv-print .cv-side-title,
 .cv-print .cv-section-title {
   margin: 0;
   font-size: 7.5pt;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #065f46;
+  letter-spacing: 0.14em;
 }
-.cv-print main section + section,
-.cv-print .cv-aside section + section { margin-top: 8px; }
-.cv-print .cv-summary {
-  margin: 4px 0 0;
-  font-size: 8pt;
-  line-height: 1.35;
-  color: #374151;
+.cv-print .cv-side-title {
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
 }
-.cv-print .cv-results {
-  margin-top: 4px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 4px;
-}
-.cv-print .cv-result-card {
-  border: 1px solid rgba(4, 120, 87, 0.28);
-  background: #ecfdf5;
-  border-radius: 5px;
-  padding: 5px 6px;
-}
-.cv-print .cv-result-card p {
-  margin: 0;
-  font-size: 8pt;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #064e3b;
-}
-.cv-print .cv-result-company {
-  margin-top: 2px !important;
-  font-size: 6.5pt !important;
-  font-weight: 400 !important;
-  color: #6b7280 !important;
-}
-.cv-print .cv-jobs {
+.cv-print .cv-section-title { color: var(--cv-navy); }
+.cv-print .cv-aside section + section { margin-top: 3.6mm; }
+.cv-print .cv-side-list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 4px;
+  gap: 1.7mm;
+  margin-top: 2mm;
+}
+.cv-print .cv-aside h3 {
+  margin: 0;
+  font-size: 7pt;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+}
+.cv-print .cv-aside p,
+.cv-print .cv-aside li {
+  margin: 1px 0 0;
+  font-size: 6.4pt;
+  line-height: 1.22;
+  color: #d5e0ec;
+}
+.cv-print .cv-aside ul {
+  margin: 1px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-print .cv-aside li {
+  position: relative;
+  padding-left: 8px;
+}
+.cv-print .cv-aside li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--cv-cyan);
+}
+.cv-print .cv-side-period,
+.cv-print .cv-course-parts span {
+  color: #9fb3c8;
+}
+.cv-print .cv-course-parts { margin-top: 1px; }
+.cv-print .cv-course-parts li { color: #c5d3e2; }
+.cv-print .cv-aside strong { color: #ffffff; font-weight: 700; }
+.cv-print main {
+  padding: 5.5mm 6.5mm 6mm;
+  background: #ffffff;
+}
+.cv-print main section + section { margin-top: 4.2mm; }
+.cv-print .cv-summary {
+  margin: 1.6mm 0 0;
+  font-size: 7.6pt;
+  line-height: 1.38;
+  color: #3c4a59;
+}
+.cv-print .cv-jobs,
+.cv-print .cv-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  margin-top: 2mm;
 }
 .cv-print .cv-job-head {
   display: flex;
@@ -1271,89 +1321,55 @@ p {
   align-items: baseline;
   gap: 8px;
 }
-.cv-print .cv-job h3 {
+.cv-print main h3 {
   margin: 0;
-  font-size: 8.5pt;
+  font-size: 8.6pt;
   font-weight: 700;
   line-height: 1.25;
-  color: #111827;
+  color: #12263c;
 }
 .cv-print .cv-job-period {
   flex-shrink: 0;
   font-size: 7pt;
-  font-weight: 500;
-  color: #6b7280;
+  font-weight: 600;
+  color: var(--cv-muted);
   white-space: nowrap;
 }
 .cv-print .cv-job-meta {
-  margin: 2px 0 0;
-  font-size: 8pt;
-  font-weight: 600;
-  color: #065f46;
-}
-.cv-print .cv-job-meta span { font-weight: 400; color: #6b7280; }
-.cv-print .cv-job-desc {
-  margin: 2px 0 0;
-  font-size: 7.5pt;
-  line-height: 1.32;
-  color: #374151;
-}
-.cv-print .cv-job-metric { display: none; }
-.cv-print .cv-metric-pill {
-  display: inline-block;
-  border: 1px solid rgba(4, 120, 87, 0.28);
-  background: #ecfdf5;
-  color: #065f46;
-  border-radius: 999px;
-  padding: 1px 7px;
-  font-size: 7pt;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.cv-print .cv-aside-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 3px;
-}
-.cv-print .cv-aside h3 {
-  margin: 0;
-  font-size: 7.5pt;
-  font-weight: 700;
-  line-height: 1.25;
-  color: #111827;
-}
-.cv-print .cv-aside p {
   margin: 1px 0 0;
+  font-size: 7.4pt;
+  font-weight: 600;
+  color: #3d5f86;
+}
+.cv-print .cv-job-desc {
+  margin: 1.4mm 0 0;
+  font-size: 7.4pt;
+  line-height: 1.34;
+  color: #3c4a59;
+}
+.cv-print .cv-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2.4mm 8mm;
+  background: var(--cv-navy);
+  color: #e7eef6;
   font-size: 7pt;
-  line-height: 1.28;
-  color: #4b5563;
+  font-weight: 600;
 }
-.cv-print .cv-edu-period { font-size: 7pt; color: #6b7280; }
-.cv-print .cv-course-part {
-  margin: 1px 0 0 8px;
-  font-size: 7pt;
-  line-height: 1.35;
-  color: #4b5563;
-}
-.cv-print .cv-langs {
-  margin-top: 6px;
-  font-size: 8pt;
-  color: #374151;
-}
-.cv-print .cv-langs p { margin: 0 0 2px; font-size: 8pt; color: #374151; }
-.cv-print .cv-langs span { margin-left: 4px; color: #6b7280; }
 
 .cv-print.cv-print-capture {
-  display: block !important;
+  display: flex !important;
+  flex-direction: column;
   position: fixed;
   left: -10000px;
   top: 0;
   width: 210mm;
+  min-height: 297mm;
   box-sizing: border-box;
-  padding: 8mm 9mm;
+  padding: 0;
   background: #ffffff;
-  color: #111827;
+  color: var(--cv-ink);
   z-index: -1;
   pointer-events: none;
 }
@@ -1361,7 +1377,7 @@ p {
 @media print {
   @page {
     size: A4;
-    margin: 12mm 13mm;
+    margin: 0;
   }
 
   .no-print,
@@ -1378,7 +1394,10 @@ p {
   }
 
   .cv-print {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
+    width: 210mm;
+    min-height: 297mm;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
