@@ -14,8 +14,8 @@
     "siteDisplay": "https://portfoliocurricular.vercel.app"
   },
   "meta": {
-    "homeTitle": "Rubens Florentino — Líder de TI, Ingeniero y Dev Fullstack",
-    "homeDescription": "Portafolio de Rubens Florentino: Líder de TI, Ingeniero Eléctrico y Desarrollador Fullstack. IA, automatización e Industria 4.0.",
+    "homeTitle": "Rubens Florentino — Sistemas, automatizaciones y desarrollo",
+    "homeDescription": "Portafolio de Rubens Florentino: creador de sistemas y soluciones de automatización en Kodeskill. Ingeniero Eléctrico y Desarrollador Fullstack.",
     "servicesTitle": "Servicios — Rubens Florentino",
     "servicesDescription": "Servicios tecnológicos de Rubens Florentino: implantación de IA, desarrollo fullstack, automatización industrial, mentoría y gestión de TI."
   },
@@ -36,7 +36,7 @@
   },
   "hero": {
     "location": "Americana, SP · Brasil",
-    "role": "Líder de TI · Ingeniero Eléctrico · Desarrollador Fullstack",
+    "role": "Creador de sistemas y automatizaciones · Ingeniero Eléctrico · Desarrollador Fullstack",
     "subtitle": "Transformo procesos con",
     "ai": "Inteligencia Artificial",
     "connector": ", automatización e",
@@ -49,7 +49,7 @@
       { "k": "2", "v": "Posgrados" },
       { "k": "WEG", "v": "Industria 4.0" }
     ],
-    "photoAlt": "Rubens Florentino Freitas Junior, Líder de TI"
+    "photoAlt": "Rubens Florentino Freitas Junior, creador de sistemas y automatizaciones"
   },
   "about": {
     "eyebrow": "Sobre mí",
@@ -58,7 +58,7 @@
     "cs": "Ciencias de la Computación",
     "and": "e",
     "ee": "Ingeniería Eléctrica",
-    "bodyAfter": ", MBA en Data Science por la USP-Esalq y experiencia sólida en entornos industriales de alta complejidad como WEG. Hoy, como Líder de TI, ayudo a empresas y empresarios a digitalizar procesos, implantar IA y construir ecosistemas tecnológicos que aumentan la eficiencia y la competitividad."
+    "bodyAfter": ", MBA en Data Science por la USP-Esalq y experiencia sólida en entornos industriales de alta complejidad como WEG. Desde que llegué a Americana, desarrollo Kodeskill, mi empresa, en la que creo sistemas y soluciones de automatización, entre otras facilidades, para empresas y empresarios."
   },
   "servicesSection": {
     "eyebrow": "Servicios",
@@ -85,12 +85,21 @@
     "title": "Trayectoria en operación real.",
     "items": [
       {
-        "role": "Líder de TI",
-        "company": "Legacy Eco Group",
+        "role": "Creador de sistemas y automatizaciones",
+        "company": "Kodeskill",
         "location": "Americana — SP",
         "period": "03/2025 — Actual",
         "paragraphs": [
-          "Lidero la estructuración y evolución del departamento de TI del grupo, impulsando la digitalización de extremo a extremo de procesos críticos y la implantación de Inteligencia Artificial como palanca de productividad, reducción de costos y toma de decisiones orientada por datos.",
+          "Desde que llegué a Americana, desarrollo Kodeskill, mi empresa. Creo sistemas y soluciones de automatización, entre otras facilidades, para empresas y empresarios."
+        ]
+      },
+      {
+        "role": "Líder de TI",
+        "company": "Legacy Eco Group",
+        "location": "Americana — SP",
+        "period": "03/2025 — 07/2026",
+        "paragraphs": [
+          "En paralelo a Kodeskill, presté servicio como empleado. Lideré la estructuración y evolución del departamento de TI del grupo, impulsando la digitalización de extremo a extremo de procesos críticos y la implantación de Inteligencia Artificial como palanca de productividad, reducción de costos y toma de decisiones orientada por datos.",
           "Además de las mentorías realizadas con gestores y equipos, la consolidación de sistemas y la centralización de procesos y datos generaron una reducción estimada de R$ 125 mil por año en licencias de software, junto con la digitalización de diversas etapas de la empresa."
         ],
         "featuredHighlight": "≈ R$ 125 mil/año ahorrados en licencias",
@@ -232,10 +241,10 @@
     "qrAlt": "Código QR para el WhatsApp de Rubens Florentino"
   },
   "cv": {
-    "headline": "Líder de TI · Ingeniero Eléctrico · Desarrollador Fullstack",
+    "headline": "Creador de sistemas y automatizaciones · Ingeniero Eléctrico · Desarrollador Fullstack",
     "profileLabel": "Perfil",
     "resultsLabel": "Resultados destacados",
-    "summary": "Líder de TI con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.",
+    "summary": "Creador de sistemas y soluciones de automatización en Kodeskill, empresa que desarrollo desde la mudanza a Americana, con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), liderazgo de TI como empleado en Legacy Eco Group, implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.",
     "emailLabel": "Correo",
     "phoneLabel": "Tel",
     "locationLabel": "Local",
@@ -244,7 +253,7 @@
   },
   "whatsapp": {
     "floatingAria": "Conversar por WhatsApp",
-    "plainMsg": "¡Hola, Rubens Florentino!\n\nEncontré su portafolio profesional y quedé impresionado(a) con su perfil de Líder de TI, Ingeniero Eléctrico y Desarrollador Fullstack — especialmente su trabajo con IA, automatización e Industria 4.0.\n\nMe gustaría conversar sobre una oportunidad de contratación alineada a su perfil. ¿Cuándo tendría disponibilidad para una conversación rápida esta semana?"
+    "plainMsg": "¡Hola, Rubens Florentino!\n\nEncontré su portafolio profesional y quedé impresionado(a) con Kodeskill y con su perfil de creador de sistemas y automatizaciones, Ingeniero Eléctrico y Desarrollador Fullstack — especialmente su trabajo con IA, automatización e Industria 4.0.\n\nMe gustaría conversar sobre una oportunidad de contratación alineada a su perfil. ¿Cuándo tendría disponibilidad para una conversación rápida esta semana?"
   },
   "footer": {
     "rights": "Rubens Florentino Freitas Junior."

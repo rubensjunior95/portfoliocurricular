@@ -14,8 +14,8 @@
     "siteDisplay": "https://portfoliocurricular.vercel.app"
   },
   "meta": {
-    "homeTitle": "Rubens Florentino — IT Leader, Engineer & Fullstack Dev",
-    "homeDescription": "Portfolio of Rubens Florentino: IT Leader, Electrical Engineer and Fullstack Developer. AI, automation and Industry 4.0.",
+    "homeTitle": "Rubens Florentino — Systems, automation and development",
+    "homeDescription": "Portfolio of Rubens Florentino: creator of systems and automation solutions at Kodeskill. Electrical Engineer and Fullstack Developer.",
     "servicesTitle": "Services — Rubens Florentino",
     "servicesDescription": "Technology services by Rubens Florentino: AI implementation, fullstack development, industrial automation, mentoring and IT management."
   },
@@ -36,7 +36,7 @@
   },
   "hero": {
     "location": "Americana, SP · Brazil",
-    "role": "IT Leader · Electrical Engineer · Fullstack Developer",
+    "role": "Systems and automation creator · Electrical Engineer · Fullstack Developer",
     "subtitle": "I transform processes with",
     "ai": "Artificial Intelligence",
     "connector": ", automation and",
@@ -49,7 +49,7 @@
       { "k": "2", "v": "Graduate degrees" },
       { "k": "WEG", "v": "Industry 4.0" }
     ],
-    "photoAlt": "Rubens Florentino Freitas Junior, IT Leader"
+    "photoAlt": "Rubens Florentino Freitas Junior, systems and automation creator"
   },
   "about": {
     "eyebrow": "About",
@@ -58,7 +58,7 @@
     "cs": "Computer Science",
     "and": "and",
     "ee": "Electrical Engineering",
-    "bodyAfter": ", an MBA in Data Science from USP-Esalq, and solid experience in high-complexity industrial environments such as WEG. Today, as IT Leader, I help companies and entrepreneurs digitize processes, deploy AI, and build technology ecosystems that increase efficiency and competitiveness."
+    "bodyAfter": ", an MBA in Data Science from USP-Esalq, and solid experience in high-complexity industrial environments such as WEG. Since I moved to Americana, I have been building Kodeskill, my own company, where I create systems and automation solutions, among other services, for companies and entrepreneurs."
   },
   "servicesSection": {
     "eyebrow": "Services",
@@ -85,12 +85,21 @@
     "title": "A path in real operations.",
     "items": [
       {
-        "role": "IT Leader",
-        "company": "Legacy Eco Group",
+        "role": "Systems and automation creator",
+        "company": "Kodeskill",
         "location": "Americana — SP",
         "period": "03/2025 — Present",
         "paragraphs": [
-          "I lead the structuring and evolution of the group's IT department, driving end-to-end digitization of critical processes and the deployment of Artificial Intelligence as a lever for productivity, cost reduction and data-driven decision making.",
+          "Since I moved to Americana, I have been building Kodeskill, my own company. I create systems and automation solutions, among other services, for companies and entrepreneurs."
+        ]
+      },
+      {
+        "role": "IT Leader",
+        "company": "Legacy Eco Group",
+        "location": "Americana — SP",
+        "period": "03/2025 — 07/2026",
+        "paragraphs": [
+          "In parallel with Kodeskill, I worked there as an employee. I led the structuring and evolution of the group's IT department, driving end-to-end digitization of critical processes and the deployment of Artificial Intelligence as a lever for productivity, cost reduction and data-driven decision making.",
           "Alongside mentoring sessions with managers and teams, consolidating systems and centralizing processes and data delivered an estimated reduction of R$ 125 thousand per year in software licenses, together with the digitization of many of the company's workflows."
         ],
         "featuredHighlight": "≈ R$ 125K/year saved on licenses",
@@ -232,10 +241,10 @@
     "qrAlt": "QR Code for Rubens Florentino's WhatsApp"
   },
   "cv": {
-    "headline": "IT Leader · Electrical Engineer · Fullstack Developer",
+    "headline": "Systems and automation creator · Electrical Engineer · Fullstack Developer",
     "profileLabel": "Profile",
     "resultsLabel": "Key results",
-    "summary": "IT Leader with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), AI implementation, fullstack development, and process digitalization with measurable financial impact.",
+    "summary": "Creator of systems and automation solutions at Kodeskill, the company I have been building since moving to Americana, with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), IT leadership as an employee at Legacy Eco Group, AI implementation, fullstack development, and process digitalization with measurable financial impact.",
     "emailLabel": "Email",
     "phoneLabel": "Tel",
     "locationLabel": "Location",
@@ -244,7 +253,7 @@
   },
   "whatsapp": {
     "floatingAria": "Chat on WhatsApp",
-    "plainMsg": "Hi, Rubens Florentino!\n\nI found your professional portfolio and was impressed by your profile as IT Leader, Electrical Engineer and Fullstack Developer — especially your work with AI, automation and Industry 4.0.\n\nI'd like to discuss a hiring opportunity (full-time or contractor) aligned with your profile. When would you be available for a quick chat this week?"
+    "plainMsg": "Hi, Rubens Florentino!\n\nI found your professional portfolio and was impressed by Kodeskill and by your profile as a creator of systems and automation, Electrical Engineer and Fullstack Developer — especially your work with AI, automation and Industry 4.0.\n\nI'd like to discuss a hiring opportunity (full-time or contractor) aligned with your profile. When would you be available for a quick chat this week?"
   },
   "footer": {
     "rights": "Rubens Florentino Freitas Junior."

@@ -24,11 +24,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Líder de TI · Engenheiro Eletricista · Desenvolvedor Fullstack',
+      headline: 'Criador de sistemas e automações · Engenheiro Eletricista · Desenvolvedor Fullstack',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados em destaque',
       summary:
-        'Líder de TI com formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia. Experiência em Indústria 4.0 (WEG), implantação de IA, desenvolvimento fullstack e digitalização de processos com impacto financeiro mensurável.',
+        'Criador de sistemas e soluções de automação na Kodeskill, empresa que desenvolvo desde a mudança para Americana, com formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia. Experiência em Indústria 4.0 (WEG), liderança de TI como funcionário na Legacy Eco Group, implantação de IA, desenvolvimento fullstack e digitalização de processos com impacto financeiro mensurável.',
       emailLabel: 'E-mail',
       phoneLabel: 'Tel',
       locationLabel: 'Local',
@@ -45,11 +45,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'IT Leader · Electrical Engineer · Fullstack Developer',
+      headline: 'Systems and automation creator · Electrical Engineer · Fullstack Developer',
       profileLabel: 'Profile',
       resultsLabel: 'Key results',
       summary:
-        'IT Leader with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), AI implementation, fullstack development, and process digitalization with measurable financial impact.',
+        'Creator of systems and automation solutions at Kodeskill, the company I have been building since moving to Americana, with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), IT leadership as an employee at Legacy Eco Group, AI implementation, fullstack development, and process digitalization with measurable financial impact.',
       emailLabel: 'Email',
       phoneLabel: 'Tel',
       locationLabel: 'Location',
@@ -66,11 +66,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Líder de TI · Ingeniero Eléctrico · Desarrollador Fullstack',
+      headline: 'Creador de sistemas y automatizaciones · Ingeniero Eléctrico · Desarrollador Fullstack',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados destacados',
       summary:
-        'Líder de TI con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.',
+        'Creador de sistemas y soluciones de automatización en Kodeskill, empresa que desarrollo desde la mudanza a Americana, con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), liderazgo de TI como empleado en Legacy Eco Group, implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.',
       emailLabel: 'Correo',
       phoneLabel: 'Tel',
       locationLabel: 'Local',
