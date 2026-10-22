@@ -24,11 +24,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Criador de sistemas e automações · Engenheiro Eletricista · Desenvolvedor Fullstack',
+      headline: 'Fundador da Kodeskill · Engenheiro Eletricista · Desenvolvedor Fullstack',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados em destaque',
       summary:
-        'Criador de sistemas e soluções de automação na Kodeskill, empresa que desenvolvo desde a mudança para Americana, com formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia. Experiência em Indústria 4.0 (WEG), liderança de TI como funcionário na Legacy Eco Group, implantação de IA, desenvolvimento fullstack e digitalização de processos com impacto financeiro mensurável.',
+        'Fundador da Kodeskill, software house própria em Americana desde 03/2025. Levo facilidades a empresas, empresários e usuários. A trajetória em Indústria 4.0 (WEG), liderança de TI na Legacy Eco Group e nas demais empresas formou o repertório que uso para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill.',
       emailLabel: 'E-mail',
       phoneLabel: 'Tel',
       locationLabel: 'Local',
@@ -45,11 +45,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Systems and automation creator · Electrical Engineer · Fullstack Developer',
+      headline: 'Founder of Kodeskill · Electrical Engineer · Fullstack Developer',
       profileLabel: 'Profile',
       resultsLabel: 'Key results',
       summary:
-        'Creator of systems and automation solutions at Kodeskill, the company I have been building since moving to Americana, with degrees in Computer Science and Electrical Engineering, an MBA in Data Science (USP-Esalq), and 10+ years in technology. Experience in Industry 4.0 (WEG), IT leadership as an employee at Legacy Eco Group, AI implementation, fullstack development, and process digitalization with measurable financial impact.',
+        'Founder of Kodeskill, my own software house in Americana since 03/2025. I bring useful solutions to companies, entrepreneurs and users. Industry 4.0 at WEG, IT leadership at Legacy Eco Group and the other roles built the repertoire I use to deliver better results and a better experience to Kodeskill clients.',
       emailLabel: 'Email',
       phoneLabel: 'Tel',
       locationLabel: 'Location',
@@ -66,11 +66,11 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Creador de sistemas y automatizaciones · Ingeniero Eléctrico · Desarrollador Fullstack',
+      headline: 'Fundador de Kodeskill · Ingeniero Eléctrico · Desarrollador Fullstack',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados destacados',
       summary:
-        'Creador de sistemas y soluciones de automatización en Kodeskill, empresa que desarrollo desde la mudanza a Americana, con formación en Ciencias de la Computación e Ingeniería Eléctrica, MBA en Data Science (USP-Esalq) y más de 10 años en tecnología. Experiencia en Industria 4.0 (WEG), liderazgo de TI como empleado en Legacy Eco Group, implantación de IA, desarrollo fullstack y digitalización de procesos con impacto financiero mensurable.',
+        'Fundador de Kodeskill, software house propia en Americana desde 03/2025. Llevo facilidades a empresas, empresarios y usuarios. La trayectoria en Industria 4.0 (WEG), el liderazgo de TI en Legacy Eco Group y las demás empresas formaron el repertorio que uso para generar más resultado y una mejor experiencia a los clientes de Kodeskill.',
       emailLabel: 'Correo',
       phoneLabel: 'Tel',
       locationLabel: 'Local',

@@ -88,6 +88,20 @@ import { PortfolioService } from '../core/portfolio.service';
           </aside>
 
           <main>
+            @if (c.company; as company) {
+              <section>
+                <p class="cv-section-title">{{ company.cvLabel }}</p>
+                <article class="cv-company">
+                  <div class="cv-job-head">
+                    <h3>{{ company.name }}</h3>
+                    <span class="cv-job-period">{{ company.period }}</span>
+                  </div>
+                  <p class="cv-job-meta">{{ company.kind }} · {{ company.role }}</p>
+                  <p class="cv-job-desc">{{ company.cvSummary }}</p>
+                </article>
+              </section>
+            }
+
             <section>
               <p class="cv-section-title">{{ c.cv.profileLabel }}</p>
               <p class="cv-summary">{{ c.cv.summary }}</p>

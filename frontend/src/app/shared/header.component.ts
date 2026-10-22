@@ -16,6 +16,9 @@ import { DownloadCvMenuComponent } from './download-cv-menu.component';
           <nav class="header-nav" [class.open]="menuOpen()" [attr.aria-label]="c.nav.openMenu">
             @if (mode === 'home') {
               <a href="#sobre" (click)="close()">{{ c.nav.about }}</a>
+              @if (c.company) {
+                <a href="#kodeskill" (click)="close()">{{ c.nav.company }}</a>
+              }
               <a routerLink="/services" (click)="close()">{{ c.nav.services }}</a>
               <a href="#experiencia" (click)="close()">{{ c.nav.experience }}</a>
               <a href="#impacto" (click)="close()">{{ c.nav.impact }}</a>

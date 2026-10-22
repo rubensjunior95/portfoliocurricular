@@ -551,6 +551,66 @@ p {
   padding: 0.4rem 1rem;
 }
 
+/* ---------- Kodeskill ---------- */
+.company-panel {
+  border: 1px solid oklch(0.78 0.18 155 / 0.38);
+  border-radius: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background:
+    radial-gradient(70% 90% at 0% 0%, oklch(0.78 0.18 155 / 0.16), transparent 58%),
+    oklch(0.16 0.022 165 / 0.92);
+}
+.company-kind {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.company-name {
+  margin-top: 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+.company-title {
+  margin-top: 0.85rem;
+  max-width: 28ch;
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.company-meta {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+.company-panel .section-description { max-width: 68ch; }
+.company-offers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.company-offers li {
+  border-top: 1px solid oklch(0.78 0.18 155 / 0.35);
+  padding-top: 0.9rem;
+}
+.company-offers h3 { font-size: 1rem; font-weight: 700; }
+.company-offers p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+@media (max-width: 800px) {
+  .company-offers { grid-template-columns: 1fr; }
+}
+
 /* ---------- Experiência ---------- */
 .timeline {
   display: flex;
@@ -1302,6 +1362,7 @@ p {
   background: #ffffff;
 }
 .cv-print main section + section { margin-top: 4.2mm; }
+.cv-print .cv-company { margin-top: 2mm; }
 .cv-print .cv-summary {
   margin: 1.6mm 0 0;
   font-size: 7.6pt;

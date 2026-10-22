@@ -16,6 +16,7 @@ export interface Profile {
 
 export interface Nav {
   about: string;
+  company: string;
   services: string;
   experience: string;
   impact: string;
@@ -54,6 +55,25 @@ export interface About {
   bodyAfter: string;
 }
 
+export interface CompanyOffer {
+  title: string;
+  description: string;
+}
+
+export interface Company {
+  eyebrow: string;
+  kind: string;
+  name: string;
+  role: string;
+  period: string;
+  place: string;
+  title: string;
+  lead: string;
+  cvLabel: string;
+  cvSummary: string;
+  offers: CompanyOffer[];
+}
+
 export interface ServicesSection {
   eyebrow: string;
   title: string;
@@ -75,6 +95,7 @@ export interface ExperienceItem {
 export interface Experience {
   eyebrow: string;
   title: string;
+  lead?: string;
   items: ExperienceItem[];
 }
 
@@ -159,6 +180,7 @@ export interface PortfolioContent {
   nav: Nav;
   hero: Hero;
   about: About;
+  company?: Company;
   servicesSection: ServicesSection;
   experience: Experience;
   impact: Impact;

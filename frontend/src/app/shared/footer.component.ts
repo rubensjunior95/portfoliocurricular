@@ -13,6 +13,9 @@ import { PortfolioService } from '../core/portfolio.service';
           <p>© {{ year }} {{ c.footer.rights }}</p>
           <nav class="footer-nav">
             <a href="/#sobre">{{ c.nav.about }}</a>
+            @if (c.company) {
+              <a href="/#kodeskill">{{ c.nav.company }}</a>
+            }
             <a routerLink="/services">{{ c.nav.services }}</a>
             <a href="/#experiencia">{{ c.nav.experience }}</a>
             <a href="/#contato">{{ c.nav.contact }}</a>

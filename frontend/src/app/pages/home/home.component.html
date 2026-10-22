@@ -68,13 +68,40 @@
     </div>
   </section>
 
+  @if (c.company; as company) {
+    <section id="kodeskill" class="section-y section-alt">
+      <div class="page-container">
+        <article class="company-panel" appReveal="settle">
+          <div class="section-kicker">
+            <span class="section-number">02</span>
+            <span class="section-kicker-rule" aria-hidden="true"></span>
+            <p class="eyebrow">{{ company.eyebrow }}</p>
+          </div>
+          <p class="company-kind">{{ company.kind }}</p>
+          <h2 class="company-name">{{ company.name }}</h2>
+          <p class="company-title">{{ company.title }}</p>
+          <p class="company-meta">{{ company.role }} · {{ company.period }} · {{ company.place }}</p>
+          <p class="section-description">{{ company.lead }}</p>
+          <ul class="company-offers">
+            @for (offer of company.offers; track offer.title; let i = $index) {
+              <li appReveal [style.--i]="i">
+                <h3>{{ offer.title }}</h3>
+                <p>{{ offer.description }}</p>
+              </li>
+            }
+          </ul>
+        </article>
+      </div>
+    </section>
+  }
+
   <!-- SERVIÇOS (resumo) -->
-  <section id="servicos" class="section-y section-alt">
+  <section id="servicos" class="section-y">
     <div class="page-container">
       <div class="section-heading-row" appReveal="settle">
         <div class="section-heading no-margin">
           <div class="section-kicker">
-            <span class="section-number">02</span>
+            <span class="section-number">03</span>
             <span class="section-kicker-rule" aria-hidden="true"></span>
             <p class="eyebrow">{{ c.servicesSection.eyebrow }}</p>
           </div>
@@ -98,15 +125,18 @@
   </section>
 
   <!-- EXPERIÊNCIA -->
-  <section id="experiencia" class="section-y">
+  <section id="experiencia" class="section-y section-alt">
     <div class="page-container narrow">
       <div class="section-heading" appReveal="settle">
         <div class="section-kicker">
-          <span class="section-number">03</span>
+          <span class="section-number">04</span>
           <span class="section-kicker-rule" aria-hidden="true"></span>
           <p class="eyebrow">{{ c.experience.eyebrow }}</p>
         </div>
         <h2>{{ c.experience.title }}</h2>
+        @if (c.experience.lead) {
+          <p class="section-description">{{ c.experience.lead }}</p>
+        }
       </div>
 
       <div class="timeline" appReveal="settle">
@@ -144,7 +174,7 @@
     <div class="page-container">
       <div class="section-heading" appReveal="settle">
         <div class="section-kicker">
-          <span class="section-number">04</span>
+          <span class="section-number">05</span>
           <span class="section-kicker-rule" aria-hidden="true"></span>
           <p class="eyebrow">{{ c.impact.eyebrow }}</p>
         </div>
@@ -172,7 +202,7 @@
       <div>
         <div class="section-heading" appReveal="settle">
           <div class="section-kicker">
-            <span class="section-number">05</span>
+            <span class="section-number">06</span>
             <span class="section-kicker-rule" aria-hidden="true"></span>
             <p class="eyebrow">{{ c.education.eyebrow }}</p>
           </div>
@@ -214,7 +244,7 @@
       <div>
         <div class="section-heading" appReveal="settle">
           <div class="section-kicker">
-            <span class="section-number">06</span>
+            <span class="section-number">07</span>
             <span class="section-kicker-rule" aria-hidden="true"></span>
             <p class="eyebrow">{{ c.education.skillsEyebrow }}</p>
           </div>
@@ -249,7 +279,7 @@
       <div>
         <div class="section-heading" appReveal="settle">
           <div class="section-kicker">
-            <span class="section-number">07</span>
+            <span class="section-number">08</span>
             <span class="section-kicker-rule" aria-hidden="true"></span>
             <p class="eyebrow">{{ c.contact.eyebrow }}</p>
           </div>

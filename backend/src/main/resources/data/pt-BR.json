@@ -15,12 +15,13 @@
   },
   "meta": {
     "homeTitle": "Rubens Florentino — Sistemas, automações e desenvolvimento",
-    "homeDescription": "Portfólio de Rubens Florentino: criador de sistemas e soluções de automação na Kodeskill. Engenheiro Eletricista e Desenvolvedor Fullstack.",
+    "homeDescription": "Portfólio de Rubens Florentino, fundador da Kodeskill. Software house própria que leva facilidades a empresas, empresários e usuários.",
     "servicesTitle": "Serviços — Rubens Florentino",
     "servicesDescription": "Serviços tecnológicos oferecidos por Rubens Florentino: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI."
   },
   "nav": {
     "about": "Sobre",
+    "company": "Kodeskill",
     "services": "Serviços",
     "experience": "Experiência",
     "impact": "Impacto",
@@ -36,7 +37,7 @@
   },
   "hero": {
     "location": "Americana, SP",
-    "role": "Criador de sistemas e automações · Engenheiro Eletricista · Desenvolvedor Fullstack",
+    "role": "Fundador da Kodeskill · Engenheiro Eletricista · Desenvolvedor Fullstack",
     "subtitle": "Transformo processos com",
     "ai": "Inteligência Artificial",
     "connector": ", automação e",
@@ -49,7 +50,7 @@
       { "k": "2", "v": "Pós-graduações" },
       { "k": "WEG", "v": "Indústria 4.0" }
     ],
-    "photoAlt": "Rubens Florentino Freitas Junior, criador de sistemas e automações"
+    "photoAlt": "Rubens Florentino Freitas Junior, fundador da Kodeskill"
   },
   "about": {
     "eyebrow": "Sobre",
@@ -58,12 +59,38 @@
     "cs": "Ciência da Computação",
     "and": "e",
     "ee": "Engenharia Elétrica",
-    "bodyAfter": ", MBA em Data Science pela USP-Esalq e experiência sólida em ambientes industriais de alta complexidade como a WEG. Desde que vim para Americana, desenvolvo a Kodeskill, minha empresa, na qual crio sistemas e soluções de automação, entre outras facilidades, para empresas e empresários."
+    "bodyAfter": ", MBA em Data Science pela USP-Esalq e um repertório construído em operação real, da WEG à liderança de TI. Desde que vim para Americana, esse repertório está a serviço da Kodeskill, minha software house, para gerar resultado e experiência melhores para empresas, empresários e usuários."
+  },
+  "company": {
+    "eyebrow": "Minha empresa",
+    "kind": "Software house própria",
+    "name": "Kodeskill",
+    "role": "Fundador",
+    "period": "03/2025 — Atual",
+    "place": "Americana — SP",
+    "title": "Facilidades para empresas, empresários e usuários.",
+    "lead": "A Kodeskill é minha. Não é um emprego na trajetória: é a software house pela qual levo facilidades a empresas, empresários e usuários. Sistemas e automações fazem parte disso. Cada experiência profissional anterior construiu repertório para entregar mais resultado e uma experiência melhor aos clientes da Kodeskill.",
+    "cvLabel": "Empresa",
+    "cvSummary": "Software house própria. Levo facilidades a empresas, empresários e usuários. O repertório de WEG, Legacy e das demais passagens existe para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill.",
+    "offers": [
+      {
+        "title": "Empresas",
+        "description": "Resultado na operação: sistemas, automações e outras facilidades que tiram esforço manual do caminho."
+      },
+      {
+        "title": "Empresários",
+        "description": "Clareza para conduzir o negócio, com a tecnologia a serviço do que precisa acontecer."
+      },
+      {
+        "title": "Usuários",
+        "description": "Experiência de quem usa no dia a dia, com menos atrito e mais clareza."
+      }
+    ]
   },
   "servicesSection": {
     "eyebrow": "Serviços",
     "title": "Do diagnóstico à execução.",
-    "lead": "Combino liderança de TI, engenharia e desenvolvimento fullstack para entregar soluções que reduzem custo, aceleram operação e geram vantagem competitiva.",
+    "lead": "Na Kodeskill, o repertório de liderança, engenharia e desenvolvimento vira facilidade para o cliente: menos custo, operação mais rápida e uma experiência melhor para quem usa.",
     "seeFullPage": "Ver página completa",
     "items": [
       {
@@ -82,17 +109,9 @@
   },
   "experience": {
     "eyebrow": "Experiência",
-    "title": "Trajetória em operação real.",
+    "title": "Repertório a serviço da Kodeskill.",
+    "lead": "WEG, Legacy e as demais passagens não são o ponto de chegada. Cada uma construiu repertório para gerar resultado e experiência melhores para os clientes da Kodeskill.",
     "items": [
-      {
-        "role": "Criador de sistemas e automações",
-        "company": "Kodeskill",
-        "location": "Americana — SP",
-        "period": "03/2025 — Atual",
-        "paragraphs": [
-          "Desde que vim para Americana, desenvolvo a Kodeskill, minha empresa. Crio sistemas e soluções de automação, entre outras facilidades, para empresas e empresários."
-        ]
-      },
       {
         "role": "Líder de TI",
         "company": "Legacy Eco Group",
@@ -161,7 +180,7 @@
   "impact": {
     "eyebrow": "Impacto",
     "title": "Resultado em operação real.",
-    "subtitle": "Projetos desenvolvidos para reduzir custos, centralizar informações e transformar dados operacionais em decisões mais rápidas e assertivas.",
+    "subtitle": "Resultados em operação real. É o repertório que hoje melhora o resultado e a experiência dos clientes da Kodeskill.",
     "cards": [
       {
         "company": "RCM Cabos Elétricos",
@@ -241,10 +260,10 @@
     "qrAlt": "QR Code para WhatsApp de Rubens Florentino"
   },
   "cv": {
-    "headline": "Criador de sistemas e automações · Engenheiro Eletricista · Desenvolvedor Fullstack",
+    "headline": "Fundador da Kodeskill · Engenheiro Eletricista · Desenvolvedor Fullstack",
     "profileLabel": "Perfil",
     "resultsLabel": "Resultados em destaque",
-    "summary": "Criador de sistemas e soluções de automação na Kodeskill, empresa que desenvolvo desde a mudança para Americana, com formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia. Experiência em Indústria 4.0 (WEG), liderança de TI como funcionário na Legacy Eco Group, implantação de IA, desenvolvimento fullstack e digitalização de processos com impacto financeiro mensurável.",
+    "summary": "Fundador da Kodeskill, software house própria em Americana desde 03/2025. Levo facilidades a empresas, empresários e usuários. A trajetória em Indústria 4.0 (WEG), liderança de TI na Legacy Eco Group e nas demais empresas formou o repertório que uso para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill. Formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia.",
     "emailLabel": "E-mail",
     "phoneLabel": "Tel",
     "locationLabel": "Local",
@@ -253,7 +272,7 @@
   },
   "whatsapp": {
     "floatingAria": "Conversar no WhatsApp",
-    "plainMsg": "Olá, Rubens Florentino!\n\nEncontrei seu portfólio profissional e fiquei impressionado(a) com a Kodeskill e com seu perfil de criador de sistemas e automações, Engenheiro Eletricista e Desenvolvedor Fullstack — especialmente sua atuação com IA, automação e Indústria 4.0.\n\nGostaria de conversar sobre uma oportunidade de contratação (CLT ou PJ) alinhada ao seu perfil. Quando você teria disponibilidade para uma conversa rápida esta semana?"
+    "plainMsg": "Olá, Rubens Florentino!\n\nEncontrei seu portfólio e fiquei impressionado(a) com a Kodeskill, a software house que leva facilidades a empresas, empresários e usuários — e com o repertório de operação real por trás desse trabalho.\n\nGostaria de conversar sobre uma oportunidade de contratação (CLT ou PJ) alinhada ao seu perfil. Quando você teria disponibilidade para uma conversa rápida esta semana?"
   },
   "footer": {
     "rights": "Rubens Florentino Freitas Junior."
