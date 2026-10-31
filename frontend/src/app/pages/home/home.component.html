@@ -182,7 +182,7 @@
         <p class="section-description">{{ c.impact.subtitle }}</p>
       </div>
 
-      <div class="cards-grid two">
+      <div class="impact-grid">
         @for (card of c.impact.cards; track card.title; let i = $index) {
           <article class="impact-card" appReveal [style.--i]="i">
             <span class="pill mono">{{ card.company }}</span>

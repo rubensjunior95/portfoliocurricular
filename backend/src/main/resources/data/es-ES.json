@@ -99,7 +99,7 @@
       },
       {
         "title": "Desarrollo Fullstack",
-        "description": "Aplicaciones web y APIs a medida con Node.js, NestJS, Next.js y Angular — y más de 10 años de experiencia multilenguaje (Java, Python, C#, PHP, Flutter y más) para entregar con el stack adecuado al negocio."
+        "description": "Aplicaciones web y APIs a medida con React, Next.js, NestJS y Angular — y más de 10 años de experiencia multilenguaje (Java, Python, C#, PHP, Flutter y más) para entregar con el stack adecuado al negocio."
       },
       {
         "title": "Mentoría y Gestión",
@@ -180,7 +180,7 @@
   "impact": {
     "eyebrow": "Impacto",
     "title": "Resultado en operación real.",
-    "subtitle": "Resultados en operación real. Es el repertorio que hoy mejora el resultado y la experiencia de los clientes de Kodeskill.",
+    "subtitle": "Del piso de fábrica al producto digital. Números de operación real y SaaS con aislamiento por empresa, colas e IA en producción.",
     "cards": [
       {
         "company": "RCM Cabos Elétricos",
@@ -195,6 +195,20 @@
         "metric": "≈ R$ 300 mil/año",
         "metricNote": "en ganancias estimadas con reducción de procesos, asertividad en la producción y mantenimiento",
         "description": "Aplicaciones e integraciones que centralizaron los datos de 48 líneas de producción en 4 fábricas, en Brasil y Estados Unidos, anticipando mantenimientos y liberando a la gestión del cierre manual de datos al final del día. Proyecto en expansión hacia Argentina, Argelia y China."
+      },
+      {
+        "company": "LevFlow",
+        "title": "SaaS financiero multi-tenant",
+        "metric": "Multi-tenant",
+        "metricNote": "cada empresa ve solo sus propios datos",
+        "description": "Monorepo en Turborepo y Next.js, con dominio en arquitectura hexagonal. PostgreSQL en Supabase con Drizzle y Row-Level Security, colas serverless en Upstash QStash, cobro en Pagar.me y pipeline con Playwright, Vitest y CodeQL."
+      },
+      {
+        "company": "Framefy",
+        "title": "Contenido y comercial con IA",
+        "metric": "Multi-LLM",
+        "metricNote": "generación asíncrona en lugar de flujo manual y no-code",
+        "description": "En Framefy y MasterClass, OpenAI y Claude orquestados en NestJS con Fastify y CQRS. Mensajería en BullMQ, RabbitMQ, Evolution API y ManyChat, en contenedores Docker ajustados."
       }
     ]
   },
@@ -236,14 +250,13 @@
       { "title": "Lean Six Sigma White Belt", "school": "MF Treinamentos", "period": "4 horas · 01/2021" }
     ],
     "skillGroups": [
-      { "title": "Lenguajes y Frameworks — Back-end", "skills": ["Java / Spring Boot", "Node.js / NestJS", "Python / Django", "C#", "PHP / Laravel", "Delphi (Object Pascal)", "C / C++"] },
-      { "title": "Lenguajes y Frameworks — Front-end y Mobile", "skills": ["Angular.js", "Next.js", "Dart / Flutter"] },
-      { "title": "Arquitectura y Diseño de Sistemas", "skills": ["Clean Architecture", "Domain-Driven Design — DDD", "SOLID y Patrones de Diseño", "Modelado de Dominio", "Diseño de APIs y Contratos de Integración"] },
-      { "title": "Sistemas Asíncronos y Escalabilidad", "skills": ["Arquitectura Orientada a Eventos", "Procesamiento Asíncrono y Mensajería", "Escalabilidad de Sistemas", "Resiliencia y Alta Disponibilidad", "Integración entre Sistemas Heterogéneos", "Datos Operativos en Tiempo Real"] },
-      { "title": "Calidad y Confiabilidad del Software", "skills": ["Test-Driven Development — TDD", "Automatización de Pruebas", "Mantenibilidad y Refactorización", "Observabilidad y Monitoreo"] },
-      { "title": "Cloud, Infraestructura y Operación", "skills": ["Arquitectura en la Nube", "Contenerización de Aplicaciones", "Automatización de Despliegue y Entrega Continua", "Administración de Servidores y VPS"] },
-      { "title": "IA, Datos e Industria 4.0", "skills": ["Inteligencia Artificial", "Implantación de Inteligencia Artificial", "Data Science & Analytics", "Ingeniería de Datos e Indicadores", "Industria 4.0 e IoT Industrial", "Automatización Industrial"] },
-      { "title": "Liderazgo y Estrategia", "skills": ["Liderazgo de TI", "Gestión de Procesos", "Digitalización de Procesos", "Mentoría de Empresarios", "Ingeniería Eléctrica"] }
+      { "title": "Lenguajes", "skills": ["Java 21", "TypeScript", "Python", "C#", "PHP", "Delphi", "C / C++", "Dart", "SQL"] },
+      { "title": "Frameworks e interfaz", "skills": ["Spring Boot 3", "NestJS y Fastify", "Next.js", "React 19", "Angular 18+", "Django", "Laravel", "Flutter", "Tailwind y shadcn/ui", "TanStack", "Turborepo"] },
+      { "title": "Datos y persistencia", "skills": ["PostgreSQL", "Supabase (Auth, SSR y RLS)", "Redis y Upstash", "Prisma y Drizzle", "TypeORM"] },
+      { "title": "Arquitectura y mensajería", "skills": ["Clean Architecture", "Arquitectura hexagonal", "DDD y SOLID", "CQRS y Outbox", "SaaS multi-tenant", "Event-driven", "BullMQ, RabbitMQ y QStash", "OpenAPI y Zod"] },
+      { "title": "IA, pagos e integraciones", "skills": ["OpenAI, Claude y Gemini", "Agentes y MCP", "AssemblyAI y Azure Speech", "Stripe y Pagar.me", "Evolution API, Z-API y ManyChat", "Puppeteer, PDFKit y SheetJS", "Industria 4.0 e IoT", "Data Science y Analytics"] },
+      { "title": "DevSecOps y calidad", "skills": ["TDD", "Vitest, Jest y Playwright", "Testcontainers", "Docker hardening", "CI/CD", "Sentry", "CodeQL y Dependency Cruiser", "Caddy, Nginx y Traefik", "Argon2, TOTP y OAuth", "Arquitectura en la nube"] },
+      { "title": "Liderazgo y estrategia", "skills": ["Liderazgo de TI", "Gestión de procesos", "Digitalización de procesos", "Mentoría de empresarios", "Ingeniería eléctrica"] }
     ]
   },
   "contact": {
@@ -294,8 +307,8 @@
       },
       {
         "title": "Desarrollo Fullstack",
-        "description": "Aplicaciones web y APIs a medida con foco en Node.js, NestJS, Next.js y Angular — además de más de 10 años en otras stacks cuando el negocio lo exige.",
-        "bullets": ["Sistemas internos, dashboards y portales", "APIs, integraciones y webhooks", "Stack JS moderna (Node, Nest, Next, Angular)", "Polyglot bajo demanda (Java, Python, C#, PHP, Flutter…)", "Aplicaciones industriales (Industria 4.0)", "Mantenimiento evolutivo y refactorización"]
+        "description": "Aplicaciones web y APIs a medida con foco en React, Next.js, NestJS y Angular — además de más de 10 años en otras stacks cuando el negocio lo exige.",
+        "bullets": ["Sistemas internos, dashboards y portales", "APIs, integraciones y webhooks", "Stack JS moderna (React, Nest, Next, Angular)", "Polyglot bajo demanda (Java, Python, C#, PHP, Flutter…)", "Aplicaciones industriales (Industria 4.0)", "Mantenimiento evolutivo y refactorización"]
       },
       {
         "title": "Mentoría y Gestión",
