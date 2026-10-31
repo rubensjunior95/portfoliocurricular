@@ -17,8 +17,9 @@
   --gradient-accent: linear-gradient(135deg, oklch(0.78 0.18 155), oklch(0.65 0.15 175));
   --shadow-glow: 0 20px 60px -20px oklch(0.78 0.18 155 / 0.45);
   --shadow-soft: 0 10px 40px -15px oklch(0 0 0 / 0.55);
-  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -98,7 +99,7 @@ p {
 
 .text-primary { color: var(--primary); }
 .muted { color: var(--muted-foreground); }
-.mono { font-family: ui-monospace, monospace; font-size: 0.75rem; }
+.mono { font-family: var(--font-mono); font-size: 0.75rem; }
 
 .text-gradient {
   display: block;
@@ -299,6 +300,17 @@ p {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--primary);
+}
+.hero-availability {
+  display: inline-block;
+  max-width: 44rem;
+  margin: 0.85rem 0 0;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid oklch(0.78 0.18 155 / 0.5);
+  border-radius: 0.75rem;
+  color: var(--foreground);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .hero-title {
@@ -735,6 +747,20 @@ p {
   max-width: 100%;
   line-height: 1.35;
   text-wrap: pretty;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+.impact-kicker {
+  margin: 1rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--primary);
+}
+.impact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .courses-block { margin-top: 2.25rem; }
@@ -1807,5 +1833,72 @@ html.motion-ok .editorial-card.in-view .pill {
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation: none !important;
+  }
+}
+
+/* Currículo ATS: uma coluna, preto no branco, texto selecionável. */
+.cv-print.cv-ats {
+  display: none;
+  width: auto;
+  min-height: 0;
+  padding: 0;
+  color: #111111;
+  background: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.35;
+}
+.cv-print.cv-ats .cv-header,
+.cv-print.cv-ats section {
+  background: #ffffff;
+  color: #111111;
+  padding: 0;
+}
+.cv-print.cv-ats h1 {
+  margin: 0;
+  color: #111111;
+  font-size: 16pt;
+  letter-spacing: 0;
+}
+.cv-print.cv-ats h2 {
+  margin: 11pt 0 4pt;
+  color: #111111;
+  font-size: 11pt;
+  letter-spacing: 0;
+  text-transform: none;
+  border-bottom: 1px solid #111111;
+}
+.cv-print.cv-ats h3 {
+  margin: 8pt 0 0;
+  color: #111111;
+  font-size: 10.5pt;
+}
+.cv-print.cv-ats h3 span,
+.cv-print.cv-ats .cv-headline,
+.cv-print.cv-ats .cv-availability {
+  color: #222222;
+  font-weight: 500;
+}
+.cv-print.cv-ats p,
+.cv-print.cv-ats li,
+.cv-print.cv-ats a {
+  margin: 2pt 0 0;
+  color: #111111;
+}
+.cv-print.cv-ats a { text-decoration: underline; }
+.cv-print.cv-ats .cv-contacts {
+  display: block;
+  margin: 6pt 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cv-print.cv-ats .cv-body { display: block; }
+
+@media print {
+  @page { margin: 12mm; }
+  .cv-print.cv-ats {
+    display: block !important;
+    width: auto !important;
+    min-height: 0 !important;
   }
 }

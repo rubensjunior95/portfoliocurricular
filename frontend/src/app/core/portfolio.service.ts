@@ -90,6 +90,7 @@ export class PortfolioService {
       this.content.set(cached);
       this.loading.set(false);
       this.error.set(false);
+      this.applyMeta(cached);
       return;
     }
     this.loading.set(true);
@@ -100,7 +101,7 @@ export class PortfolioService {
         this.cache.set(locale, hydrated);
         this.content.set(hydrated);
         this.loading.set(false);
-        document.title = hydrated.meta.homeTitle;
+        this.applyMeta(hydrated);
         this.prefetchOthers(locale);
       },
       error: () => {
@@ -129,9 +130,30 @@ export class PortfolioService {
     } catch {
       /* ignore */
     }
-    const nav = (navigator.language || 'pt-BR').toLowerCase();
-    if (nav.startsWith('en')) return 'en-US';
-    if (nav.startsWith('es')) return 'es-ES';
-    return 'pt-BR';
+    return 'en-US';
+  }
+
+  private applyMeta(content: PortfolioContent): void {
+    document.title = content.meta.homeTitle;
+    const url = 'https://portfoliocurricular.vercel.app/';
+    this.upsertMeta('description', content.meta.homeDescription);
+    this.upsertMeta('og:title', content.meta.homeTitle, true);
+    this.upsertMeta('og:description', content.meta.homeDescription, true);
+    this.upsertMeta('og:type', 'website', true);
+    this.upsertMeta('og:url', url, true);
+    this.upsertMeta('twitter:card', 'summary');
+    this.upsertMeta('twitter:title', content.meta.homeTitle);
+    this.upsertMeta('twitter:description', content.meta.homeDescription);
+  }
+
+  private upsertMeta(name: string, content: string, property = false): void {
+    const attr = property ? 'property' : 'name';
+    let el = document.head.querySelector(`meta[${attr}="${name}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, name);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
   }
 }

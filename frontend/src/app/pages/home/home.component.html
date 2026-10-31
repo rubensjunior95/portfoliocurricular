@@ -7,6 +7,7 @@
       <div class="hero-copy">
         <p class="hero-location">{{ c.hero.location }}</p>
         <p class="hero-role">{{ c.hero.role }}</p>
+        <p class="hero-availability">{{ c.hero.availability }}</p>
         <h1 class="hero-title">
           {{ c.profile.firstNames }}
           <span class="text-gradient">{{ c.profile.surname }}</span>
@@ -189,7 +190,25 @@
             <h3>{{ card.title }}</h3>
             <p class="impact-metric">{{ card.metric }}</p>
             <p class="impact-metric-note">{{ card.metricNote }}</p>
-            <p class="impact-description">{{ card.description }}</p>
+            <p class="impact-kicker">{{ c.impact.problemLabel }}</p>
+            <p class="impact-description">{{ card.problem }}</p>
+            @if (card.stack.length) {
+              <p class="impact-kicker">{{ c.impact.stackLabel }}</p>
+              <ul class="skill-pills">
+                @for (tech of card.stack; track tech) {
+                  <li class="pill mono">{{ tech }}</li>
+                }
+              </ul>
+            }
+            <p class="impact-kicker">{{ c.impact.highlightLabel }}</p>
+            <p class="impact-description">{{ card.highlight }}</p>
+            @if (card.links?.length) {
+              <div class="impact-links">
+                @for (link of card.links; track link.href) {
+                  <a class="btn btn-outline" [href]="link.href" target="_blank" rel="noreferrer">{{ link.label }}</a>
+                }
+              </div>
+            }
           </article>
         }
       </div>

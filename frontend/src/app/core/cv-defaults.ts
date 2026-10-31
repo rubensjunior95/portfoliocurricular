@@ -16,15 +16,15 @@ const SITE_DISPLAY = 'portfoliocurricular.vercel.app';
 
 const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
   'pt-BR': {
-    downloadCv: 'Baixar CV',
-    downloadCvAria: 'Baixar Curriculum Vitae — escolher idioma',
+    downloadCv: 'CV ATS',
+    downloadCvAria: 'Baixar currículo ATS — escolher idioma',
     chooseCvLanguage: 'Idioma do currículo',
-    downloadPdf: 'Baixar CV (PDF)',
-    downloadPdfAria: 'Baixar Curriculum Vitae — escolher idioma para imprimir',
+    downloadPdf: 'Baixar Currículo ATS (PDF)',
+    downloadPdfAria: 'Baixar currículo ATS — escolher idioma para imprimir',
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Fundador da Kodeskill · Engenheiro Eletricista · Desenvolvedor Fullstack',
+      headline: 'Engenheiro de Software Fullstack | +10 Anos de Experiência',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados em destaque',
       summary:
@@ -33,19 +33,20 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
       phoneLabel: 'Tel',
       locationLabel: 'Local',
       linkedinLabel: 'LinkedIn',
+      githubLabel: 'GitHub',
       webLabel: 'Web',
     },
   },
   'en-US': {
-    downloadCv: 'Download CV',
-    downloadCvAria: 'Download CV — choose language',
+    downloadCv: 'ATS CV',
+    downloadCvAria: 'Download ATS resume — choose language',
     chooseCvLanguage: 'CV language',
-    downloadPdf: 'Download CV (PDF)',
-    downloadPdfAria: 'Download CV — choose language to print',
+    downloadPdf: 'Download ATS Resume (PDF)',
+    downloadPdfAria: 'Download ATS resume — choose language to print',
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Founder of Kodeskill · Electrical Engineer · Fullstack Developer',
+      headline: 'Fullstack Software Engineer | 10+ Years of Experience',
       profileLabel: 'Profile',
       resultsLabel: 'Key results',
       summary:
@@ -54,19 +55,20 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
       phoneLabel: 'Tel',
       locationLabel: 'Location',
       linkedinLabel: 'LinkedIn',
+      githubLabel: 'GitHub',
       webLabel: 'Web',
     },
   },
   'es-ES': {
-    downloadCv: 'Descargar CV',
-    downloadCvAria: 'Descargar Curriculum Vitae — elegir idioma',
+    downloadCv: 'CV ATS',
+    downloadCvAria: 'Descargar CV ATS — elegir idioma',
     chooseCvLanguage: 'Idioma del currículum',
-    downloadPdf: 'Descargar CV (PDF)',
-    downloadPdfAria: 'Descargar Curriculum Vitae — elegir idioma para imprimir',
+    downloadPdf: 'Descargar CV formato ATS (PDF)',
+    downloadPdfAria: 'Descargar CV ATS — elegir idioma para imprimir',
     linkedinDisplay: LINKEDIN_DISPLAY,
     siteDisplay: SITE_DISPLAY,
     cv: {
-      headline: 'Fundador de Kodeskill · Ingeniero Eléctrico · Desarrollador Fullstack',
+      headline: 'Ingeniero / Desarrollador de Software Full Stack | +10 Años de Experiencia',
       profileLabel: 'Perfil',
       resultsLabel: 'Resultados destacados',
       summary:
@@ -75,6 +77,7 @@ const CV_DEFAULTS: Record<Locale, CvUiDefaults> = {
       phoneLabel: 'Tel',
       locationLabel: 'Local',
       linkedinLabel: 'LinkedIn',
+      githubLabel: 'GitHub',
       webLabel: 'Web',
     },
   },
@@ -93,6 +96,8 @@ export function hydrateContent(raw: PortfolioContent): PortfolioContent {
     profile: {
       ...raw.profile,
       linkedinDisplay: raw.profile.linkedinDisplay ?? defaults.linkedinDisplay,
+      github: raw.profile.github ?? 'https://github.com/RubensJr-ME',
+      githubDisplay: raw.profile.githubDisplay ?? 'github.com/RubensJr-ME',
       siteDisplay: raw.profile.siteDisplay ?? defaults.siteDisplay,
     },
     nav: {

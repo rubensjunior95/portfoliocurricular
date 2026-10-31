@@ -11,6 +11,8 @@ export interface Profile {
   linkedin: string;
   linkedinHandle: string;
   linkedinDisplay: string;
+  github: string;
+  githubDisplay: string;
   siteDisplay: string;
 }
 
@@ -39,6 +41,7 @@ export interface Hero {
   connector: string;
   industry: string;
   proof: string;
+  availability: string;
   ctaTalk: string;
   ctaServices: string;
   stats: { k: string; v: string }[];
@@ -99,16 +102,28 @@ export interface Experience {
   items: ExperienceItem[];
 }
 
+export interface ImpactLink {
+  label: string;
+  href: string;
+}
+
 export interface Impact {
   eyebrow: string;
   title: string;
   subtitle: string;
+  problemLabel: string;
+  stackLabel: string;
+  highlightLabel: string;
   cards: {
     company: string;
     title: string;
     metric: string;
     metricNote: string;
     description: string;
+    problem: string;
+    stack: string[];
+    highlight: string;
+    links?: ImpactLink[];
   }[];
 }
 
@@ -153,6 +168,7 @@ export interface CvCopy {
   phoneLabel: string;
   locationLabel: string;
   linkedinLabel: string;
+  githubLabel: string;
   webLabel: string;
 }
 
