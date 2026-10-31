@@ -15,13 +15,15 @@
     "github": "https://github.com/RubensJr-ME",
     "githubDisplay": "github.com/RubensJr-ME",
     "githubAlt": "https://github.com/rubensjunior95",
-    "githubAltDisplay": "github.com/rubensjunior95"
+    "githubAltDisplay": "github.com/rubensjunior95",
+    "shortName": "Rubens Junior"
   },
   "meta": {
-    "homeTitle": "Rubens Freitas | Engenheiro de Software Fullstack (+10 Anos)",
-    "homeDescription": "Engenheiro de software fullstack com mais de 10 anos de experiência. Disponível para contratos B2B/CLT e realocação na América do Norte, América do Sul ou Europa.",
-    "servicesTitle": "Serviços — Rubens Florentino",
-    "servicesDescription": "Serviços tecnológicos oferecidos por Rubens Florentino: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI."
+    "homeTitle": "Rubens Junior | Engenheiro de Software Fullstack (+10 anos)",
+    "homeDescription": "Engenheiro de software fullstack, 10+ anos. Aberto a contratos B2B/CLT e realocação para América do Norte, América do Sul ou Europa.",
+    "servicesTitle": "Serviços de IA e Desenvolvimento Fullstack | Rubens Junior",
+    "servicesDescription": "Serviços tecnológicos de Rubens Junior e da Kodeskill: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI.",
+    "ogImageAlt": "Rubens Florentino Freitas Junior, engenheiro de software fullstack e fundador da Kodeskill"
   },
   "nav": {
     "about": "Sobre",
@@ -36,8 +38,10 @@
     "language": "Idioma da página",
     "downloadCv": "CV ATS",
     "downloadCvAria": "Baixar currículo ATS — escolher idioma",
-    "chooseCvLanguage": "Idioma do currículo",
-    "openMenu": "Abrir menu de navegação"
+    "chooseCvLanguage": "Baixar CV ATS em:",
+    "openMenu": "Abrir menu de navegação",
+    "main": "Principal",
+    "skip": "Pular para o conteúdo"
   },
   "hero": {
     "location": "Americana, SP",
@@ -46,21 +50,24 @@
     "ai": "Inteligência Artificial",
     "connector": ", automação e",
     "industry": "Indústria 4.0",
-    "proof": "10+ anos em tech · WEG Indústria 4.0 · ganhos operacionais mensuráveis",
     "ctaTalk": "Falar no WhatsApp",
     "ctaServices": "Ver serviços",
     "stats": [
       {
+        "k": "R$ 1,2 mi+",
+        "v": "em fretes economizados · RCM"
+      },
+      {
+        "k": "R$ 300 mil/ano",
+        "v": "em ganhos industriais · WEG"
+      },
+      {
+        "k": "R$ 125 mil/ano",
+        "v": "em licenças reduzidas · Legacy"
+      },
+      {
         "k": "10+",
-        "v": "Anos em tech"
-      },
-      {
-        "k": "2",
-        "v": "Pós-graduações"
-      },
-      {
-        "k": "WEG",
-        "v": "Indústria 4.0"
+        "v": "anos em tecnologia"
       }
     ],
     "photoAlt": "Rubens Florentino Freitas Junior, fundador da Kodeskill",
@@ -99,7 +106,9 @@
         "title": "Usuários",
         "description": "Experiência de quem usa no dia a dia, com menos atrito e mais clareza."
       }
-    ]
+    ],
+    "tagline": "Código que transforma. IA que impulsiona.",
+    "logoAlt": "Logotipo da Kodeskill"
   },
   "servicesSection": {
     "eyebrow": "Serviços",

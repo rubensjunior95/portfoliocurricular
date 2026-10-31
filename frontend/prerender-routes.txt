@@ -1,0 +1,6 @@
+/
+/pt
+/es
+/services
+/pt/services
+/es/services

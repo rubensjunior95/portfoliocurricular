@@ -18,8 +18,7 @@ export class CvDownloadService {
     if (this.busy()) return;
     this.busy.set(true);
     try {
-      const content = await this.portfolio.awaitLocale(locale);
-      this.printContent.set(content);
+      this.printContent.set(this.portfolio.contentFor(locale));
       await nextFrames();
       await delay(80);
       this.printTextResume();

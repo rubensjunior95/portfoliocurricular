@@ -16,34 +16,26 @@
             "outputPath": "dist/portfolio-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "prerender": {
+              "discoverRoutes": false,
+              "routesFile": "prerender-routes.txt"
+            },
+            "ssr": false,
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "src/assets", "output": "assets" }
+              { "glob": "**/*", "input": "src/assets", "output": "assets" },
+              { "glob": "**/*", "input": "public", "output": "/" }
             ],
             "styles": ["src/styles.css"],
-            "scripts": [],
-            "allowedCommonJsDependencies": [
-              "html2canvas",
-              "jspdf",
-              "canvg",
-              "core-js",
-              "raf",
-              "rgbcolor",
-              "dompurify"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 { "type": "initial", "maximumWarning": "800kB", "maximumError": "2MB" },
                 { "type": "anyComponentStyle", "maximumWarning": "8kB", "maximumError": "16kB" }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
               ],
               "outputHashing": "all"
             },

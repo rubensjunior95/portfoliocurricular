@@ -1,86 +1,91 @@
-import { Component, HostListener, Input, inject, signal } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, inject, signal } from '@angular/core';
 import { CvDownloadService } from '../core/cv-download.service';
 import { Locale, PortfolioContent } from '../core/portfolio.models';
 import { LOCALE_LABELS, LOCALE_NATIVE, PortfolioService } from '../core/portfolio.service';
+import { IconComponent } from './icon.component';
+
+let nextId = 0;
 
 @Component({
   selector: 'app-download-cv-menu',
   standalone: true,
+  imports: [IconComponent],
   template: `
-    @if (portfolio.content(); as c) {
-      <div class="cv-menu" [class.stack]="variant === 'stack'" (click)="$event.stopPropagation()">
-        @if (variant === 'stack') {
-          <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
-          <div class="cv-menu-stack">
+    @let c = portfolio.content();
+    <div class="cv-menu" [class.stack]="variant === 'stack'" (click)="$event.stopPropagation()" (focusout)="onFocusOut($event)">
+      @if (variant === 'stack') {
+        <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
+        <div class="cv-menu-stack">
+          @for (l of locales; track l) {
+            <button type="button" class="cv-menu-item" [disabled]="cv.busy()" (click)="pick(l)">
+              <app-icon name="download" [size]="14" />
+              <span class="cv-menu-flag">{{ labels[l] }}</span>
+              <span>{{ native[l] }}</span>
+            </button>
+          }
+        </div>
+      } @else {
+        <button
+          #toggleButton
+          type="button"
+          class="btn-cv"
+          [class.compact]="variant === 'compact'"
+          [attr.aria-expanded]="open()"
+          [attr.aria-controls]="panelId"
+          [disabled]="cv.busy()"
+          (click)="toggle()"
+        >
+          <app-icon name="download" />
+          {{ buttonLabel(c) }}
+        </button>
+        @if (open()) {
+          <div #panel class="cv-menu-panel" [id]="panelId">
+            <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
             @for (l of locales; track l) {
-              <button
-                type="button"
-                class="cv-menu-item"
-                [disabled]="cv.busy()"
-                (click)="pick(l)"
-              >
+              <button type="button" class="cv-menu-item" [disabled]="cv.busy()" (click)="pick(l)">
                 <span class="cv-menu-flag">{{ labels[l] }}</span>
                 <span>{{ native[l] }}</span>
               </button>
             }
           </div>
-        } @else {
-          <button
-            type="button"
-            class="btn-cv"
-            [class.compact]="variant === 'compact'"
-            [attr.aria-label]="c.nav.downloadCvAria"
-            [attr.aria-expanded]="open()"
-            [attr.aria-busy]="cv.busy()"
-            [disabled]="cv.busy()"
-            (click)="toggle()"
-          >
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" x2="12" y1="15" y2="3" />
-            </svg>
-            {{ buttonLabel(c) }}
-          </button>
-          @if (open()) {
-            <div class="cv-menu-panel" role="menu">
-              <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
-              @for (l of locales; track l) {
-                <button
-                  type="button"
-                  role="menuitem"
-                  class="cv-menu-item"
-                  [disabled]="cv.busy()"
-                  (click)="pick(l)"
-                >
-                  <span class="cv-menu-flag">{{ labels[l] }}</span>
-                  <span>{{ native[l] }}</span>
-                </button>
-              }
-            </div>
-          }
         }
-      </div>
-    }
+      }
+    </div>
   `,
 })
 export class DownloadCvMenuComponent {
   @Input() variant: 'menu' | 'compact' | 'stack' = 'menu';
+  @Output() readonly picked = new EventEmitter<Locale>();
+  @ViewChild('toggleButton') private toggleButton?: ElementRef<HTMLButtonElement>;
+  @ViewChild('panel') private panel?: ElementRef<HTMLElement>;
 
   readonly portfolio = inject(PortfolioService);
   readonly cv = inject(CvDownloadService);
+  private readonly host = inject(ElementRef<HTMLElement>);
   readonly locales = this.portfolio.locales;
   readonly labels = LOCALE_LABELS;
   readonly native = LOCALE_NATIVE;
   readonly open = signal(false);
+  readonly panelId = `cv-menu-${nextId++}`;
 
   toggle(): void {
     this.open.update((value) => !value);
+    if (this.open()) {
+      setTimeout(() => this.panel?.nativeElement.querySelector<HTMLButtonElement>('button')?.focus());
+    }
   }
 
   pick(locale: Locale): void {
-    this.open.set(false);
+    this.close(true);
+    this.picked.emit(locale);
     void this.cv.download(locale);
+  }
+
+  onFocusOut(event: FocusEvent): void {
+    const next = event.relatedTarget as Node | null;
+    if (this.open() && next && !this.host.nativeElement.contains(next)) {
+      this.open.set(false);
+    }
   }
 
   buttonLabel(content: PortfolioContent): string {
@@ -105,6 +110,13 @@ export class DownloadCvMenuComponent {
 
   @HostListener('document:keydown.escape')
   closeOnEscape(): void {
+    if (this.open()) this.close(true);
+  }
+
+  private close(restoreFocus: boolean): void {
     this.open.set(false);
+    if (restoreFocus) {
+      setTimeout(() => this.toggleButton?.nativeElement.focus());
+    }
   }
 }

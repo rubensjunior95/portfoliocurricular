@@ -1,203 +1,203 @@
-@if (portfolio.content(); as c) {
-  <app-header mode="home" />
+@let c = portfolio.content();
+<app-header mode="home" />
+<main id="conteudo" tabindex="-1">
 
-  <!-- HERO -->
-  <section id="top" class="hero">
-    <div class="page-container hero-grid">
-      <div class="hero-copy">
-        <p class="hero-location">{{ c.hero.location }}</p>
-        <p class="hero-role">{{ c.hero.role }}</p>
-        <p class="hero-availability">{{ c.hero.availability }}</p>
-        <h1 class="hero-title">
-          {{ c.profile.firstNames }}
-          <span class="text-gradient">{{ c.profile.surname }}</span>
-        </h1>
-        <p class="hero-subtitle">
-          {{ c.hero.subtitle }} <strong>{{ c.hero.ai }}</strong>{{ c.hero.connector }}
-          <strong>{{ c.hero.industry }}</strong>.
-        </p>
-        <p class="hero-proof">{{ c.hero.proof }}</p>
-
-        <div class="hero-ctas">
-          <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
-            {{ c.hero.ctaTalk }}
-          </a>
-          <a routerLink="/services" class="btn btn-outline">{{ c.hero.ctaServices }}</a>
-          <app-download-cv-menu />
-        </div>
+<section id="top" tabindex="-1" class="hero">
+  <div class="page-container hero-grid">
+    <div class="hero-copy">
+      <p class="hero-role">{{ c.hero.role }}</p>
+      <h1 class="hero-title">{{ c.profile.fullName }}</h1>
+      <p class="hero-subtitle">
+        {{ c.hero.subtitle }} <strong>{{ c.hero.ai }}</strong>{{ c.hero.connector }}
+        <strong>{{ c.hero.industry }}</strong>.
+      </p>
+      <p class="hero-availability">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>{{ c.hero.availability }}</span>
+      </p>
+      <div class="hero-ctas">
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <app-icon name="whatsapp" />
+          {{ c.hero.ctaTalk }}
+        </a>
+        <app-download-cv-menu />
       </div>
-
-      <div
-        class="hero-photo-wrap"
-        (pointermove)="onPhotoPointer($event)"
-        (pointerleave)="onPhotoLeave($event)"
-      >
-        <div class="hero-photo-glow" aria-hidden="true"></div>
-        <div class="photo-ring">
-          <img src="assets/rubens.jpeg" [alt]="c.hero.photoAlt" class="hero-photo" loading="eager" />
-        </div>
-      </div>
+      <a [routerLink]="portfolio.servicesPath()" class="link-primary hero-services">
+        {{ c.hero.ctaServices }}
+        <app-icon name="arrow" [size]="15" />
+      </a>
     </div>
 
-    <div class="hero-metrics">
-      <div class="page-container hero-metrics-inner">
-        @for (s of c.hero.stats; track s.v; let i = $index) {
-          <div class="hero-stat" [style.--i]="i">
-            <div class="hero-stat-k">{{ s.k }}</div>
-            <div class="hero-stat-v">{{ s.v }}</div>
+    <div class="hero-visual" (pointermove)="onPhotoPointer($event)" (pointerleave)="onPhotoLeave($event)">
+      <svg class="hero-traces" viewBox="0 0 420 520" aria-hidden="true">
+        <path d="M210 40V8H330" />
+        <path d="M60 120H18V40" />
+        <path d="M360 160H404V260H380" />
+        <path d="M40 300H10V420" />
+        <path d="M380 420H408V500H300" />
+        <path d="M120 480V512H30" />
+        <circle cx="330" cy="8" r="4" />
+        <circle cx="18" cy="40" r="4" />
+        <circle cx="380" cy="260" r="4" />
+        <circle cx="10" cy="420" r="4" />
+        <circle cx="300" cy="500" r="4" />
+        <circle cx="30" cy="512" r="4" />
+      </svg>
+      <div class="photo-frame">
+        <img src="assets/rubens.jpeg" [alt]="c.hero.photoAlt" width="640" height="800" class="hero-photo" fetchpriority="high" />
+      </div>
+    </div>
+  </div>
+
+  <div class="page-container">
+    <dl class="hero-metrics">
+      @for (s of c.hero.stats; track s.k) {
+        <div class="hero-stat">
+          <dt>{{ s.v }}</dt>
+          <dd>{{ s.k }}</dd>
+        </div>
+      }
+    </dl>
+  </div>
+</section>
+
+<section id="sobre" tabindex="-1" class="section-y">
+  <div class="page-container narrow">
+    <div class="section-heading">
+      <p class="eyebrow">{{ c.about.eyebrow }}</p>
+      <h2>{{ c.about.title }}</h2>
+      <p class="section-description">
+        {{ c.about.bodyBefore }} <strong>{{ c.about.cs }}</strong> {{ c.about.and }}
+        <strong>{{ c.about.ee }}</strong>{{ c.about.bodyAfter }}
+      </p>
+    </div>
+  </div>
+</section>
+
+@if (c.company; as company) {
+  <section id="kodeskill" tabindex="-1" class="section-y">
+    <div class="page-container">
+      <article class="company-panel">
+        <div class="company-brand">
+          <img src="/brand/kodeskill-k.png" [alt]="company.logoAlt" width="216" height="173" class="company-mark" loading="lazy" />
+          <div>
+            <p class="company-wordmark">KODESKILL <span>LTDA.</span></p>
+            <p class="company-tagline">{{ company.tagline }}</p>
           </div>
-        }
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section id="sobre" class="section-y">
-    <div class="page-container narrow">
-      <div class="section-heading" appReveal="settle">
-        <div class="section-kicker">
-          <span class="section-number">01</span>
-          <span class="section-kicker-rule" aria-hidden="true"></span>
-          <p class="eyebrow">{{ c.about.eyebrow }}</p>
         </div>
-        <h2>{{ c.about.title }}</h2>
-        <p class="section-description">
-          {{ c.about.bodyBefore }} <strong>{{ c.about.cs }}</strong> {{ c.about.and }}
-          <strong>{{ c.about.ee }}</strong>{{ c.about.bodyAfter }}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  @if (c.company; as company) {
-    <section id="kodeskill" class="section-y section-alt">
-      <div class="page-container">
-        <article class="company-panel" appReveal="settle">
-          <div class="section-kicker">
-            <span class="section-number">02</span>
-            <span class="section-kicker-rule" aria-hidden="true"></span>
-            <p class="eyebrow">{{ company.eyebrow }}</p>
-          </div>
-          <p class="company-kind">{{ company.kind }}</p>
-          <h2 class="company-name">{{ company.name }}</h2>
-          <p class="company-title">{{ company.title }}</p>
-          <p class="company-meta">{{ company.role }} · {{ company.period }} · {{ company.place }}</p>
+        <div class="company-body">
+          <p class="eyebrow">{{ company.eyebrow }} · {{ company.role }} · {{ company.period }}</p>
+          <h2 class="company-title">{{ company.title }}</h2>
           <p class="section-description">{{ company.lead }}</p>
           <ul class="company-offers">
-            @for (offer of company.offers; track offer.title; let i = $index) {
-              <li appReveal [style.--i]="i">
+            @for (offer of company.offers; track offer.title) {
+              <li>
                 <h3>{{ offer.title }}</h3>
                 <p>{{ offer.description }}</p>
               </li>
             }
           </ul>
-        </article>
-      </div>
-    </section>
-  }
-
-  <!-- SERVIÇOS (resumo) -->
-  <section id="servicos" class="section-y">
-    <div class="page-container">
-      <div class="section-heading-row" appReveal="settle">
-        <div class="section-heading no-margin">
-          <div class="section-kicker">
-            <span class="section-number">03</span>
-            <span class="section-kicker-rule" aria-hidden="true"></span>
-            <p class="eyebrow">{{ c.servicesSection.eyebrow }}</p>
-          </div>
-          <h2>{{ c.servicesSection.title }}</h2>
-          <p class="section-description">{{ c.servicesSection.lead }}</p>
         </div>
-        <a routerLink="/services" class="link-primary">{{ c.servicesSection.seeFullPage }} →</a>
-      </div>
-
-      <div class="cards-grid three">
-        @for (s of c.servicesSection.items; track s.title; let i = $index) {
-          <a routerLink="/services" class="editorial-card" appReveal [style.--i]="i">
-            <span class="card-index">{{ pad(i) }}</span>
-            <h3>{{ s.title }}</h3>
-            <p>{{ s.description }}</p>
-            <span class="editorial-rule" aria-hidden="true"></span>
-          </a>
-        }
-      </div>
+      </article>
     </div>
   </section>
+}
 
-  <!-- EXPERIÊNCIA -->
-  <section id="experiencia" class="section-y section-alt">
-    <div class="page-container narrow">
-      <div class="section-heading" appReveal="settle">
-        <div class="section-kicker">
-          <span class="section-number">04</span>
-          <span class="section-kicker-rule" aria-hidden="true"></span>
-          <p class="eyebrow">{{ c.experience.eyebrow }}</p>
-        </div>
-        <h2>{{ c.experience.title }}</h2>
-        @if (c.experience.lead) {
-          <p class="section-description">{{ c.experience.lead }}</p>
-        }
+<section id="servicos" tabindex="-1" class="section-y section-alt">
+  <div class="page-container">
+    <div class="section-heading-row">
+      <div class="section-heading no-margin">
+        <p class="eyebrow">{{ c.servicesSection.eyebrow }}</p>
+        <h2>{{ c.servicesSection.title }}</h2>
+        <p class="section-description">{{ c.servicesSection.lead }}</p>
       </div>
+      <a [routerLink]="portfolio.servicesPath()" class="link-primary">
+        {{ c.servicesSection.seeFullPage }}
+        <app-icon name="arrow" [size]="15" />
+      </a>
+    </div>
 
-      <div class="timeline" appReveal="settle">
-        @for (exp of c.experience.items; track exp.role + exp.company; let i = $index) {
-          <article class="exp-card" appReveal="left" [style.--i]="i">
-            <div class="exp-head">
-              <div>
-                <h3>{{ exp.role }}</h3>
-                <p class="exp-company">{{ exp.company }}</p>
-                <p class="exp-location">{{ exp.location }}</p>
-              </div>
-              <span class="pill mono">{{ exp.period }}</span>
+    <div class="service-list">
+      @for (s of c.servicesSection.items; track s.title) {
+        <a [routerLink]="portfolio.servicesPath()" class="service-item">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.description }}</p>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" tabindex="-1" class="section-y">
+  <div class="page-container narrow">
+    <div class="section-heading">
+      <p class="eyebrow">{{ c.experience.eyebrow }}</p>
+      <h2>{{ c.experience.title }}</h2>
+      @if (c.experience.lead) {
+        <p class="section-description">{{ c.experience.lead }}</p>
+      }
+    </div>
+
+    <ol class="timeline">
+      @for (exp of c.experience.items; track exp.role + exp.company) {
+        <li class="exp-card">
+          <div class="exp-head">
+            <div>
+              <h3>{{ exp.role }}</h3>
+              <p class="exp-company">{{ exp.company }} · {{ exp.location }}</p>
             </div>
+            <span class="exp-period">{{ exp.period }}</span>
+          </div>
+          <div class="exp-body">
             @for (p of exp.paragraphs; track p) {
-              <p class="exp-paragraph">{{ p }}</p>
+              @if (label(p); as part) {
+                <p class="exp-paragraph"><strong>{{ part.label }}</strong> {{ part.body }}</p>
+              } @else {
+                <p class="exp-paragraph">{{ p }}</p>
+              }
             }
-            @if (exp.featuredHighlight || exp.highlights?.length) {
-              <ul class="highlights">
-                @if (exp.featuredHighlight) {
-                  <li class="pill featured">{{ exp.featuredHighlight }}</li>
-                }
-                @for (h of exp.highlights ?? []; track h) {
-                  <li class="pill">{{ h }}</li>
-                }
-              </ul>
-            }
-          </article>
-        }
-      </div>
+          </div>
+          @if (exp.featuredHighlight || exp.highlights?.length) {
+            <ul class="highlights">
+              @if (exp.featuredHighlight) {
+                <li class="pill featured">{{ exp.featuredHighlight }}</li>
+              }
+              @for (h of exp.highlights ?? []; track h) {
+                <li class="pill">{{ h }}</li>
+              }
+            </ul>
+          }
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section id="impacto" tabindex="-1" class="section-y section-alt">
+  <div class="page-container">
+    <div class="section-heading">
+      <p class="eyebrow">{{ c.impact.eyebrow }}</p>
+      <h2>{{ c.impact.title }}</h2>
+      <p class="section-description">{{ c.impact.subtitle }}</p>
     </div>
-  </section>
 
-  <!-- IMPACTO -->
-  <section id="impacto" class="section-y">
-    <div class="page-container">
-      <div class="section-heading" appReveal="settle">
-        <div class="section-kicker">
-          <span class="section-number">05</span>
-          <span class="section-kicker-rule" aria-hidden="true"></span>
-          <p class="eyebrow">{{ c.impact.eyebrow }}</p>
-        </div>
-        <h2>{{ c.impact.title }}</h2>
-        <p class="section-description">{{ c.impact.subtitle }}</p>
-      </div>
-
-      <div class="impact-grid">
-        @for (card of c.impact.cards; track card.title; let i = $index) {
-          <article class="impact-card" appReveal [style.--i]="i">
-            <span class="pill mono">{{ card.company }}</span>
+    <div class="impact-grid">
+      @for (card of c.impact.cards; track card.title) {
+        <article class="impact-card" [class.impact-case]="card.stack.length > 0">
+          <div class="impact-lead">
+            <p class="impact-company">{{ card.company }}</p>
             <h3>{{ card.title }}</h3>
             <p class="impact-metric">{{ card.metric }}</p>
             <p class="impact-metric-note">{{ card.metricNote }}</p>
+          </div>
+          <div class="impact-detail">
             <p class="impact-kicker">{{ c.impact.problemLabel }}</p>
             <p class="impact-description">{{ card.problem }}</p>
             @if (card.stack.length) {
               <p class="impact-kicker">{{ c.impact.stackLabel }}</p>
-              <ul class="skill-pills">
+              <ul class="tech-pills">
                 @for (tech of card.stack; track tech) {
-                  <li class="pill mono">{{ tech }}</li>
+                  <li>{{ tech }}</li>
                 }
               </ul>
             }
@@ -206,183 +206,164 @@
             @if (card.links?.length) {
               <div class="impact-links">
                 @for (link of card.links; track link.href) {
-                  <a class="btn btn-outline" [href]="link.href" target="_blank" rel="noreferrer">{{ link.label }}</a>
+                  <a class="btn btn-outline btn-sm" [href]="link.href" target="_blank" rel="noreferrer">
+                    <app-icon [name]="link.href.includes('github.com') ? 'github' : 'external'" [size]="14" />
+                    {{ link.label }}
+                  </a>
                 }
               </div>
             }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section id="formacao" tabindex="-1" class="section-y">
+  <div class="page-container education-grid">
+    <div>
+      <div class="section-heading">
+        <p class="eyebrow">{{ c.education.eyebrow }}</p>
+        <h2>{{ c.education.title }}</h2>
+      </div>
+      <ul class="education-list">
+        @for (e of c.education.items; track e.title) {
+          <li class="edu-item">
+            <h3>{{ e.title }}</h3>
+            <p class="edu-school">{{ e.school }}</p>
+            <p class="edu-period">{{ e.period }}</p>
+          </li>
+        }
+      </ul>
+
+      <details class="courses-block">
+        <summary>
+          <span>{{ c.education.coursesLabel }}</span>
+          <span class="courses-count">{{ c.education.courses.length }}</span>
+        </summary>
+        <ul class="education-list">
+          @for (course of c.education.courses; track course.title) {
+            <li class="edu-item">
+              <h3>{{ course.title }}</h3>
+              <p class="edu-school">{{ course.school }}</p>
+              <p class="edu-period">{{ course.period }}</p>
+              @if (course.parts?.length) {
+                <ul class="course-parts">
+                  @for (part of course.parts; track part.title) {
+                    <li>
+                      <span>{{ part.title }}</span>
+                      <span class="edu-period">{{ part.period }}</span>
+                    </li>
+                  }
+                </ul>
+              }
+            </li>
+          }
+        </ul>
+      </details>
+    </div>
+
+    <div>
+      <div class="section-heading">
+        <p class="eyebrow">{{ c.education.skillsEyebrow }}</p>
+        <h2>{{ c.education.skillsTitle }}</h2>
+      </div>
+      <div class="skill-groups">
+        @for (group of c.education.skillGroups; track group.title) {
+          <article class="skill-group">
+            <h3>{{ group.title }}</h3>
+            <ul class="tech-pills">
+              @for (skill of group.skills; track skill) {
+                <li>{{ skill }}</li>
+              }
+            </ul>
           </article>
         }
       </div>
-    </div>
-  </section>
-
-  <!-- FORMAÇÃO + STACK -->
-  <section id="formacao" class="section-y section-alt">
-    <div class="page-container education-grid">
-      <div>
-        <div class="section-heading" appReveal="settle">
-          <div class="section-kicker">
-            <span class="section-number">06</span>
-            <span class="section-kicker-rule" aria-hidden="true"></span>
-            <p class="eyebrow">{{ c.education.eyebrow }}</p>
-          </div>
-          <h2>{{ c.education.title }}</h2>
-        </div>
-        <div class="education-list">
-          @for (e of c.education.items; track e.title; let i = $index) {
-            <div class="editorial-card edu-card" appReveal="left" [style.--i]="i">
-              <h3>{{ e.title }}</h3>
-              <p class="edu-school">{{ e.school }}</p>
-              <p class="edu-period mono">{{ e.period }}</p>
-            </div>
+      <div class="languages-card">
+        <h3 class="languages-label">{{ c.education.languagesLabel }}</h3>
+        <div class="language-list">
+          @for (lang of c.education.languages; track lang.name) {
+            <p class="language-item">
+              <strong>{{ lang.name }}</strong>
+              <span>{{ lang.level }}</span>
+            </p>
           }
         </div>
-        <div class="courses-block">
-          <p class="courses-label">{{ c.education.coursesLabel }}</p>
-          <div class="education-list">
-            @for (course of c.education.courses; track course.title; let i = $index) {
-              <div class="editorial-card edu-card" appReveal="left" [style.--i]="i">
-                <h3>{{ course.title }}</h3>
-                <p class="edu-school">{{ course.school }}</p>
-                <p class="edu-period mono">{{ course.period }}</p>
-                @if (course.parts?.length) {
-                  <ul class="course-parts">
-                    @for (part of course.parts; track part.title) {
-                      <li>
-                        <span>{{ part.title }}</span>
-                        <span class="mono">{{ part.period }}</span>
-                      </li>
-                    }
-                  </ul>
-                }
-              </div>
-            }
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="section-heading" appReveal="settle">
-          <div class="section-kicker">
-            <span class="section-number">07</span>
-            <span class="section-kicker-rule" aria-hidden="true"></span>
-            <p class="eyebrow">{{ c.education.skillsEyebrow }}</p>
-          </div>
-          <h2>{{ c.education.skillsTitle }}</h2>
-        </div>
-        <div class="cards-grid two compact">
-          @for (group of c.education.skillGroups; track group.title; let i = $index) {
-            <article class="editorial-card" appReveal [style.--i]="i">
-              <h3 class="skill-group-title">{{ group.title }}</h3>
-              <ul class="skill-pills">
-                @for (skill of group.skills; track skill; let j = $index) {
-                  <li class="pill" [style.--i]="j">{{ skill }}</li>
-                }
-              </ul>
-              <span class="editorial-rule" aria-hidden="true"></span>
-            </article>
-          }
-        </div>
-        <div class="languages-card" appReveal>
-          <p class="languages-label">{{ c.education.languagesLabel }}</p>
-          <div class="language-list">
-            @for (lang of c.education.languages; track lang.name) {
-              <p class="language-item">
-                <strong>{{ lang.name }}</strong>
-                <span>{{ lang.level }}</span>
-              </p>
-            }
-          </div>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="section-y contact-section">
-    <div class="page-container contact-layout">
-      <div>
-        <div class="section-heading" appReveal="settle">
-          <div class="section-kicker">
-            <span class="section-number">08</span>
-            <span class="section-kicker-rule" aria-hidden="true"></span>
-            <p class="eyebrow">{{ c.contact.eyebrow }}</p>
-          </div>
-          <h2>{{ c.contact.title }}</h2>
-          <p class="section-description">{{ c.contact.body }}</p>
+<section id="contato" tabindex="-1" class="section-y section-alt contact-section">
+  <div class="page-container contact-layout">
+    <div>
+      <div class="section-heading">
+        <p class="eyebrow">{{ c.contact.eyebrow }}</p>
+        <h2>{{ c.contact.title }}</h2>
+        <p class="section-description">{{ c.contact.body }}</p>
+      </div>
+
+      <div class="contact-rows">
+        <a [href]="'mailto:' + c.profile.email" class="contact-row">
+          <span class="contact-icon"><app-icon name="mail" /></span>
+          <span class="contact-copy">
+            <span class="contact-label">{{ c.contact.email }}</span>
+            <span class="contact-value">{{ c.profile.email }}</span>
+          </span>
+        </a>
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="contact-row">
+          <span class="contact-icon"><app-icon name="whatsapp" /></span>
+          <span class="contact-copy">
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">{{ c.profile.phoneDisplay }}</span>
+          </span>
+        </a>
+        <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="contact-row">
+          <span class="contact-icon"><app-icon name="linkedin" /></span>
+          <span class="contact-copy">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">{{ c.profile.linkedinHandle }}</span>
+          </span>
+        </a>
+        <div class="contact-row static">
+          <span class="contact-icon"><app-icon name="github" /></span>
+          <span class="contact-copy">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-links">
+              <a [href]="c.profile.githubAlt" target="_blank" rel="noreferrer">{{ c.profile.githubAltDisplay }}</a>
+              <a [href]="c.profile.github" target="_blank" rel="noreferrer">{{ c.profile.githubDisplay }}</a>
+            </span>
+          </span>
         </div>
-
-        <div class="contact-rows">
-          <a [href]="'mailto:' + c.profile.email" class="contact-row" appReveal [style.--i]="0">
-            <span class="contact-icon" aria-hidden="true">
-              <svg class="stroke" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
-            </span>
-            <span class="contact-copy">
-              <span class="contact-label">{{ c.contact.email }}</span>
-              <span class="contact-value">{{ c.profile.email }}</span>
-            </span>
-          </a>
-          <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="contact-row" appReveal [style.--i]="1">
-            <span class="contact-icon" aria-hidden="true">
-              <svg class="stroke" viewBox="0 0 24 24"><path d="M12 3.2A8.3 8.3 0 0 0 5.1 16L4 20.2l4.3-1.1A8.3 8.3 0 1 0 12 3.2z"/><path d="M9.1 9.4c.2-.5.4-.5.7-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .4-.2.6l-.4.4c-.1.2-.1.3 0 .5.4.7 1.1 1.3 1.8 1.7.2.1.4.1.5-.1l.5-.5c.2-.2.4-.1.6 0l1.4.7c.3.1.4.3.3.6-.2.7-.9 1.2-1.6 1.2-2.4 0-5.2-2.6-5.6-4.8-.2-1 .2-1.8.5-2.6z"/></svg>
-            </span>
-            <span class="contact-copy">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">{{ c.profile.phoneDisplay }}</span>
-            </span>
-          </a>
-          <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="contact-row" appReveal [style.--i]="2">
-            <span class="contact-icon" aria-hidden="true">
-              <svg class="solid" viewBox="0 0 24 24"><path d="M6.2 9H4v10.5h2.2V9zM5.1 4.2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM20 19.5h-2.2v-5.4c0-1.5-.5-2.5-1.9-2.5-1 0-1.5.7-1.8 1.3-.1.2-.1.5-.1.8v5.8H11.8V9h2.1v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.1 1.4 3.1 4.5v6.3z"/></svg>
-            </span>
-            <span class="contact-copy">
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">{{ c.profile.linkedinHandle }}</span>
-            </span>
-          </a>
-          <div class="contact-row static" appReveal [style.--i]="3">
-            <span class="contact-icon" aria-hidden="true">
-              <svg class="solid" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.6c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1 2.8.8.1-.6.3-1 .6-1.3-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 4.8 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.2z"/></svg>
-            </span>
-            <span class="contact-copy">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-links">
-                <a [href]="c.profile.githubAlt" target="_blank" rel="noreferrer">{{ c.profile.githubAltDisplay }}</a>
-                <a [href]="c.profile.github" target="_blank" rel="noreferrer">{{ c.profile.githubDisplay }}</a>
-              </span>
-            </span>
-          </div>
-          <div class="contact-row static" appReveal [style.--i]="4">
-            <span class="contact-icon" aria-hidden="true">
-              <svg class="stroke" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
-            </span>
-            <span class="contact-copy">
-              <span class="contact-label">{{ c.contact.location }}</span>
-              <span class="contact-value">{{ c.contact.locationValue }}</span>
-            </span>
-          </div>
-        </div>
-
-        <div class="contact-ctas" appReveal>
-          <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
-            {{ c.contact.whatsappCta }}
-          </a>
-          <app-download-cv-menu />
+        <div class="contact-row static">
+          <span class="contact-icon"><app-icon name="pin" /></span>
+          <span class="contact-copy">
+            <span class="contact-label">{{ c.contact.location }}</span>
+            <span class="contact-value">{{ c.contact.locationValue }}</span>
+          </span>
         </div>
       </div>
 
-      <div class="qr-block" appReveal>
-        <p class="qr-hint">{{ c.contact.qrHint }}</p>
-        <div class="qr-frame">
-          <img [src]="portfolio.qrSrc()" [alt]="c.contact.qrAlt" width="200" height="200" loading="lazy" />
-        </div>
-        <p class="muted">wa.me/{{ c.profile.whatsappNumber }}</p>
+      <div class="contact-ctas">
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary">
+          <app-icon name="whatsapp" />
+          {{ c.contact.whatsappCta }}
+        </a>
+        <app-download-cv-menu />
       </div>
     </div>
-  </section>
 
-  <app-footer />
-} @else {
-  <app-loading-state />
-}
+    <div class="qr-block">
+      <p class="qr-hint">{{ c.contact.qrHint }}</p>
+      <div class="qr-frame">
+        <img [src]="portfolio.qrSrc()" [alt]="c.contact.qrAlt" width="200" height="200" loading="lazy" />
+      </div>
+      <p class="muted">wa.me/{{ c.profile.whatsappNumber }}</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<app-footer />

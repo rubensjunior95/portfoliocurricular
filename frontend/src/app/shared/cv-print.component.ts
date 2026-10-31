@@ -96,6 +96,13 @@ import { PortfolioService } from '../core/portfolio.service';
         </section>
 
         <section>
+          <h2>{{ c.education.coursesLabel }}</h2>
+          @for (course of c.education.courses; track course.title) {
+            <p class="cv-course cv-avoid-break"><strong>{{ course.title }}</strong> — {{ course.school }} ({{ course.period }})</p>
+          }
+        </section>
+
+        <section>
           <h2>{{ c.education.skillsEyebrow }}</h2>
           @for (group of c.education.skillGroups; track group.title) {
             <p class="cv-avoid-break"><strong>{{ group.title }}.</strong> {{ group.skills.join(', ') }}</p>

@@ -1,63 +1,58 @@
-@if (portfolio.content(); as c) {
-  <app-header mode="services" />
+@let c = portfolio.content();
+<app-header mode="services" />
+<main id="conteudo" tabindex="-1">
 
-  <section class="hero services-hero">
-    <div class="page-container hero-copy">
-      <a routerLink="/" class="link-primary">← {{ c.servicesPage.back }}</a>
-      <div class="section-kicker services-kicker">
-        <span class="section-kicker-rule" aria-hidden="true"></span>
-        <p class="eyebrow">{{ c.servicesPage.eyebrow }}</p>
-      </div>
-      <h1 class="hero-title">
-        {{ c.servicesPage.titleBefore }}
-        <span class="text-gradient">{{ c.servicesPage.titleAccent }}</span>
-      </h1>
-      <p class="hero-subtitle">{{ c.servicesPage.intro }}</p>
+<section class="hero services-hero">
+  <div class="page-container">
+    <a [routerLink]="portfolio.homePath()" class="link-primary back-link">
+      <app-icon name="arrow" [size]="15" class="flip" />
+      {{ c.servicesPage.back }}
+    </a>
+    <p class="eyebrow">{{ c.servicesPage.eyebrow }}</p>
+    <h1 class="hero-title">{{ c.servicesPage.titleBefore }} {{ c.servicesPage.titleAccent }}</h1>
+    <p class="hero-subtitle">{{ c.servicesPage.intro }}</p>
+  </div>
+</section>
+
+<section class="section-y">
+  <div class="page-container">
+    <div class="service-grid">
+      @for (s of c.servicesPage.items; track s.title) {
+        <article class="service-card">
+          <h2>{{ s.title }}</h2>
+          <p>{{ s.description }}</p>
+          <ul class="service-bullets">
+            @for (b of s.bullets; track b) {
+              <li>{{ b }}</li>
+            }
+          </ul>
+        </article>
+      }
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section-y">
-    <div class="page-container">
-      <div class="cards-grid two">
-        @for (s of c.servicesPage.items; track s.title; let i = $index) {
-          <article class="editorial-card service-card" appReveal [style.--i]="i">
-            <span class="card-index">{{ pad(i) }}</span>
-            <h3>{{ s.title }}</h3>
-            <p>{{ s.description }}</p>
-            <ul class="service-bullets">
-              @for (b of s.bullets; track b) {
-                <li>{{ b }}</li>
-              }
-            </ul>
-            <span class="editorial-rule" aria-hidden="true"></span>
-          </article>
-        }
-      </div>
+<section class="section-y section-alt">
+  <div class="page-container contact-cta-band">
+    <div class="section-heading">
+      <h2>{{ c.servicesPage.ctaTitle }}</h2>
+      <p class="section-description">{{ c.servicesPage.ctaBody }}</p>
     </div>
-  </section>
-
-  <section class="section-y section-alt">
-    <div class="page-container contact-cta-band">
-      <div class="section-heading" appReveal="settle">
-        <h2>{{ c.servicesPage.ctaTitle }}</h2>
-        <p class="section-description">{{ c.servicesPage.ctaBody }}</p>
-      </div>
-      <div class="contact-ctas" appReveal>
-        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
-          {{ c.contact.whatsappCta }}
-        </a>
-      </div>
-      <p class="muted other-contacts">
-        {{ c.servicesPage.otherContacts }}:
-        <a [href]="'mailto:' + c.profile.email" class="link-primary">{{ c.profile.email }}</a>
-        ·
-        <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="link-primary">LinkedIn</a>
-      </p>
+    <div class="contact-ctas">
+      <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary">
+        <app-icon name="whatsapp" />
+        {{ c.contact.whatsappCta }}
+      </a>
+      <app-download-cv-menu />
     </div>
-  </section>
+    <p class="muted other-contacts">
+      {{ c.servicesPage.otherContacts }}:
+      <a [href]="'mailto:' + c.profile.email" class="link-primary">{{ c.profile.email }}</a>
+      ·
+      <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="link-primary">LinkedIn</a>
+    </p>
+  </div>
+</section>
 
-  <app-footer />
-} @else {
-  <app-loading-state />
-}
+</main>
+<app-footer />

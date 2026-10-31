@@ -4,7 +4,7 @@ Réplica do portfólio de `C:\www\Pessoal\Portfolio` em arquitetura frontend/bac
 
 ```
 PortfolioCurricular/
-├── frontend/   Angular 18 (SPA) → Vercel (Git, 1 deploy por push)
+├── frontend/   Angular 18, páginas pré-renderizadas → Vercel (Git, 1 deploy por push)
 └── backend/    Spring Boot 3 / Java 21 → Render (Git + Blueprint, 1 deploy por push)
 ```
 
@@ -16,25 +16,23 @@ Não use GitHub Actions para publicar na Vercel — isso duplicava o deploy.
 
 ## Rodar localmente
 
-Requisitos: Node 18.19+ e [Docker Desktop](https://www.docker.com/products/docker-desktop/). O backend sobe no Docker com Java 21 (Maven não precisa estar instalado na máquina).
+Requisitos: Node 18.19+ (20 ou 22 LTS recomendado).
 
 ```bash
 npm install
 npm run dev
 ```
 
-- Frontend: [http://localhost:4200](http://localhost:4200)
-- Backend: [http://localhost:8080](http://localhost:8080) (`GET /api/portfolio/pt-BR`)
+- Frontend: [http://localhost:4200](http://localhost:4200) (`/` inglês, `/pt`, `/es`)
 
-Na primeira vez o Maven baixa as dependências dentro do container; as seguintes ficam em cache. Para subir só um dos lados: `npm run backend` ou `npm run frontend`.
+O site não depende do backend para rodar. Para subir também a API (precisa do [Docker Desktop](https://www.docker.com/products/docker-desktop/) aberto): `npm run dev:full` — Backend em [http://localhost:8080](http://localhost:8080) (`GET /api/portfolio/pt-BR`).
 
 ## Como funciona
 
-1. O **backend** serve o conteúdo (3 idiomas) em JSON:
-   `GET /api/portfolio/{pt-BR|en-US|es-ES}` + `GET /api/health`
-2. O **frontend** busca a API conforme o idioma (PT/EN/ES) e monta as seções.
-3. A URL de produção da API está em `frontend/src/environments/environment.prod.ts`.
-4. O workflow **Keep Render awake** (`.github/workflows/keep-alive.yml`) pinga `/api/health` a cada 5 min para a instância free da Render não dormir.
+1. O conteúdo (3 idiomas) fica em `backend/src/main/resources/data/*.json`. A API do **backend** continua servindo esses JSON em `GET /api/portfolio/{pt-BR|en-US|es-ES}`.
+2. O **frontend** copia esses JSON para `frontend/src/content/` antes de cada `start` e `build` (`npm run sync:content`) e embute o conteúdo no build. O site abre direto, sem esperar a Render acordar.
+3. O build pré-renderiza `/`, `/pt`, `/es`, `/services`, `/pt/services` e `/es/services` (`frontend/prerender-routes.txt`). Cada página sai com o texto, o título, o Open Graph e o hreflang do idioma. `npm run build` termina com `scripts/check-prerender.mjs`, que falha se alguma página sair errada.
+4. O workflow **Keep Render awake** (`.github/workflows/keep-alive.yml`) só é necessário se você ainda usar a API publicamente; o site não chama mais a Render.
 
 ## Passo a passo
 
@@ -70,6 +68,4 @@ Keep-alive 24h consome as 750 h/mês até o fim do mês. Workflows agendados do 
 
 ## Editar conteúdo
 
-Textos: `backend/src/main/resources/data/*.json` → push → Render faz o deploy.
-
-URL da API: `frontend/src/environments/environment.prod.ts` → push → Vercel faz o deploy.
+Textos: edite `backend/src/main/resources/data/*.json`, rode `npm --prefix frontend run sync:content` e faça push com as duas cópias (`backend/.../data` e `frontend/src/content`). A Vercel reconstrói o site; a Render reconstrói a API.

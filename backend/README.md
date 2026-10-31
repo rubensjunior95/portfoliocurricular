@@ -45,4 +45,4 @@ Não use só o cron-job.org: o timeout gratuito é 30s e o job é desativado ap�
 
 ## Editar o conteúdo do portfólio
 
-Todo o conteúdo fica em `src/main/resources/data/{pt-BR,en-US,es-ES}.json`. Edite os JSONs e faça novo deploy — nenhuma alteração de código é necessária.
+Todo o conteúdo fica em `src/main/resources/data/{pt-BR,en-US,es-ES}.json`. Edite os JSONs e faça novo deploy — nenhuma alteração de código é necessária. O site (frontend) embute uma cópia desses arquivos: depois de editar, rode `npm --prefix ../frontend run sync:content` e versione também `frontend/src/content`.
