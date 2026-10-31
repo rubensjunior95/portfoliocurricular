@@ -1,0 +1,579 @@
+{
+  "locale": "pt-BR",
+  "profile": {
+    "firstNames": "Rubens Florentino",
+    "surname": "Freitas Junior",
+    "fullName": "Rubens Florentino Freitas Junior",
+    "email": "rubensjr.me@gmail.com",
+    "phone": "+5527996939025",
+    "phoneDisplay": "(27) 99693-9025",
+    "whatsappNumber": "5527996939025",
+    "linkedin": "https://www.linkedin.com/in/rubens-junior-996696193",
+    "linkedinHandle": "rubens-junior",
+    "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
+    "siteDisplay": "https://portfoliocurricular.vercel.app",
+    "github": "https://github.com/RubensJr-ME",
+    "githubDisplay": "github.com/RubensJr-ME",
+    "githubAlt": "https://github.com/rubensjunior95",
+    "githubAltDisplay": "github.com/rubensjunior95",
+    "shortName": "Rubens Junior"
+  },
+  "meta": {
+    "homeTitle": "Rubens Junior | Engenheiro de Software Fullstack (+10 anos)",
+    "homeDescription": "Engenheiro de software fullstack, 10+ anos. Aberto a contratos B2B/CLT e realocação para América do Norte, América do Sul ou Europa.",
+    "servicesTitle": "Serviços de IA e Desenvolvimento Fullstack | Rubens Junior",
+    "servicesDescription": "Serviços tecnológicos de Rubens Junior e da Kodeskill: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI.",
+    "ogImageAlt": "Rubens Florentino Freitas Junior, engenheiro de software fullstack e fundador da Kodeskill"
+  },
+  "nav": {
+    "about": "Sobre",
+    "company": "Kodeskill",
+    "services": "Serviços",
+    "experience": "Experiência",
+    "impact": "Impacto",
+    "education": "Formação",
+    "contact": "Contato",
+    "home": "Início",
+    "talk": "Conversar",
+    "language": "Idioma da página",
+    "downloadCv": "CV ATS",
+    "downloadCvAria": "Baixar currículo ATS — escolher idioma",
+    "chooseCvLanguage": "Baixar CV ATS em:",
+    "openMenu": "Abrir menu de navegação",
+    "main": "Principal",
+    "skip": "Pular para o conteúdo"
+  },
+  "hero": {
+    "location": "Americana, SP",
+    "role": "Engenheiro de Software Fullstack | +10 Anos de Experiência",
+    "subtitle": "Transformo processos com",
+    "ai": "Inteligência Artificial",
+    "connector": ", automação e",
+    "industry": "Indústria 4.0",
+    "ctaTalk": "Falar no WhatsApp",
+    "ctaServices": "Ver serviços",
+    "stats": [
+      {
+        "k": "R$ 1,2 mi+",
+        "v": "em fretes economizados · RCM"
+      },
+      {
+        "k": "R$ 300 mil/ano",
+        "v": "em ganhos industriais · WEG"
+      },
+      {
+        "k": "R$ 125 mil/ano",
+        "v": "em licenças reduzidas · Legacy"
+      },
+      {
+        "k": "10+",
+        "v": "anos em tecnologia"
+      }
+    ],
+    "photoAlt": "Rubens Florentino Freitas Junior, fundador da Kodeskill",
+    "availability": "Disponível para Contratos B2B/CLT e Realocação (América do Norte, América do Sul ou Europa)."
+  },
+  "about": {
+    "eyebrow": "Sobre",
+    "title": "Não é só código. É resultado operacional.",
+    "bodyBefore": "Profissional com formação dupla em",
+    "cs": "Ciência da Computação",
+    "and": "e",
+    "ee": "Engenharia Elétrica",
+    "bodyAfter": ", MBA em Data Science pela USP-Esalq e um repertório construído em operação real, da WEG à liderança de TI. Desde que vim para Americana, esse repertório está a serviço da Kodeskill, minha software house, para gerar resultado e experiência melhores para empresas, empresários e usuários."
+  },
+  "company": {
+    "eyebrow": "Minha empresa",
+    "kind": "Software house própria",
+    "name": "Kodeskill",
+    "role": "Fundador",
+    "period": "03/2025 — Atual",
+    "place": "Americana — SP",
+    "title": "Facilidades para empresas, empresários e usuários.",
+    "lead": "A Kodeskill é minha. Não é um emprego na trajetória: é a software house pela qual levo facilidades a empresas, empresários e usuários. Sistemas e automações fazem parte disso. Cada experiência profissional anterior construiu repertório para entregar mais resultado e uma experiência melhor aos clientes da Kodeskill.",
+    "cvLabel": "Empresa",
+    "cvSummary": "Software house própria. Levo facilidades a empresas, empresários e usuários. O repertório de WEG, Legacy e das demais passagens existe para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill.",
+    "offers": [
+      {
+        "title": "Empresas",
+        "description": "Resultado na operação: sistemas, automações e outras facilidades que tiram esforço manual do caminho."
+      },
+      {
+        "title": "Empresários",
+        "description": "Clareza para conduzir o negócio, com a tecnologia a serviço do que precisa acontecer."
+      },
+      {
+        "title": "Usuários",
+        "description": "Experiência de quem usa no dia a dia, com menos atrito e mais clareza."
+      }
+    ],
+    "tagline": "Código que transforma. IA que impulsiona.",
+    "logoAlt": "Logotipo da Kodeskill"
+  },
+  "servicesSection": {
+    "eyebrow": "Serviços",
+    "title": "Do diagnóstico à execução.",
+    "lead": "Na Kodeskill, o repertório de liderança, engenharia e desenvolvimento vira facilidade para o cliente: menos custo, operação mais rápida e uma experiência melhor para quem usa.",
+    "seeFullPage": "Ver página completa",
+    "items": [
+      {
+        "title": "Implantação de IA",
+        "description": "Diagnóstico, estratégia e implantação de soluções de Inteligência Artificial para otimizar processos e gerar valor real ao negócio."
+      },
+      {
+        "title": "Desenvolvimento Fullstack",
+        "description": "Aplicações web e APIs sob medida com React, Next.js, NestJS e Angular — e 10+ anos de experiência multilinguagem (Java, Python, C#, PHP, Flutter e mais) para entregar com a stack certa do negócio."
+      },
+      {
+        "title": "Mentoria & Gestão",
+        "description": "Mentoria para empresários em Mapa do Negócio, Gestão de Processos e adoção de tecnologia como vantagem competitiva."
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Experiência",
+    "title": "Repertório a serviço da Kodeskill.",
+    "lead": "WEG, Legacy e as demais passagens não são o ponto de chegada. Cada uma construiu repertório para gerar resultado e experiência melhores para os clientes da Kodeskill.",
+    "items": [
+      {
+        "role": "Líder de TI (Contractor B2B)",
+        "company": "Legacy Eco Group",
+        "location": "Americana — SP",
+        "period": "03/2025 — 07/2026",
+        "paragraphs": [
+          "Arquitetura: estruturei o departamento de TI e consolidei os sistemas do grupo, com dados e processos no mesmo lugar.",
+          "Ação: atuei como contractor B2B, em paralelo à Kodeskill, na digitalização de ponta a ponta, na implantação de IA e em mentorias com gestores e equipes.",
+          "Impacto: redução estimada de R$ 125 mil por ano em licenças, com etapas da operação digitalizadas."
+        ],
+        "featuredHighlight": "≈ R$ 125 mil/ano economizados em licenças",
+        "highlights": [
+          "Sistemas consolidados e dados centralizados",
+          "Digitalização de etapas da empresa",
+          "Mentorias para gestores e equipes"
+        ]
+      },
+      {
+        "role": "Analista de Processos de Engenharia",
+        "company": "WEG Equipamentos Elétricos",
+        "location": "Linhares — ES",
+        "period": "01/2022 — 02/2025",
+        "paragraphs": [
+          "Arquitetura: centralizei o operacional de 48 linhas em 4 fábricas (Bluffton/EUA, Belém/PA e duas em Linhares/ES), com expansão para Argentina, Argélia e China.",
+          "Ação: desenvolvi aplicações e integrações que entregam os dados de produção à gestão, às filiais e à matriz sem esperar o fechamento manual do dia.",
+          "Impacto: ganhos estimados de cerca de R$ 300 mil por ano em processo, assertividade, manutenção e dados centralizados."
+        ],
+        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados",
+        "highlights": [
+          "48 linhas de produção em 4 fábricas",
+          "Redução de processos manuais",
+          "Assertividade na produção",
+          "Centralização dos dados",
+          "Redução de custos com manutenção",
+          "Expansão para Argentina, Argélia e China"
+        ]
+      },
+      {
+        "role": "Estagiário — Engenharia de Processos",
+        "company": "WEG Equipamentos Elétricos",
+        "location": "Linhares — ES",
+        "period": "02/2021 — 12/2021",
+        "paragraphs": [
+          "Arquitetura: entrei no time de Indústria 4.0 pela coleta e pela visualização dos dados de máquina.",
+          "Ação: contribuí com aplicações, automações e dashboards que substituíram controles espalhados e processos manuais.",
+          "Impacto: as equipes passaram a enxergar a produção com dados mais confiáveis e atualizados."
+        ]
+      },
+      {
+        "role": "Analista Técnico",
+        "company": "RCM Cabos Elétricos",
+        "location": "Porto União — SC",
+        "period": "03/2019 — 02/2021",
+        "paragraphs": [
+          "Arquitetura: um comparador de frete que cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais.",
+          "Ação: a equipe passava a escolher a transportadora de melhor custo-benefício antes de contratar.",
+          "Impacto: em nove meses, redução superior a R$ 1,2 milhão nos custos de transporte."
+        ],
+        "featuredHighlight": "R$ 1,2 milhão+ economizados",
+        "highlights": [
+          "9 meses de resultado analisado",
+          "Comparação automatizada de transportadoras",
+          "Maior previsibilidade dos custos logísticos"
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "Impacto",
+    "title": "Resultado em operação real.",
+    "subtitle": "Do chão de fábrica ao produto digital. Números de operação real e SaaS com isolamento por empresa, filas e IA em produção.",
+    "cards": [
+      {
+        "company": "RCM Cabos Elétricos",
+        "title": "Otimização inteligente de fretes",
+        "metric": "R$ 1,2 milhão+",
+        "metricNote": "em redução de custos logísticos durante nove meses",
+        "description": "Aplicação desenvolvida para analisar tabelas, condições e variáveis de transporte, indicando a opção de melhor custo-benefício para cada operação.",
+        "problem": "O frete era contratado sem uma comparação confiável de tabela, destino, peso, volume e taxas.",
+        "stack": [],
+        "highlight": "A comparação automática indicava a opção de melhor custo-benefício antes da contratação. Em nove meses, a redução superou R$ 1,2 milhão."
+      },
+      {
+        "company": "WEG Equipamentos Elétricos",
+        "title": "Centralização de dados industriais",
+        "metric": "≈ R$ 300 mil/ano",
+        "metricNote": "em ganhos estimados com redução de processos, assertividade na produção e manutenção",
+        "description": "Aplicações e integrações que centralizaram os dados de 48 linhas de produção em 4 fábricas, no Brasil e nos Estados Unidos, antecipando manutenções e liberando a gestão do fechamento manual de dados ao fim do dia. Projeto em expansão para Argentina, Argélia e China.",
+        "problem": "Os dados de 48 linhas, em 4 fábricas, dependiam do fechamento manual no fim do dia.",
+        "stack": [],
+        "highlight": "Integrações passaram a entregar o operacional para a gestão, as filiais e a matriz, e a antecipar manutenção. Ganhos estimados de cerca de R$ 300 mil por ano, com expansão para Argentina, Argélia e China."
+      },
+      {
+        "company": "LevFlow",
+        "title": "SaaS financeiro multi-tenant",
+        "metric": "Multi-tenant",
+        "metricNote": "cada empresa enxerga apenas os próprios dados",
+        "description": "Monorepo em Turborepo e Next.js, com domínio em arquitetura hexagonal. PostgreSQL no Supabase com Drizzle e Row-Level Security, filas serverless no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL.",
+        "problem": "Cada empresa precisava ver só os próprios dados financeiros, sem misturar com outro tenant.",
+        "stack": [
+          "Next.js",
+          "Supabase",
+          "Drizzle",
+          "PostgreSQL",
+          "Pagar.me",
+          "Arquitetura hexagonal"
+        ],
+        "highlight": "Monólito modular serverless, domínio hexagonal e isolamento por Row-Level Security."
+      },
+      {
+        "company": "Framefy",
+        "title": "Conteúdo e comercial com IA",
+        "metric": "Multi-LLM",
+        "metricNote": "geração assíncrona no lugar de fluxo manual e no-code",
+        "description": "No Framefy e na MasterClass, OpenAI e Claude orquestrados em NestJS com Fastify e CQRS. Mensageria em BullMQ, RabbitMQ, Evolution API e ManyChat, em containers Docker enxutos.",
+        "problem": "A geração de conteúdo e a operação comercial dependiam de fluxo manual e de plataformas no-code.",
+        "stack": [
+          "NestJS",
+          "Fastify",
+          "CQRS",
+          "BullMQ",
+          "OpenAI",
+          "Claude",
+          "Docker",
+          "Z-API"
+        ],
+        "highlight": "Filas e mais de um provedor de IA substituíram o fluxo manual. A MasterClass unificou em NestJS os funis de WhatsApp que rodavam no n8n.",
+        "links": [
+          {
+            "label": "Demo",
+            "href": "https://www.framefystudio.com"
+          },
+          {
+            "label": "GitHub Front",
+            "href": "https://github.com/framefystudio/framefy_frontend"
+          },
+          {
+            "label": "GitHub Back",
+            "href": "https://github.com/framefystudio/framefy_backend"
+          }
+        ]
+      }
+    ],
+    "problemLabel": "Problema",
+    "stackLabel": "Arquitetura e stack",
+    "highlightLabel": "Destaque de engenharia"
+  },
+  "education": {
+    "eyebrow": "Formação",
+    "title": "Base acadêmica sólida.",
+    "skillsEyebrow": "Stack",
+    "skillsTitle": "Núcleo em produção.",
+    "languagesLabel": "Idiomas",
+    "coursesLabel": "Cursos complementares",
+    "languages": [
+      {
+        "name": "Português",
+        "level": "Nativo."
+      },
+      {
+        "name": "Inglês",
+        "level": "Intermediário (B1) — leitura técnica e escrita de documentação; comunicação efetiva em ritos ágeis e trabalho assíncrono."
+      },
+      {
+        "name": "Espanhol",
+        "level": "Intermediário (B1) — leitura e redação técnica; comunicação efetiva em ambientes ágeis."
+      }
+    ],
+    "items": [
+      {
+        "title": "MBA em Data Science & Analytics",
+        "school": "USP-Esalq — Piracicaba/SP",
+        "period": "2021 — 2023"
+      },
+      {
+        "title": "Pós-Graduação em Docência no Ensino Superior",
+        "school": "UniCesumar — União da Vitória/PR",
+        "period": "2019 — 2021"
+      },
+      {
+        "title": "Bacharel em Engenharia Elétrica",
+        "school": "UNIGUAÇU — União da Vitória/PR",
+        "period": "2017 — 2021"
+      },
+      {
+        "title": "Bacharel em Ciência da Computação",
+        "school": "UnC — Porto União/SC",
+        "period": "2013 — 2016"
+      }
+    ],
+    "courses": [
+      {
+        "title": "Especialização em Machine Learning",
+        "school": "Stanford Online · DeepLearning.AI",
+        "period": "04/2024 — 06/2024",
+        "parts": [
+          {
+            "title": "Supervised Machine Learning: Regression and Classification",
+            "period": "abr/2024"
+          },
+          {
+            "title": "Advanced Learning Algorithms",
+            "period": "mai/2024"
+          },
+          {
+            "title": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+            "period": "jun/2024"
+          }
+        ]
+      },
+      {
+        "title": "Deep Learning and Reinforcement Learning",
+        "school": "IBM · Coursera",
+        "period": "jul/2024"
+      },
+      {
+        "title": "Exploratory Data Analysis for Machine Learning",
+        "school": "IBM · Coursera",
+        "period": "abr/2024"
+      },
+      {
+        "title": "Managing Machine Learning Projects",
+        "school": "Duke University · Coursera",
+        "period": "abr/2024"
+      },
+      {
+        "title": "Generative AI for Everyone",
+        "school": "DeepLearning.AI · Coursera",
+        "period": "mar/2024"
+      },
+      {
+        "title": "Digital Business Models",
+        "school": "Lund University · Coursera",
+        "period": "abr/2024"
+      },
+      {
+        "title": "Lean Six Sigma Green Belt",
+        "school": "MF Treinamentos",
+        "period": "60 horas · 01/2022"
+      },
+      {
+        "title": "Lean Six Sigma Yellow Belt",
+        "school": "MF Treinamentos",
+        "period": "20 horas · 12/2021 — 01/2022"
+      },
+      {
+        "title": "Lean Six Sigma White Belt",
+        "school": "MF Treinamentos",
+        "period": "4 horas · 01/2021"
+      }
+    ],
+    "skillGroups": [
+      {
+        "title": "Frontend e arquitetura de interface",
+        "skills": [
+          "TypeScript",
+          "React 19",
+          "Next.js",
+          "Angular 18+",
+          "Tailwind & shadcn/ui",
+          "TanStack",
+          "Turborepo",
+          "Flutter",
+          "Dart"
+        ]
+      },
+      {
+        "title": "Backend e APIs distribuídas",
+        "skills": [
+          "Java 21",
+          "Spring Boot 3",
+          "NestJS & Fastify",
+          "Python",
+          "Django",
+          "C#",
+          "PHP",
+          "Laravel",
+          "Delphi",
+          "C / C++",
+          "OpenAPI & Zod",
+          "Argon2, TOTP & OAuth",
+          "OpenAI, Claude & Gemini",
+          "Agentes & MCP",
+          "AssemblyAI & Azure Speech",
+          "Stripe & Pagar.me",
+          "Evolution API, Z-API & ManyChat",
+          "Puppeteer, PDFKit & SheetJS"
+        ]
+      },
+      {
+        "title": "Bancos e modelagem de dados",
+        "skills": [
+          "SQL",
+          "PostgreSQL",
+          "Supabase (Auth, SSR & RLS)",
+          "Redis & Upstash",
+          "Prisma & Drizzle",
+          "TypeORM",
+          "Data Science & Analytics"
+        ]
+      },
+      {
+        "title": "Cloud, DevOps e engenharia",
+        "skills": [
+          "Docker hardening",
+          "CI/CD",
+          "TDD",
+          "Vitest, Jest & Playwright",
+          "Testcontainers",
+          "Sentry",
+          "CodeQL & Dependency Cruiser",
+          "Caddy, Nginx & Traefik",
+          "Arquitetura em nuvem",
+          "Clean Architecture",
+          "Arquitetura hexagonal",
+          "DDD & SOLID",
+          "CQRS & Outbox",
+          "SaaS multi-tenant",
+          "Event-driven",
+          "BullMQ, RabbitMQ & QStash",
+          "Indústria 4.0 & IoT"
+        ]
+      },
+      {
+        "title": "Liderança e estratégia",
+        "skills": [
+          "Liderança de TI",
+          "Gestão de processos",
+          "Digitalização de processos",
+          "Mentoria de empresários",
+          "Engenharia elétrica"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Vamos construir algo juntos?",
+    "body": "Disponível para contratos B2B ou CLT e para realocação na América do Norte, América do Sul ou Europa. Entre em contato pelo canal que preferir.",
+    "email": "E-mail",
+    "location": "Localização",
+    "locationValue": "Americana — SP",
+    "whatsappCta": "Falar no WhatsApp",
+    "downloadPdf": "Baixar Currículo ATS (PDF)",
+    "downloadPdfAria": "Baixar currículo ATS — escolher idioma para imprimir",
+    "qrHint": "Aponte a câmera para falar no WhatsApp",
+    "qrAlt": "QR Code para WhatsApp de Rubens Florentino"
+  },
+  "cv": {
+    "headline": "Engenheiro de Software Fullstack | +10 Anos de Experiência",
+    "profileLabel": "Perfil",
+    "resultsLabel": "Resultados em destaque",
+    "summary": "Fundador da Kodeskill, software house própria em Americana desde 03/2025. Levo facilidades a empresas, empresários e usuários. A trajetória em Indústria 4.0 (WEG), liderança de TI na Legacy Eco Group e nas demais empresas formou o repertório que uso para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill. Formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia.",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Tel",
+    "locationLabel": "Local",
+    "linkedinLabel": "LinkedIn",
+    "webLabel": "Web",
+    "githubLabel": "GitHub"
+  },
+  "whatsapp": {
+    "floatingAria": "Conversar no WhatsApp",
+    "plainMsg": "Olá, Rubens Florentino!\n\nEncontrei seu portfólio e fiquei impressionado(a) com a Kodeskill, a software house que leva facilidades a empresas, empresários e usuários — e com o repertório de operação real por trás desse trabalho.\n\nGostaria de conversar sobre uma oportunidade de contratação (CLT ou PJ) alinhada ao seu perfil. Quando você teria disponibilidade para uma conversa rápida esta semana?"
+  },
+  "footer": {
+    "rights": "Rubens Florentino Freitas Junior."
+  },
+  "servicesPage": {
+    "back": "Voltar ao portfólio",
+    "eyebrow": "Serviços",
+    "titleBefore": "Soluções tecnológicas",
+    "titleAccent": "sob medida",
+    "intro": "Da estratégia à execução. Combino visão de negócio, engenharia e desenvolvimento para entregar resultados reais — em projetos pontuais ou parcerias de longo prazo.",
+    "ctaTitle": "Vamos conversar sobre seu projeto?",
+    "ctaBody": "Conte um pouco sobre o desafio do seu negócio e em poucos dias retorno com uma proposta clara e objetiva.",
+    "otherContacts": "Outros contatos",
+    "items": [
+      {
+        "title": "Implantação de Inteligência Artificial",
+        "description": "Diagnóstico, estratégia e implantação de soluções de IA para otimizar processos, reduzir custos operacionais e gerar vantagem competitiva.",
+        "bullets": [
+          "Mapeamento de oportunidades com IA",
+          "Integração de LLMs em fluxos internos",
+          "Automação de tarefas repetitivas",
+          "Treinamento de equipes para uso de IA"
+        ]
+      },
+      {
+        "title": "Desenvolvimento Fullstack",
+        "description": "Aplicações web e APIs sob medida com foco em React, Next.js, NestJS e Angular — além de 10+ anos em outras stacks quando o negócio exige.",
+        "bullets": [
+          "Sistemas internos, dashboards e portais",
+          "APIs, integrações e webhooks",
+          "Stack JS moderna (React, Nest, Next, Angular)",
+          "Polyglot sob demanda (Java, Python, C#, PHP, Flutter…)",
+          "Aplicações industriais (Indústria 4.0)",
+          "Manutenção evolutiva e refatoração"
+        ]
+      },
+      {
+        "title": "Mentoria & Gestão",
+        "description": "Mentoria para empresários e gestores em Mapa do Negócio, Gestão de Processos e adoção de tecnologia como vantagem estratégica.",
+        "bullets": [
+          "Mapeamento e redesenho de processos",
+          "Plano de transformação digital",
+          "Mentoria 1:1 com empresários",
+          "Capacitação de times de TI"
+        ]
+      },
+      {
+        "title": "Automação Industrial",
+        "description": "Projetos de automação e Indústria 4.0 com base sólida em Engenharia Elétrica e experiência prática na WEG.",
+        "bullets": [
+          "Coleta e telemetria de chão de fábrica",
+          "Dashboards de OEE e indicadores",
+          "Integração entre sistemas legados",
+          "Documentação técnica de processos"
+        ]
+      },
+      {
+        "title": "Data Science & Analytics",
+        "description": "Transformação de dados em decisões. Pipelines, modelagem e visualização aplicadas ao seu negócio (MBA USP-Esalq).",
+        "bullets": [
+          "Modelos preditivos e classificatórios",
+          "Pipelines de dados e ETL",
+          "Dashboards executivos",
+          "Análises ad-hoc para tomada de decisão"
+        ]
+      },
+      {
+        "title": "Liderança & Estruturação de TI",
+        "description": "Estruturação completa do departamento de TI: pessoas, processos e tecnologia para empresas em crescimento.",
+        "bullets": [
+          "Definição de stack e arquitetura",
+          "Governança e segurança da informação",
+          "Implantação de metodologias ágeis",
+          "Contratação e desenvolvimento de time"
+        ]
+      }
+    ]
+  }
+}

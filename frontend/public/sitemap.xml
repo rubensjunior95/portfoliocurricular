@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/" />
+  </url>
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/services" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/services" />
+  </url>
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/pt/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/services" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/services" />
+  </url>
+  <url>
+    <loc>https://portfoliocurricular.vercel.app/es/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfoliocurricular.vercel.app/services" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://portfoliocurricular.vercel.app/pt/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://portfoliocurricular.vercel.app/es/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://portfoliocurricular.vercel.app/services" />
+  </url>
+</urlset>

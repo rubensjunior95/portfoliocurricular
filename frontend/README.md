@@ -1,39 +1,38 @@
 # Portfolio Frontend — Angular
 
-SPA em Angular 18 (standalone components + signals) que replica o portfólio curricular de Rubens Florentino. Consome o conteúdo (pt-BR / en-US / es-ES) do backend Spring Boot hospedado na Render.
+Angular 18 (standalone components + signals) com páginas pré-renderizadas no build. Identidade visual da Kodeskill. O conteúdo (pt-BR / en-US / es-ES) vem embutido de `src/content/*.json`, cópia de `../backend/src/main/resources/data`.
 
 ## Rodar localmente
 
-Requisitos: Node 18.19+ (ou 20 LTS).
+Requisitos: Node 18.19+ (20 ou 22 LTS recomendado).
 
 ```bash
 npm install
 npm start
-# http://localhost:4200 (backend precisa estar rodando em :8080)
+# http://localhost:4200  →  /  (inglês), /pt, /es
 ```
 
-Em desenvolvimento a API é `http://localhost:8080` (`src/environments/environment.ts`). Em produção o build usa `src/environments/environment.prod.ts` (`https://portfolio-curricular-api.onrender.com`).
+`npm start` e `npm run build` copiam o conteúdo do backend antes (`npm run sync:content`). Se a pasta do backend não existir, o build usa a cópia versionada em `src/content`.
 
-## Build de produção (local)
+## Build de produção
 
 ```bash
-# usa o placeholder de environment.prod.ts — só para validar o bundle
 npm run build
 # saída em dist/portfolio-frontend/browser
-
-# build igual ao CI, exigindo a URL real da Render
-set API_BASE_URL=https://SEU-APP.onrender.com
-npm run build:ci
 ```
+
+O build pré-renderiza as rotas de `prerender-routes.txt` e depois roda `scripts/check-prerender.mjs`, que confere idioma, título, canonical, imagem de compartilhamento e hreflang de cada página e a presença de `robots.txt`, `sitemap.xml`, favicon e manifesto.
 
 ## Deploy
 
-O deploy de produção é **um por push** em `main`, pela integração Git da Vercel (Root Directory = `frontend`). Não use GitHub Actions para publicar — duplica o deploy. O `vercel.json` define o output SPA e o rewrite `/* → /index.html`.
+Um deploy por push em `main`, pela integração Git da Vercel (Root Directory = `frontend`). O `vercel.json` define o output, o cache dos arquivos com hash e o rewrite de fallback para `/index.html`. Arquivos estáticos (as páginas pré-renderizadas, `robots.txt`, `sitemap.xml`) têm precedência sobre o rewrite.
 
 ## Estrutura
 
-- `src/app/core` — modelos + `PortfolioService` (estado, idioma, cache, chamadas à API)
-- `src/app/pages/home` — página principal (hero, sobre, serviços, experiência, impacto, formação, contato)
-- `src/app/pages/services` — página completa de serviços
-- `src/app/shared` — header (com seletor de idioma), footer, estado de loading
-- `src/styles.css` — design system (tema dark esmeralda, réplica do original)
+- `src/content` — conteúdo nos três idiomas
+- `src/app/core` — modelos, `PortfolioService` (idioma pela URL, metadados por página) e o download do CV ATS
+- `src/app/pages/home` — página principal
+- `src/app/pages/services` — página de serviços
+- `src/app/shared` — header, footer, ícones, menu do CV, currículo para impressão e fundo animado
+- `public` — favicon, ícones, imagem de compartilhamento, `robots.txt`, `sitemap.xml`, marca da Kodeskill
+- `src/styles.css` — design system (marinho + azul elétrico da Kodeskill) e o currículo ATS para impressão

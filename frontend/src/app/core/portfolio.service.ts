@@ -1,12 +1,43 @@
-import { Injectable, computed, effect, inject, signal } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { firstValueFrom, map } from 'rxjs';
-import { environment } from '../../environments/environment';
-import { hydrateContent } from './cv-defaults';
+import { Injectable, PLATFORM_ID, computed, inject, signal } from '@angular/core';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import enUS from '../../content/en-US.json';
+import esES from '../../content/es-ES.json';
+import ptBR from '../../content/pt-BR.json';
 import { Locale, PortfolioContent } from './portfolio.models';
 
+export type Page = 'home' | 'services';
+
+export const SITE_URL = 'https://portfoliocurricular.vercel.app';
+
 const STORAGE_KEY = 'portfolio.locale';
-const LOCALES: Locale[] = ['pt-BR', 'en-US', 'es-ES'];
+const LOCALES: Locale[] = ['en-US', 'pt-BR', 'es-ES'];
+
+const CONTENT: Record<Locale, PortfolioContent> = {
+  'en-US': enUS as unknown as PortfolioContent,
+  'pt-BR': ptBR as unknown as PortfolioContent,
+  'es-ES': esES as unknown as PortfolioContent,
+};
+
+const PREFIX: Record<Locale, string> = {
+  'en-US': '',
+  'pt-BR': '/pt',
+  'es-ES': '/es',
+};
+
+/** Só o idioma, sem região: o conteúdo vale para toda a América Latina, a Europa e os EUA. */
+const HREFLANG: Record<Locale, string> = {
+  'en-US': 'en',
+  'pt-BR': 'pt',
+  'es-ES': 'es',
+};
+
+const OG_LOCALE: Record<Locale, string> = {
+  'en-US': 'en_US',
+  'pt-BR': 'pt_BR',
+  'es-ES': 'es_ES',
+};
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   'pt-BR': 'PT',
@@ -21,23 +52,27 @@ export const LOCALE_NATIVE: Record<Locale, string> = {
 };
 
 /**
- * Estado central do portfólio: idioma selecionado + conteúdo carregado da API
- * Spring Boot (Render). Cache por idioma para trocas instantâneas.
+ * Idioma ativo + conteúdo embutido no build. A URL define o idioma
+ * (`/`, `/pt`, `/es`), o que permite pré-renderizar cada versão.
  */
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
-  private readonly http = inject(HttpClient);
-  private readonly cache = new Map<Locale, PortfolioContent>();
+  private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
+  private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
+  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+  private restoredPreference = false;
 
   readonly locales = LOCALES;
-  readonly locale = signal<Locale>(this.initialLocale());
-  readonly content = signal<PortfolioContent | null>(null);
-  readonly loading = signal<boolean>(true);
-  readonly error = signal<boolean>(false);
+  readonly locale = signal<Locale>('en-US');
+  readonly page = signal<Page>('home');
+  readonly content = computed(() => CONTENT[this.locale()]);
+  readonly homePath = computed(() => PREFIX[this.locale()] || '/');
+  readonly servicesPath = computed(() => `${PREFIX[this.locale()]}/services`);
 
   readonly whatsappHref = computed(() => {
     const c = this.content();
-    if (!c) return '#';
     return `https://wa.me/${c.profile.whatsappNumber}?text=${encodeURIComponent(c.whatsapp.plainMsg)}`;
   });
 
@@ -46,92 +81,98 @@ export class PortfolioService {
     return `https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=${encodeURIComponent(href)}`;
   });
 
-  constructor() {
-    effect(
-      () => {
-        const locale = this.locale();
-        try {
-          localStorage.setItem(STORAGE_KEY, locale);
-        } catch {
-          /* storage indisponível — segue sem persistir */
-        }
-        document.documentElement.lang = locale;
-        this.fetch(locale);
-      },
-      { allowSignalWrites: true },
-    );
+  pathFor(locale: Locale, page: Page = this.page()): string {
+    const prefix = PREFIX[locale];
+    if (page === 'services') return `${prefix}/services`;
+    return prefix || '/';
   }
 
-  setLocale(locale: Locale): void {
+  applyRouteLocale(locale: Locale, page: Page): void {
     this.locale.set(locale);
+    this.page.set(page);
+    this.document.documentElement.lang = locale;
+    this.applyMeta(locale, page);
+    this.restorePreference(locale, page);
   }
 
-  retry(): void {
-    this.fetch(this.locale());
+  contentFor(locale: Locale): PortfolioContent {
+    return CONTENT[locale];
   }
 
-  awaitLocale(locale: Locale): Promise<PortfolioContent> {
-    const cached = this.cache.get(locale);
-    if (cached) return Promise.resolve(cached);
-    return firstValueFrom(
-      this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).pipe(
-        map((data) => {
-          const hydrated = hydrateContent(data);
-          this.cache.set(locale, hydrated);
-          return hydrated;
-        }),
-      ),
-    );
-  }
-
-  private fetch(locale: Locale): void {
-    const cached = this.cache.get(locale);
-    if (cached) {
-      this.content.set(cached);
-      this.loading.set(false);
-      this.error.set(false);
-      return;
-    }
-    this.loading.set(true);
-    this.error.set(false);
-    this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).subscribe({
-      next: (data) => {
-        const hydrated = hydrateContent(data);
-        this.cache.set(locale, hydrated);
-        this.content.set(hydrated);
-        this.loading.set(false);
-        document.title = hydrated.meta.homeTitle;
-        this.prefetchOthers(locale);
-      },
-      error: () => {
-        this.loading.set(false);
-        this.error.set(true);
-      },
-    });
-  }
-
-  private prefetchOthers(current: Locale): void {
-    for (const locale of LOCALES) {
-      if (locale === current || this.cache.has(locale)) continue;
-      this.http.get<PortfolioContent>(`${environment.apiBaseUrl}/api/portfolio/${locale}`).subscribe({
-        next: (data) => this.cache.set(locale, hydrateContent(data)),
-        error: () => {
-          /* prefetch opcional — o download busca de novo se precisar */
-        },
-      });
+  private restorePreference(locale: Locale, page: Page): void {
+    if (!this.isBrowser || this.restoredPreference) return;
+    this.restoredPreference = true;
+    if (locale !== 'en-US') return;
+    const saved = this.savedLocale();
+    if (saved && saved !== locale) {
+      queueMicrotask(() => void this.router.navigateByUrl(this.pathFor(saved, page), { replaceUrl: true }));
     }
   }
 
-  private initialLocale(): Locale {
+  private savedLocale(): Locale | null {
+    if (!this.isBrowser) return null;
     try {
       const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
-      if (saved && LOCALES.includes(saved)) return saved;
+      return saved && LOCALES.includes(saved) ? saved : null;
     } catch {
-      /* ignore */
+      return null;
     }
-    const nav = (navigator.language || 'pt-BR').toLowerCase();
-    if (nav.startsWith('en')) return 'en-US';
-    if (nav.startsWith('es')) return 'es-ES';
-    return 'pt-BR';
+  }
+
+  rememberLocale(locale: Locale): void {
+    if (!this.isBrowser) return;
+    try {
+      localStorage.setItem(STORAGE_KEY, locale);
+    } catch {
+      /* storage indisponível — segue sem persistir */
+    }
+  }
+
+  private applyMeta(locale: Locale, page: Page): void {
+    const c = CONTENT[locale];
+    const title = page === 'services' ? c.meta.servicesTitle : c.meta.homeTitle;
+    const description = page === 'services' ? c.meta.servicesDescription : c.meta.homeDescription;
+    const url = SITE_URL + this.pathFor(locale, page);
+    const image = `${SITE_URL}/og-image.png`;
+
+    this.title.setTitle(title);
+    this.meta.updateTag({ name: 'description', content: description });
+    this.meta.updateTag({ property: 'og:title', content: title });
+    this.meta.updateTag({ property: 'og:description', content: description });
+    this.meta.updateTag({ property: 'og:type', content: page === 'services' ? 'website' : 'profile' });
+    this.meta.updateTag({ property: 'og:url', content: url });
+    this.meta.updateTag({ property: 'og:image', content: image });
+    this.meta.updateTag({ property: 'og:image:width', content: '1200' });
+    this.meta.updateTag({ property: 'og:image:height', content: '630' });
+    this.meta.updateTag({ property: 'og:image:alt', content: c.meta.ogImageAlt });
+    this.meta.updateTag({ property: 'og:locale', content: OG_LOCALE[locale] });
+    this.meta.getTags("property='og:locale:alternate'").forEach((tag) => this.meta.removeTagElement(tag));
+    this.meta.addTags(
+      LOCALES.filter((alt) => alt !== locale).map((alt) => ({ property: 'og:locale:alternate', content: OG_LOCALE[alt] })),
+    );
+    this.meta.updateTag({ property: 'og:site_name', content: c.profile.fullName });
+    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title', content: title });
+    this.meta.updateTag({ name: 'twitter:description', content: description });
+    this.meta.updateTag({ name: 'twitter:image', content: image });
+    this.meta.updateTag({ name: 'twitter:image:alt', content: c.meta.ogImageAlt });
+
+    this.setLink('canonical', url);
+    for (const alt of LOCALES) {
+      this.setLink('alternate', SITE_URL + this.pathFor(alt, page), HREFLANG[alt]);
+    }
+    this.setLink('alternate', SITE_URL + this.pathFor('en-US', page), 'x-default');
+  }
+
+  private setLink(rel: string, href: string, hreflang?: string): void {
+    const selector = hreflang ? `link[rel="${rel}"][hreflang="${hreflang}"]` : `link[rel="${rel}"]:not([hreflang])`;
+    let link = this.document.head.querySelector<HTMLLinkElement>(selector);
+    if (!link) {
+      link = this.document.createElement('link');
+      link.setAttribute('rel', rel);
+      if (hreflang) link.setAttribute('hreflang', hreflang);
+      this.document.head.appendChild(link);
+    }
+    link.setAttribute('href', href);
   }
 }

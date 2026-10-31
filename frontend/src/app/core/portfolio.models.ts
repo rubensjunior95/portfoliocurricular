@@ -4,6 +4,7 @@ export interface Profile {
   firstNames: string;
   surname: string;
   fullName: string;
+  shortName: string;
   email: string;
   phone: string;
   phoneDisplay: string;
@@ -11,6 +12,10 @@ export interface Profile {
   linkedin: string;
   linkedinHandle: string;
   linkedinDisplay: string;
+  github: string;
+  githubDisplay: string;
+  githubAlt: string;
+  githubAltDisplay: string;
   siteDisplay: string;
 }
 
@@ -29,6 +34,8 @@ export interface Nav {
   downloadCvAria: string;
   chooseCvLanguage: string;
   openMenu: string;
+  main: string;
+  skip: string;
 }
 
 export interface Hero {
@@ -38,7 +45,7 @@ export interface Hero {
   ai: string;
   connector: string;
   industry: string;
-  proof: string;
+  availability: string;
   ctaTalk: string;
   ctaServices: string;
   stats: { k: string; v: string }[];
@@ -71,6 +78,8 @@ export interface Company {
   lead: string;
   cvLabel: string;
   cvSummary: string;
+  tagline: string;
+  logoAlt: string;
   offers: CompanyOffer[];
 }
 
@@ -99,16 +108,28 @@ export interface Experience {
   items: ExperienceItem[];
 }
 
+export interface ImpactLink {
+  label: string;
+  href: string;
+}
+
 export interface Impact {
   eyebrow: string;
   title: string;
   subtitle: string;
+  problemLabel: string;
+  stackLabel: string;
+  highlightLabel: string;
   cards: {
     company: string;
     title: string;
     metric: string;
     metricNote: string;
     description: string;
+    problem: string;
+    stack: string[];
+    highlight: string;
+    links?: ImpactLink[];
   }[];
 }
 
@@ -153,6 +174,7 @@ export interface CvCopy {
   phoneLabel: string;
   locationLabel: string;
   linkedinLabel: string;
+  githubLabel: string;
   webLabel: string;
 }
 
@@ -176,6 +198,7 @@ export interface PortfolioContent {
     homeDescription: string;
     servicesTitle: string;
     servicesDescription: string;
+    ogImageAlt: string;
   };
   nav: Nav;
   hero: Hero;

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, NgZone, OnDestroy, ViewChild, afterNextRender, inject } from '@angular/core';
 
 type Block = {
   x: number;
@@ -18,10 +18,12 @@ type Mode = { density: number; opacity: number; fps: number; largeBlocks: boolea
 
 const HERO: Mode = { density: 1, opacity: 1, fps: 60, largeBlocks: true };
 const AMBIENT: Mode = { density: 0.45, opacity: 0.3, fps: 30, largeBlocks: false };
+/** O campo anima só na entrada; depois fica parado (WCAG 2.2.2). */
+const FREEZE_AFTER_MS = 6000;
 
 /**
  * Campo de cubos wireframe + spotlight que segue o pointer.
- * Portado do motion background de portfolio-davidpinho.vercel.app, com a paleta esmeralda deste currículo.
+ * Portado do motion background de portfolio-davidpinho.vercel.app, com a paleta azul da Kodeskill.
  */
 @Component({
   selector: 'app-ambient-field',
@@ -40,7 +42,7 @@ const AMBIENT: Mode = { density: 0.45, opacity: 0.3, fps: 30, largeBlocks: false
     </div>
   `,
 })
-export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
+export class AmbientFieldComponent implements OnDestroy {
   @ViewChild('canvas', { static: true }) private canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('glow', { static: true }) private glowRef!: ElementRef<HTMLElement>;
   @ViewChild('spot', { static: true }) private spotRef!: ElementRef<HTMLElement>;
@@ -54,7 +56,10 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
   private reduced = false;
   private coarse = false;
   private blocks: Block[] = [];
-  private rgb: [number, number, number] = [62, 214, 163];
+  private rgb: [number, number, number] = [46, 140, 255];
+  private started = false;
+  private frozen = false;
+  private freezeTimer?: ReturnType<typeof setTimeout>;
   private pointer = { x: 0, y: 0 };
   private cursor = { x: 0, y: 0 };
   private lastFrame = 0;
@@ -72,17 +77,26 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
     this.pointer.y = e.clientY;
   };
   private readonly onScroll = (): void => this.syncScroll();
-  private readonly onResize = (): void => this.resize();
+  private readonly onResize = (): void => {
+    this.resize();
+    const ctx = this.canvasRef.nativeElement.getContext('2d');
+    if (ctx && (this.frozen || this.reduced)) this.draw(ctx, 0);
+  };
   private readonly onVisibility = (): void => {
     this.running = !document.hidden;
     if (this.running && this.visible && !this.reduced) this.kick();
     else this.stop();
   };
 
-  ngAfterViewInit(): void {
+  constructor() {
+    afterNextRender(() => this.start());
+  }
+
+  private start(): void {
     const canvas = this.canvasRef.nativeElement;
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
+    this.started = true;
 
     this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.coarse = window.matchMedia('(hover: none)').matches;
@@ -96,7 +110,13 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
       this.syncScroll();
       this.applySpotlight();
       this.draw(ctx, 0);
-      if (!this.reduced) this.kick();
+      if (!this.reduced) {
+        this.kick();
+        this.freezeTimer = setTimeout(() => {
+          this.frozen = true;
+          this.stop();
+        }, FREEZE_AFTER_MS);
+      }
 
       window.addEventListener('mousemove', this.onMove, { passive: true });
       window.addEventListener('scroll', this.onScroll, { passive: true });
@@ -106,6 +126,8 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (!this.started) return;
+    clearTimeout(this.freezeTimer);
     this.stop();
     window.removeEventListener('mousemove', this.onMove);
     window.removeEventListener('scroll', this.onScroll);
@@ -119,7 +141,7 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
     if (parts.length === 3 && parts.every((n) => Number.isFinite(n))) {
       return [parts[0], parts[1], parts[2]];
     }
-    return [62, 214, 163];
+    return [46, 140, 255];
   }
 
   private seed(count: number, w: number, h: number): Block[] {
@@ -381,6 +403,7 @@ export class AmbientFieldComponent implements AfterViewInit, OnDestroy {
   };
 
   private kick(): void {
+    if (this.frozen) return;
     this.stop();
     this.running = true;
     this.visible = true;
