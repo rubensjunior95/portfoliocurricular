@@ -98,6 +98,8 @@ export function hydrateContent(raw: PortfolioContent): PortfolioContent {
       linkedinDisplay: raw.profile.linkedinDisplay ?? defaults.linkedinDisplay,
       github: raw.profile.github ?? 'https://github.com/RubensJr-ME',
       githubDisplay: raw.profile.githubDisplay ?? 'github.com/RubensJr-ME',
+      githubAlt: raw.profile.githubAlt ?? 'https://github.com/rubensjunior95',
+      githubAltDisplay: raw.profile.githubAltDisplay ?? 'github.com/rubensjunior95',
       siteDisplay: raw.profile.siteDisplay ?? defaults.siteDisplay,
     },
     nav: {

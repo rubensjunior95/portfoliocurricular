@@ -13,6 +13,8 @@ export interface Profile {
   linkedinDisplay: string;
   github: string;
   githubDisplay: string;
+  githubAlt: string;
+  githubAltDisplay: string;
   siteDisplay: string;
 }
 

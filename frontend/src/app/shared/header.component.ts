@@ -56,6 +56,7 @@ import { DownloadCvMenuComponent } from './download-cv-menu.component';
               rel="noreferrer"
               class="btn btn-primary btn-sm hide-mobile"
             >
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
               {{ c.nav.talk }}
             </a>
             <button

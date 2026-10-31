@@ -20,6 +20,7 @@
 
         <div class="hero-ctas">
           <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
             {{ c.hero.ctaTalk }}
           </a>
           <a routerLink="/services" class="btn btn-outline">{{ c.hero.ctaServices }}</a>
@@ -284,9 +285,14 @@
         </div>
         <div class="languages-card" appReveal>
           <p class="languages-label">{{ c.education.languagesLabel }}</p>
-          @for (lang of c.education.languages; track lang.name) {
-            <p><strong>{{ lang.name }}</strong> <span class="muted">{{ lang.level }}</span></p>
-          }
+          <div class="language-list">
+            @for (lang of c.education.languages; track lang.name) {
+              <p class="language-item">
+                <strong>{{ lang.name }}</strong>
+                <span>{{ lang.level }}</span>
+              </p>
+            }
+          </div>
         </div>
       </div>
     </div>
@@ -308,25 +314,58 @@
 
         <div class="contact-rows">
           <a [href]="'mailto:' + c.profile.email" class="contact-row" appReveal [style.--i]="0">
-            <span class="contact-label">{{ c.contact.email }}</span>
-            <span class="contact-value">{{ c.profile.email }}</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="stroke" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">{{ c.contact.email }}</span>
+              <span class="contact-value">{{ c.profile.email }}</span>
+            </span>
           </a>
           <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="contact-row" appReveal [style.--i]="1">
-            <span class="contact-label">WhatsApp</span>
-            <span class="contact-value">{{ c.profile.phoneDisplay }}</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="stroke" viewBox="0 0 24 24"><path d="M12 3.2A8.3 8.3 0 0 0 5.1 16L4 20.2l4.3-1.1A8.3 8.3 0 1 0 12 3.2z"/><path d="M9.1 9.4c.2-.5.4-.5.7-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .4-.2.6l-.4.4c-.1.2-.1.3 0 .5.4.7 1.1 1.3 1.8 1.7.2.1.4.1.5-.1l.5-.5c.2-.2.4-.1.6 0l1.4.7c.3.1.4.3.3.6-.2.7-.9 1.2-1.6 1.2-2.4 0-5.2-2.6-5.6-4.8-.2-1 .2-1.8.5-2.6z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">WhatsApp</span>
+              <span class="contact-value">{{ c.profile.phoneDisplay }}</span>
+            </span>
           </a>
           <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer" class="contact-row" appReveal [style.--i]="2">
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">{{ c.profile.linkedinHandle }}</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="solid" viewBox="0 0 24 24"><path d="M6.2 9H4v10.5h2.2V9zM5.1 4.2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM20 19.5h-2.2v-5.4c0-1.5-.5-2.5-1.9-2.5-1 0-1.5.7-1.8 1.3-.1.2-.1.5-.1.8v5.8H11.8V9h2.1v1.4c.4-.7 1.2-1.7 3-1.7 2.2 0 3.1 1.4 3.1 4.5v6.3z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">{{ c.profile.linkedinHandle }}</span>
+            </span>
           </a>
           <div class="contact-row static" appReveal [style.--i]="3">
-            <span class="contact-label">{{ c.contact.location }}</span>
-            <span class="contact-value">{{ c.contact.locationValue }}</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="solid" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.6c-2.7.6-3.3-1.2-3.3-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1 2.8.8.1-.6.3-1 .6-1.3-2.2-.2-4.4-1.1-4.4-4.8 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 4.8 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.2.1 2.5.6.7 1 1.5 1 2.6 0 3.7-2.3 4.6-4.5 4.8.4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.2z"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-links">
+                <a [href]="c.profile.githubAlt" target="_blank" rel="noreferrer">{{ c.profile.githubAltDisplay }}</a>
+                <a [href]="c.profile.github" target="_blank" rel="noreferrer">{{ c.profile.githubDisplay }}</a>
+              </span>
+            </span>
+          </div>
+          <div class="contact-row static" appReveal [style.--i]="4">
+            <span class="contact-icon" aria-hidden="true">
+              <svg class="stroke" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            </span>
+            <span class="contact-copy">
+              <span class="contact-label">{{ c.contact.location }}</span>
+              <span class="contact-value">{{ c.contact.locationValue }}</span>
+            </span>
           </div>
         </div>
 
         <div class="contact-ctas" appReveal>
           <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-glow">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3.1A8.4 8.4 0 0 0 5 16.2L3.8 20.5l4.4-1.1A8.4 8.4 0 1 0 12 3.1zm4.7 11.8c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.8-.3-1.4-.5-2.5-1.1-4.1-3.6-4.2-3.7-.1-.2-1-1.3-1-2.5s.6-1.8.9-2 .6-.3.9-.3h.4c.2 0 .4 0 .5.4.2.5.7 1.7.8 1.8.1.2 0 .3-.1.5l-.4.4c-.1.1-.2.3 0 .5.3.6 1 1.3 1.6 1.6.2.1.3.1.5 0l.4-.5c.1-.2.3-.1.5 0l1.2.6c.2.1.4.2.4.3.1.2.1.6-.1 1.2z"/></svg>
             {{ c.contact.whatsappCta }}
           </a>
           <app-download-cv-menu />

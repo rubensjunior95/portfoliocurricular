@@ -13,11 +13,13 @@
     "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
     "siteDisplay": "https://portfoliocurricular.vercel.app",
     "github": "https://github.com/RubensJr-ME",
-    "githubDisplay": "github.com/RubensJr-ME"
+    "githubDisplay": "github.com/RubensJr-ME",
+    "githubAlt": "https://github.com/rubensjunior95",
+    "githubAltDisplay": "github.com/rubensjunior95"
   },
   "meta": {
     "homeTitle": "Rubens Freitas | Fullstack Software Engineer (+10 Years Exp)",
-    "homeDescription": "Fullstack software engineer with 10+ years of experience. Available for global remote B2B contracts (USD/EUR) and relocation to Portugal, Spain, or Uruguay.",
+    "homeDescription": "Fullstack software engineer with 10+ years of experience. Available for global remote B2B contracts (USD/EUR) and relocation to North America, South America, or Europe.",
     "servicesTitle": "Services — Rubens Florentino",
     "servicesDescription": "Technology services by Rubens Florentino: AI implementation, fullstack development, industrial automation, mentoring and IT management."
   },
@@ -62,7 +64,7 @@
       }
     ],
     "photoAlt": "Rubens Florentino Freitas Junior, founder of Kodeskill",
-    "availability": "Available for Global Remote B2B Contracts (USD/EUR) & Relocation (Portugal / Spain / Uruguay)."
+    "availability": "Available for Global Remote B2B Contracts (USD/EUR) & Relocation (North America, South America, or Europe)."
   },
   "about": {
     "eyebrow": "About",
@@ -125,13 +127,13 @@
     "lead": "WEG, Legacy and the other roles are not the destination. Each one built repertoire for better results and a better experience for Kodeskill clients.",
     "items": [
       {
-        "role": "IT Leader",
+        "role": "IT Leader (B2B Contractor)",
         "company": "Legacy Eco Group",
         "location": "Americana — SP",
         "period": "03/2025 — 07/2026",
         "paragraphs": [
           "Architecture: I structured the IT department and consolidated the group’s systems so data and processes lived in one place.",
-          "Action: I led end-to-end digitization, AI deployment, and mentoring for managers and teams, in parallel with Kodeskill.",
+          "Action: as a B2B contractor, in parallel with Kodeskill, I led end-to-end digitization, AI deployment, and mentoring for managers and teams.",
           "Impact: an estimated R$ 125K per year saved on software licenses, with operational steps digitized."
         ],
         "featuredHighlight": "≈ R$ 125K/year saved on licenses",
@@ -231,13 +233,7 @@
           "Pagar.me",
           "Hexagonal architecture"
         ],
-        "highlight": "A modular serverless monolith, hexagonal domain, and row-level security per company.",
-        "links": [
-          {
-            "label": "GitHub",
-            "href": "https://github.com/RubensJr-ME/levflow"
-          }
-        ]
+        "highlight": "A modular serverless monolith, hexagonal domain, and row-level security per company."
       },
       {
         "company": "Framefy",
@@ -263,16 +259,12 @@
             "href": "https://www.framefystudio.com"
           },
           {
-            "label": "Frontend",
+            "label": "GitHub Front",
             "href": "https://github.com/framefystudio/framefy_frontend"
           },
           {
-            "label": "Backend",
+            "label": "GitHub Back",
             "href": "https://github.com/framefystudio/framefy_backend"
-          },
-          {
-            "label": "MasterClass",
-            "href": "https://github.com/infinityintelligence07-tech/masterclass_integracao"
           }
         ]
       }
@@ -472,7 +464,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's build something together",
-    "body": "Available for global remote B2B contracts (USD/EUR), full-time roles, and relocation to Portugal, Spain, or Uruguay.",
+    "body": "Available for global remote B2B contracts (USD/EUR), full-time roles, and relocation to North America, South America, or Europe.",
     "email": "Email",
     "location": "Location",
     "locationValue": "Americana — SP, Brazil",

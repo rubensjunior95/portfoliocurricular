@@ -22,6 +22,8 @@ import { PortfolioService } from '../core/portfolio.service';
           </nav>
           <div class="footer-links">
             <a [href]="c.profile.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a [href]="c.profile.githubAlt" target="_blank" rel="noreferrer">{{ c.profile.githubAltDisplay }}</a>
+            <a [href]="c.profile.github" target="_blank" rel="noreferrer">{{ c.profile.githubDisplay }}</a>
             <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer">WhatsApp</a>
             <a [href]="'mailto:' + c.profile.email">E-mail</a>
           </div>

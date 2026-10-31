@@ -13,11 +13,13 @@
     "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
     "siteDisplay": "https://portfoliocurricular.vercel.app",
     "github": "https://github.com/RubensJr-ME",
-    "githubDisplay": "github.com/RubensJr-ME"
+    "githubDisplay": "github.com/RubensJr-ME",
+    "githubAlt": "https://github.com/rubensjunior95",
+    "githubAltDisplay": "github.com/rubensjunior95"
   },
   "meta": {
     "homeTitle": "Rubens Freitas | Ingeniero de Software Full Stack (+10 Años)",
-    "homeDescription": "Ingeniero de software full stack con más de 10 años de experiencia. Disponible para contratos remotos B2B y reubicación internacional (España / Uruguay - Mercosur).",
+    "homeDescription": "Ingeniero de software full stack con más de 10 años de experiencia. Disponible para contratos remotos B2B y reubicación en América del Norte, América del Sur o Europa.",
     "servicesTitle": "Servicios — Rubens Florentino",
     "servicesDescription": "Servicios tecnológicos de Rubens Florentino: implantación de IA, desarrollo fullstack, automatización industrial, mentoría y gestión de TI."
   },
@@ -62,7 +64,7 @@
       }
     ],
     "photoAlt": "Rubens Florentino Freitas Junior, fundador de Kodeskill",
-    "availability": "Disponible para Contratos Remotos B2B y Reubicación Internacional (España / Uruguay - Mercosur)."
+    "availability": "Disponible para Contratos Remotos B2B y Reubicación (América del Norte, América del Sur o Europa)."
   },
   "about": {
     "eyebrow": "Sobre mí",
@@ -125,13 +127,13 @@
     "lead": "WEG, Legacy y las demás etapas no son el punto de llegada. Cada una construyó repertorio para generar mejor resultado y una mejor experiencia para los clientes de Kodeskill.",
     "items": [
       {
-        "role": "Líder de TI",
+        "role": "Líder de TI (Contractor B2B)",
         "company": "Legacy Eco Group",
         "location": "Americana — SP",
         "period": "03/2025 — 07/2026",
         "paragraphs": [
           "Arquitectura: estructuré el departamento de TI y consolidé los sistemas del grupo, con datos y procesos en el mismo lugar.",
-          "Acción: conduje la digitalización de extremo a extremo, la implantación de IA y mentorías con gestores y equipos, en paralelo a Kodeskill.",
+          "Acción: actué como contractor B2B, en paralelo a Kodeskill, en la digitalización de extremo a extremo, la implantación de IA y mentorías con gestores y equipos.",
           "Impacto: reducción estimada de R$ 125 mil al año en licencias, con etapas de la operación digitalizadas."
         ],
         "featuredHighlight": "≈ R$ 125 mil/año ahorrados en licencias",
@@ -231,13 +233,7 @@
           "Pagar.me",
           "Arquitectura hexagonal"
         ],
-        "highlight": "Monolito modular serverless, dominio hexagonal y aislamiento por Row-Level Security.",
-        "links": [
-          {
-            "label": "GitHub",
-            "href": "https://github.com/RubensJr-ME/levflow"
-          }
-        ]
+        "highlight": "Monolito modular serverless, dominio hexagonal y aislamiento por Row-Level Security."
       },
       {
         "company": "Framefy",
@@ -263,16 +259,12 @@
             "href": "https://www.framefystudio.com"
           },
           {
-            "label": "Frontend",
+            "label": "GitHub Front",
             "href": "https://github.com/framefystudio/framefy_frontend"
           },
           {
-            "label": "Backend",
+            "label": "GitHub Back",
             "href": "https://github.com/framefystudio/framefy_backend"
-          },
-          {
-            "label": "MasterClass",
-            "href": "https://github.com/infinityintelligence07-tech/masterclass_integracao"
           }
         ]
       }
@@ -472,7 +464,7 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "¿Construimos algo juntos?",
-    "body": "Disponible para contratos remotos B2B y para reubicación internacional (España / Uruguay). Escríbame por el canal que prefiera.",
+    "body": "Disponible para contratos remotos B2B y para reubicación en América del Norte, América del Sur o Europa. Escríbame por el canal que prefiera.",
     "email": "Correo",
     "location": "Ubicación",
     "locationValue": "Americana — SP, Brasil",

@@ -13,11 +13,13 @@
     "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
     "siteDisplay": "https://portfoliocurricular.vercel.app",
     "github": "https://github.com/RubensJr-ME",
-    "githubDisplay": "github.com/RubensJr-ME"
+    "githubDisplay": "github.com/RubensJr-ME",
+    "githubAlt": "https://github.com/rubensjunior95",
+    "githubAltDisplay": "github.com/rubensjunior95"
   },
   "meta": {
     "homeTitle": "Rubens Freitas | Engenheiro de Software Fullstack (+10 Anos)",
-    "homeDescription": "Engenheiro de software fullstack com mais de 10 anos de experiência. Disponível para contratos B2B/CLT e realocação internacional (Portugal / Europa / Mercosul).",
+    "homeDescription": "Engenheiro de software fullstack com mais de 10 anos de experiência. Disponível para contratos B2B/CLT e realocação na América do Norte, América do Sul ou Europa.",
     "servicesTitle": "Serviços — Rubens Florentino",
     "servicesDescription": "Serviços tecnológicos oferecidos por Rubens Florentino: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI."
   },
@@ -62,7 +64,7 @@
       }
     ],
     "photoAlt": "Rubens Florentino Freitas Junior, fundador da Kodeskill",
-    "availability": "Disponível para Contratos B2B/CLT e Realocação Internacional (Portugal / Europa / Mercosul)."
+    "availability": "Disponível para Contratos B2B/CLT e Realocação (América do Norte, América do Sul ou Europa)."
   },
   "about": {
     "eyebrow": "Sobre",
@@ -125,13 +127,13 @@
     "lead": "WEG, Legacy e as demais passagens não são o ponto de chegada. Cada uma construiu repertório para gerar resultado e experiência melhores para os clientes da Kodeskill.",
     "items": [
       {
-        "role": "Líder de TI",
+        "role": "Líder de TI (Contractor B2B)",
         "company": "Legacy Eco Group",
         "location": "Americana — SP",
         "period": "03/2025 — 07/2026",
         "paragraphs": [
           "Arquitetura: estruturei o departamento de TI e consolidei os sistemas do grupo, com dados e processos no mesmo lugar.",
-          "Ação: conduzi a digitalização de ponta a ponta, a implantação de IA e mentorias com gestores e equipes, em paralelo à Kodeskill.",
+          "Ação: atuei como contractor B2B, em paralelo à Kodeskill, na digitalização de ponta a ponta, na implantação de IA e em mentorias com gestores e equipes.",
           "Impacto: redução estimada de R$ 125 mil por ano em licenças, com etapas da operação digitalizadas."
         ],
         "featuredHighlight": "≈ R$ 125 mil/ano economizados em licenças",
@@ -231,13 +233,7 @@
           "Pagar.me",
           "Arquitetura hexagonal"
         ],
-        "highlight": "Monólito modular serverless, domínio hexagonal e isolamento por Row-Level Security.",
-        "links": [
-          {
-            "label": "GitHub",
-            "href": "https://github.com/RubensJr-ME/levflow"
-          }
-        ]
+        "highlight": "Monólito modular serverless, domínio hexagonal e isolamento por Row-Level Security."
       },
       {
         "company": "Framefy",
@@ -263,16 +259,12 @@
             "href": "https://www.framefystudio.com"
           },
           {
-            "label": "Frontend",
+            "label": "GitHub Front",
             "href": "https://github.com/framefystudio/framefy_frontend"
           },
           {
-            "label": "Backend",
+            "label": "GitHub Back",
             "href": "https://github.com/framefystudio/framefy_backend"
-          },
-          {
-            "label": "MasterClass",
-            "href": "https://github.com/infinityintelligence07-tech/masterclass_integracao"
           }
         ]
       }
@@ -472,7 +464,7 @@
   "contact": {
     "eyebrow": "Contato",
     "title": "Vamos construir algo juntos?",
-    "body": "Disponível para contratos B2B ou CLT e para realocação internacional. Entre em contato pelo canal que preferir.",
+    "body": "Disponível para contratos B2B ou CLT e para realocação na América do Norte, América do Sul ou Europa. Entre em contato pelo canal que preferir.",
     "email": "E-mail",
     "location": "Localização",
     "locationValue": "Americana — SP",
