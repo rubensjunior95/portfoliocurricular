@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../../core/portfolio.service';
 import { DownloadCvMenuComponent } from '../../shared/download-cv-menu.component';
 import { FooterComponent } from '../../shared/footer.component';
@@ -9,14 +8,14 @@ import { IconComponent } from '../../shared/icon.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, HeaderComponent, FooterComponent, DownloadCvMenuComponent, IconComponent],
+  imports: [HeaderComponent, FooterComponent, DownloadCvMenuComponent, IconComponent],
   templateUrl: './home.component.html',
   host: { class: 'site-page' },
 })
 export class HomeComponent {
   readonly portfolio = inject(PortfolioService);
 
-  /** Separa "Arquitetura: texto" em rótulo e corpo para destacar o rótulo. */
+  /** Separa "LevFlow: texto" em rótulo e corpo para destacar o rótulo. */
   label(paragraph: string): { label: string; body: string } | null {
     const match = /^([^:]{3,24}):\s+(.*)$/s.exec(paragraph);
     return match ? { label: match[1], body: match[2] } : null;

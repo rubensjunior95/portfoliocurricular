@@ -332,7 +332,8 @@ button { font: inherit; }
   gap: 0.75rem;
   margin-top: 2rem;
 }
-.hero-services { margin-top: 1.25rem; }
+.hero-secondary { margin-top: 1.25rem; }
+.fx-note { margin-top: 0.9rem; color: var(--muted); font-size: 0.78rem; }
 
 .hero-visual {
   position: relative;
@@ -465,74 +466,6 @@ button { font: inherit; }
   line-height: 1.4;
 }
 
-/* ---------- Kodeskill ---------- */
-.company-panel {
-  display: grid;
-  gap: 2.5rem;
-  padding: clamp(1.75rem, 4vw, 3rem);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(60% 80% at 0% 0%, rgba(31, 111, 235, 0.22), transparent 60%),
-    var(--surface);
-}
-.company-brand {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-.company-mark { width: clamp(5.5rem, 12vw, 8rem); height: auto; }
-.company-wordmark {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4.6vw, 3rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-.company-wordmark span {
-  display: block;
-  margin-top: 0.3rem;
-  color: var(--primary);
-  font-size: 0.42em;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-.company-tagline { margin-top: 0.8rem; color: var(--cyan); font-size: 0.98rem; }
-.company-title {
-  margin-top: 0.6rem;
-  max-width: 26ch;
-  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-  font-weight: 800;
-}
-.company-offers {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-.company-offers li { padding-top: 1rem; border-top: 1px solid var(--border-strong); }
-.company-offers h3 { font-size: 1rem; font-weight: 700; }
-.company-offers p { margin-top: 0.4rem; color: var(--muted); font-size: 0.92rem; }
-
-/* ---------- Serviços (resumo) ---------- */
-.service-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-}
-.service-item {
-  padding: 1.75rem 1.6rem;
-  border-left: 1px solid var(--border);
-  transition: background 0.25s var(--ease-out-quart);
-}
-.service-item:first-child { border-left: none; border-radius: var(--radius-lg) 0 0 var(--radius-lg); }
-.service-item:last-child { border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
-.service-item:focus-visible { outline-offset: -3px; }
-.service-item:hover { background: rgba(14, 35, 80, 0.6); }
-.service-item h3 { font-size: 1.1rem; font-weight: 700; }
-.service-item p { margin-top: 0.6rem; color: var(--muted); font-size: 0.93rem; }
-
 /* ---------- Experiência ---------- */
 .timeline {
   position: relative;
@@ -587,6 +520,7 @@ button { font: inherit; }
 .exp-paragraph { color: var(--muted); font-size: 0.95rem; }
 .exp-paragraph strong { color: var(--text); font-weight: 700; }
 .highlights { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.2rem; }
+.exp-stack { margin-top: 1rem; }
 
 /* ---------- Impacto ---------- */
 .impact-grid {
@@ -687,16 +621,6 @@ button { font: inherit; }
 }
 .courses-block > .education-list { padding: 0 1.2rem 1rem; }
 .courses-block .edu-item:first-child { padding-top: 1rem; border-top: 1px solid var(--border); }
-.course-parts { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.75rem; }
-.course-parts li {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--border-strong);
-  font-size: 0.85rem;
-  line-height: 1.35;
-}
-
 .skill-groups { display: flex; flex-direction: column; gap: 1.6rem; }
 .skill-group h3 { font-size: 0.95rem; font-weight: 700; }
 
@@ -739,9 +663,6 @@ button { font: inherit; }
 .contact-copy { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
 .contact-label { color: var(--muted); font-size: 0.76rem; }
 .contact-value { font-weight: 600; overflow-wrap: anywhere; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 0.15rem 1rem; }
-.contact-links a { font-weight: 600; overflow-wrap: anywhere; transition: color 0.2s var(--ease-out-quart); }
-.contact-links a:hover { color: var(--primary); }
 .contact-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 .contact-cta-band { max-width: 42rem; }
 .other-contacts { margin-top: 1.5rem; font-size: 0.92rem; }
@@ -808,7 +729,6 @@ button { font: inherit; }
 .footer-brand { display: flex; align-items: center; gap: 0.85rem; }
 .footer-brand img { width: 34px; height: auto; }
 .footer-name { color: var(--text); font-family: var(--font-display); font-weight: 700; }
-.footer-tagline { color: var(--muted); font-size: 0.82rem; }
 .footer-nav, .footer-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; }
 .footer-nav a, .footer-links a { transition: color 0.2s var(--ease-out-quart); }
 .footer-nav a:hover, .footer-links a:hover { color: var(--primary); }
@@ -995,8 +915,6 @@ button { font: inherit; }
 @media (min-width: 768px) {
   .hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
   .education-grid { grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; }
-  .company-panel { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; }
-  .company-brand { flex-direction: column; align-items: flex-start; }
 }
 
 @media (min-width: 900px) {
@@ -1079,12 +997,8 @@ button { font: inherit; }
   .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3rem; }
   .hero-stat:nth-child(3) { border-left: none; }
   .hero-stat:nth-child(n + 3) { border-top: 1px solid var(--border); }
-  .service-list { grid-template-columns: 1fr; }
-  .service-item { border-left: none; border-top: 1px solid var(--border); }
-  .service-item:first-child { border-top: none; }
   .impact-grid, .service-grid { grid-template-columns: 1fr; }
   .impact-card.impact-case { grid-template-columns: 1fr; gap: 1.25rem; }
-  .company-offers { grid-template-columns: 1fr; }
   .exp-card, .impact-card { padding: 1.35rem; }
   .timeline { padding-left: 1.1rem; }
   .timeline::before { left: 0.15rem; }
@@ -1177,8 +1091,8 @@ button { font: inherit; }
 .cv-print.cv-ats a { text-decoration: underline; }
 .cv-print.cv-ats .cv-contacts {
   display: flex;
-  flex-direction: column;
-  gap: 1pt;
+  flex-wrap: wrap;
+  gap: 1pt 10pt;
   margin: 5pt 0 0;
   padding: 0;
   list-style: none;
@@ -1205,21 +1119,8 @@ button { font: inherit; }
   color: #333333;
   font-size: 9.5pt;
 }
-.cv-print.cv-ats .cv-edu,
-.cv-print.cv-ats .cv-lang {
-  display: flex;
-  flex-direction: column;
-  gap: 1pt;
-  margin-top: 3pt;
-}
-.cv-print.cv-ats .cv-edu span,
-.cv-print.cv-ats .cv-lang span {
-  color: #333333;
-  font-size: 9.5pt;
-  line-height: 1.35;
-}
-.cv-print.cv-ats .cv-course { margin-top: 1.5pt; font-size: 9pt; }
-.cv-print.cv-ats .cv-body { display: block; }
+.cv-print.cv-ats .cv-edu { margin-top: 1.5pt; }
+.cv-print.cv-ats .cv-note { margin-top: 2pt; color: #333333; font-size: 8pt; }
 
 @media print {
   @page { size: A4; margin: 10mm; }

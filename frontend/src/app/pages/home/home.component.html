@@ -16,15 +16,15 @@
         <span>{{ c.hero.availability }}</span>
       </p>
       <div class="hero-ctas">
-        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary">
-          <app-icon name="whatsapp" />
-          {{ c.hero.ctaTalk }}
+        <a [href]="'mailto:' + c.profile.email" class="btn btn-primary">
+          <app-icon name="mail" />
+          {{ c.hero.ctaEmail }}
         </a>
         <app-download-cv-menu />
       </div>
-      <a [routerLink]="portfolio.servicesPath()" class="link-primary hero-services">
-        {{ c.hero.ctaServices }}
-        <app-icon name="arrow" [size]="15" />
+      <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="link-primary hero-secondary">
+        <app-icon name="whatsapp" [size]="15" />
+        {{ c.hero.ctaTalk }}
       </a>
     </div>
 
@@ -58,6 +58,9 @@
         </div>
       }
     </dl>
+    @if (c.fxNote) {
+      <p class="fx-note">{{ c.fxNote }}</p>
+    }
   </div>
 </section>
 
@@ -70,60 +73,6 @@
         {{ c.about.bodyBefore }} <strong>{{ c.about.cs }}</strong> {{ c.about.and }}
         <strong>{{ c.about.ee }}</strong>{{ c.about.bodyAfter }}
       </p>
-    </div>
-  </div>
-</section>
-
-@if (c.company; as company) {
-  <section id="kodeskill" tabindex="-1" class="section-y">
-    <div class="page-container">
-      <article class="company-panel">
-        <div class="company-brand">
-          <img src="/brand/kodeskill-k.png" [alt]="company.logoAlt" width="216" height="173" class="company-mark" loading="lazy" />
-          <div>
-            <p class="company-wordmark">KODESKILL <span>LTDA.</span></p>
-            <p class="company-tagline">{{ company.tagline }}</p>
-          </div>
-        </div>
-        <div class="company-body">
-          <p class="eyebrow">{{ company.eyebrow }} · {{ company.role }} · {{ company.period }}</p>
-          <h2 class="company-title">{{ company.title }}</h2>
-          <p class="section-description">{{ company.lead }}</p>
-          <ul class="company-offers">
-            @for (offer of company.offers; track offer.title) {
-              <li>
-                <h3>{{ offer.title }}</h3>
-                <p>{{ offer.description }}</p>
-              </li>
-            }
-          </ul>
-        </div>
-      </article>
-    </div>
-  </section>
-}
-
-<section id="servicos" tabindex="-1" class="section-y section-alt">
-  <div class="page-container">
-    <div class="section-heading-row">
-      <div class="section-heading no-margin">
-        <p class="eyebrow">{{ c.servicesSection.eyebrow }}</p>
-        <h2>{{ c.servicesSection.title }}</h2>
-        <p class="section-description">{{ c.servicesSection.lead }}</p>
-      </div>
-      <a [routerLink]="portfolio.servicesPath()" class="link-primary">
-        {{ c.servicesSection.seeFullPage }}
-        <app-icon name="arrow" [size]="15" />
-      </a>
-    </div>
-
-    <div class="service-list">
-      @for (s of c.servicesSection.items; track s.title) {
-        <a [routerLink]="portfolio.servicesPath()" class="service-item">
-          <h3>{{ s.title }}</h3>
-          <p>{{ s.description }}</p>
-        </a>
-      }
     </div>
   </div>
 </section>
@@ -151,21 +100,33 @@
           <div class="exp-body">
             @for (p of exp.paragraphs; track p) {
               @if (label(p); as part) {
-                <p class="exp-paragraph"><strong>{{ part.label }}</strong> {{ part.body }}</p>
+                <p class="exp-paragraph"><strong>{{ part.label }}:</strong> {{ part.body }}</p>
               } @else {
                 <p class="exp-paragraph">{{ p }}</p>
               }
             }
           </div>
-          @if (exp.featuredHighlight || exp.highlights?.length) {
+          @if (exp.featuredHighlight) {
             <ul class="highlights">
-              @if (exp.featuredHighlight) {
-                <li class="pill featured">{{ exp.featuredHighlight }}</li>
-              }
-              @for (h of exp.highlights ?? []; track h) {
-                <li class="pill">{{ h }}</li>
+              <li class="pill featured">{{ exp.featuredHighlight }}</li>
+            </ul>
+          }
+          @if (exp.stack?.length) {
+            <ul class="tech-pills exp-stack" [attr.aria-label]="c.experience.stackLabel">
+              @for (tech of exp.stack; track tech) {
+                <li>{{ tech }}</li>
               }
             </ul>
+          }
+          @if (exp.links?.length) {
+            <div class="impact-links">
+              @for (link of exp.links; track link.href) {
+                <a class="btn btn-outline btn-sm" [href]="link.href" target="_blank" rel="noreferrer">
+                  <app-icon [name]="link.href.includes('github.com') ? 'github' : 'external'" [size]="14" />
+                  {{ link.label }}
+                </a>
+              }
+            </div>
           }
         </li>
       }
@@ -179,6 +140,9 @@
       <p class="eyebrow">{{ c.impact.eyebrow }}</p>
       <h2>{{ c.impact.title }}</h2>
       <p class="section-description">{{ c.impact.subtitle }}</p>
+      @if (c.fxNote) {
+        <p class="fx-note">{{ c.fxNote }}</p>
+      }
     </div>
 
     <div class="impact-grid">
@@ -248,16 +212,6 @@
               <h3>{{ course.title }}</h3>
               <p class="edu-school">{{ course.school }}</p>
               <p class="edu-period">{{ course.period }}</p>
-              @if (course.parts?.length) {
-                <ul class="course-parts">
-                  @for (part of course.parts; track part.title) {
-                    <li>
-                      <span>{{ part.title }}</span>
-                      <span class="edu-period">{{ part.period }}</span>
-                    </li>
-                  }
-                </ul>
-              }
             </li>
           }
         </ul>
@@ -327,16 +281,13 @@
             <span class="contact-value">{{ c.profile.linkedinHandle }}</span>
           </span>
         </a>
-        <div class="contact-row static">
+        <a [href]="c.profile.github" target="_blank" rel="noreferrer" class="contact-row">
           <span class="contact-icon"><app-icon name="github" /></span>
           <span class="contact-copy">
             <span class="contact-label">GitHub</span>
-            <span class="contact-links">
-              <a [href]="c.profile.githubAlt" target="_blank" rel="noreferrer">{{ c.profile.githubAltDisplay }}</a>
-              <a [href]="c.profile.github" target="_blank" rel="noreferrer">{{ c.profile.githubDisplay }}</a>
-            </span>
+            <span class="contact-value">{{ c.profile.githubDisplay }}</span>
           </span>
-        </div>
+        </a>
         <div class="contact-row static">
           <span class="contact-icon"><app-icon name="pin" /></span>
           <span class="contact-copy">
@@ -347,11 +298,15 @@
       </div>
 
       <div class="contact-ctas">
-        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary">
+        <a [href]="'mailto:' + c.profile.email" class="btn btn-primary">
+          <app-icon name="mail" />
+          {{ c.hero.ctaEmail }}
+        </a>
+        <app-download-cv-menu />
+        <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-outline">
           <app-icon name="whatsapp" />
           {{ c.contact.whatsappCta }}
         </a>
-        <app-download-cv-menu />
       </div>
     </div>
 

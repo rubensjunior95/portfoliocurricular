@@ -1,7 +1,6 @@
-import { Injectable, PLATFORM_ID, computed, inject, signal } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Injectable, computed, inject, signal } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import enUS from '../../content/en-US.json';
 import esES from '../../content/es-ES.json';
 import ptBR from '../../content/pt-BR.json';
@@ -11,7 +10,6 @@ export type Page = 'home' | 'services';
 
 export const SITE_URL = 'https://portfoliocurricular.vercel.app';
 
-const STORAGE_KEY = 'portfolio.locale';
 const LOCALES: Locale[] = ['en-US', 'pt-BR', 'es-ES'];
 
 const CONTENT: Record<Locale, PortfolioContent> = {
@@ -58,11 +56,8 @@ export const LOCALE_NATIVE: Record<Locale, string> = {
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
   private readonly document = inject(DOCUMENT);
-  private readonly router = inject(Router);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
-  private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-  private restoredPreference = false;
 
   readonly locales = LOCALES;
   readonly locale = signal<Locale>('en-US');
@@ -92,40 +87,10 @@ export class PortfolioService {
     this.page.set(page);
     this.document.documentElement.lang = locale;
     this.applyMeta(locale, page);
-    this.restorePreference(locale, page);
   }
 
   contentFor(locale: Locale): PortfolioContent {
     return CONTENT[locale];
-  }
-
-  private restorePreference(locale: Locale, page: Page): void {
-    if (!this.isBrowser || this.restoredPreference) return;
-    this.restoredPreference = true;
-    if (locale !== 'en-US') return;
-    const saved = this.savedLocale();
-    if (saved && saved !== locale) {
-      queueMicrotask(() => void this.router.navigateByUrl(this.pathFor(saved, page), { replaceUrl: true }));
-    }
-  }
-
-  private savedLocale(): Locale | null {
-    if (!this.isBrowser) return null;
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
-      return saved && LOCALES.includes(saved) ? saved : null;
-    } catch {
-      return null;
-    }
-  }
-
-  rememberLocale(locale: Locale): void {
-    if (!this.isBrowser) return;
-    try {
-      localStorage.setItem(STORAGE_KEY, locale);
-    } catch {
-      /* storage indisponível — segue sem persistir */
-    }
   }
 
   private applyMeta(locale: Locale, page: Page): void {

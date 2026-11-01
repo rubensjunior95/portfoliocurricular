@@ -2,12 +2,10 @@ import { Component, ElementRef, HostListener, Input, ViewChild, inject, signal }
 import { RouterLink } from '@angular/router';
 import { LOCALE_LABELS, LOCALE_NATIVE, PortfolioService } from '../core/portfolio.service';
 import { DownloadCvMenuComponent } from './download-cv-menu.component';
-import { IconComponent } from './icon.component';
-
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, DownloadCvMenuComponent, IconComponent],
+  imports: [RouterLink, DownloadCvMenuComponent],
   template: `
     @let c = portfolio.content();
     <header class="site-header no-print">
@@ -20,9 +18,6 @@ import { IconComponent } from './icon.component';
         <nav #nav id="site-nav" class="header-nav" [class.open]="menuOpen()" [attr.aria-label]="c.nav.main">
           @if (mode === 'home') {
             <a [routerLink]="portfolio.homePath()" fragment="sobre" (click)="close()">{{ c.nav.about }}</a>
-            @if (c.company) {
-              <a [routerLink]="portfolio.homePath()" fragment="kodeskill" (click)="close()">{{ c.nav.company }}</a>
-            }
             <a [routerLink]="portfolio.homePath()" fragment="experiencia" (click)="close()">{{ c.nav.experience }}</a>
             <a [routerLink]="portfolio.homePath()" fragment="impacto" (click)="close()">{{ c.nav.impact }}</a>
             <a [routerLink]="portfolio.homePath()" fragment="formacao" (click)="close()">{{ c.nav.education }}</a>
@@ -45,15 +40,13 @@ import { IconComponent } from './icon.component';
                 [attr.aria-current]="portfolio.locale() === l ? 'page' : null"
                 [attr.hreflang]="l"
                 [attr.lang]="l"
-                (click)="portfolio.rememberLocale(l)"
               ><span aria-hidden="true">{{ labels[l] }}</span><span class="sr-only">{{ native[l] }}</span></a>
             }
           </nav>
           <div class="hide-mobile">
             <app-download-cv-menu variant="compact" />
           </div>
-          <a [href]="portfolio.whatsappHref()" target="_blank" rel="noreferrer" class="btn btn-primary btn-sm hide-mobile">
-            <app-icon name="whatsapp" [size]="15" />
+          <a [routerLink]="portfolio.homePath()" fragment="contato" class="btn btn-primary btn-sm hide-mobile">
             {{ c.nav.talk }}
           </a>
           <button

@@ -8,20 +8,18 @@ export interface Profile {
   email: string;
   phone: string;
   phoneDisplay: string;
+  phoneIntl: string;
   whatsappNumber: string;
   linkedin: string;
   linkedinHandle: string;
   linkedinDisplay: string;
   github: string;
   githubDisplay: string;
-  githubAlt: string;
-  githubAltDisplay: string;
   siteDisplay: string;
 }
 
 export interface Nav {
   about: string;
-  company: string;
   services: string;
   experience: string;
   impact: string;
@@ -46,8 +44,8 @@ export interface Hero {
   connector: string;
   industry: string;
   availability: string;
+  ctaEmail: string;
   ctaTalk: string;
-  ctaServices: string;
   stats: { k: string; v: string }[];
   photoAlt: string;
 }
@@ -62,35 +60,6 @@ export interface About {
   bodyAfter: string;
 }
 
-export interface CompanyOffer {
-  title: string;
-  description: string;
-}
-
-export interface Company {
-  eyebrow: string;
-  kind: string;
-  name: string;
-  role: string;
-  period: string;
-  place: string;
-  title: string;
-  lead: string;
-  cvLabel: string;
-  cvSummary: string;
-  tagline: string;
-  logoAlt: string;
-  offers: CompanyOffer[];
-}
-
-export interface ServicesSection {
-  eyebrow: string;
-  title: string;
-  lead: string;
-  seeFullPage: string;
-  items: { title: string; description: string }[];
-}
-
 export interface ExperienceItem {
   role: string;
   company: string;
@@ -98,13 +67,15 @@ export interface ExperienceItem {
   period: string;
   paragraphs: string[];
   featuredHighlight?: string;
-  highlights?: string[];
+  stack?: string[];
+  links?: ImpactLink[];
 }
 
 export interface Experience {
   eyebrow: string;
   title: string;
   lead?: string;
+  stackLabel: string;
   items: ExperienceItem[];
 }
 
@@ -145,7 +116,6 @@ export interface Education {
     title: string;
     school: string;
     period: string;
-    parts?: { title: string; period: string }[];
   }[];
   items: { title: string; school: string; period: string }[];
   skillGroups: { title: string; skills: string[] }[];
@@ -168,7 +138,7 @@ export interface Contact {
 export interface CvCopy {
   headline: string;
   profileLabel: string;
-  resultsLabel: string;
+  skillsLabel: string;
   summary: string;
   emailLabel: string;
   phoneLabel: string;
@@ -203,13 +173,13 @@ export interface PortfolioContent {
   nav: Nav;
   hero: Hero;
   about: About;
-  company?: Company;
-  servicesSection: ServicesSection;
   experience: Experience;
   impact: Impact;
   education: Education;
   contact: Contact;
   cv: CvCopy;
+  /** Taxa e data usadas para converter valores em R$; ausente quando o texto fica só em reais. */
+  fxNote?: string;
   whatsapp: { floatingAria: string; plainMsg: string };
   footer: { rights: string };
   servicesPage: ServicesPage;

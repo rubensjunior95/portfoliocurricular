@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { CvDownloadService } from '../core/cv-download.service';
-import { PortfolioService } from '../core/portfolio.service';
+import { PortfolioContent } from '../core/portfolio.models';
+import { PortfolioService, SITE_URL } from '../core/portfolio.service';
 
 @Component({
   selector: 'app-cv-print',
@@ -17,8 +18,12 @@ import { PortfolioService } from '../core/portfolio.service';
               <a [href]="'mailto:' + c.profile.email">{{ c.cv.emailLabel }}: {{ c.profile.email }}</a>
             </li>
             <li>
+              <a [href]="'tel:' + c.profile.phone">{{ c.cv.phoneLabel }}: {{ c.profile.phoneIntl }}</a>
+            </li>
+            <li>
               <a [href]="'https://wa.me/' + c.profile.whatsappNumber">WhatsApp: https://wa.me/{{ c.profile.whatsappNumber }}</a>
             </li>
+            <li>{{ c.cv.locationLabel }}: {{ c.contact.locationValue }}</li>
             <li>
               <a [href]="c.profile.linkedin">{{ c.cv.linkedinLabel }}: {{ c.profile.linkedin }}</a>
             </li>
@@ -26,10 +31,7 @@ import { PortfolioService } from '../core/portfolio.service';
               <a [href]="c.profile.github">{{ c.cv.githubLabel }}: {{ c.profile.github }}</a>
             </li>
             <li>
-              <a [href]="c.profile.githubAlt">{{ c.cv.githubLabel }}: {{ c.profile.githubAlt }}</a>
-            </li>
-            <li>
-              <a href="https://portfoliocurricular.vercel.app/">{{ c.cv.webLabel }}: https://portfoliocurricular.vercel.app/</a>
+              <a [href]="siteUrl(c)">{{ c.cv.webLabel }}: {{ siteUrl(c) }}</a>
             </li>
           </ul>
         </header>
@@ -37,24 +39,15 @@ import { PortfolioService } from '../core/portfolio.service';
         <section>
           <h2>{{ c.cv.profileLabel }}</h2>
           <p>{{ c.cv.summary }}</p>
+          @if (c.fxNote) {
+            <p class="cv-note">{{ c.fxNote }}</p>
+          }
         </section>
-
-        @if (c.company; as company) {
-          <section>
-            <h2>{{ company.cvLabel }}</h2>
-            <div class="cv-role">
-              <h3>{{ company.name }}</h3>
-              <span>{{ company.period }}</span>
-            </div>
-            <p>{{ company.kind }} · {{ company.role }}</p>
-            <p>{{ company.cvSummary }}</p>
-          </section>
-        }
 
         <section>
           <h2>{{ c.experience.eyebrow }}</h2>
           @for (exp of c.experience.items; track exp.role + exp.company) {
-            <div class="cv-job cv-avoid-break">
+            <div class="cv-job">
               <div class="cv-role">
                 <h3>{{ exp.role }}</h3>
                 <span>{{ exp.period }}</span>
@@ -63,56 +56,41 @@ import { PortfolioService } from '../core/portfolio.service';
               @for (paragraph of exp.paragraphs; track paragraph) {
                 <p>{{ paragraph }}</p>
               }
-            </div>
-          }
-        </section>
-
-        <section>
-          <h2>{{ c.impact.eyebrow }}</h2>
-          @for (card of c.impact.cards; track card.title) {
-            <div class="cv-job cv-avoid-break">
-              <div class="cv-role">
-                <h3>{{ card.title }}</h3>
-                <span>{{ card.company }}</span>
-              </div>
-              <p class="cv-meta">{{ card.metric }} — {{ card.metricNote }}</p>
-              <p>{{ c.impact.problemLabel }}: {{ card.problem }}</p>
-              <p>{{ c.impact.highlightLabel }}: {{ card.highlight }}</p>
-              @if (card.stack.length) {
-                <p>{{ c.impact.stackLabel }}: {{ card.stack.join(', ') }}</p>
+              @if (exp.stack?.length) {
+                <p>{{ c.experience.stackLabel }}: {{ exp.stack!.join(', ') }}</p>
               }
-              @for (link of card.links ?? []; track link.href) {
+              @for (link of exp.links ?? []; track link.href) {
                 <p><a [href]="link.href">{{ link.label }}: {{ link.href }}</a></p>
               }
             </div>
           }
         </section>
 
-        <section>
+        <section class="cv-avoid-break">
           <h2>{{ c.education.eyebrow }}</h2>
           @for (item of c.education.items; track item.title) {
-            <p class="cv-edu cv-avoid-break"><strong>{{ item.title }}</strong><span>{{ item.school }} · {{ item.period }}</span></p>
+            <p class="cv-edu"><strong>{{ item.title }}</strong> — {{ item.school }} · {{ item.period }}</p>
           }
         </section>
 
-        <section>
+        <section class="cv-avoid-break">
           <h2>{{ c.education.coursesLabel }}</h2>
           @for (course of c.education.courses; track course.title) {
-            <p class="cv-course cv-avoid-break"><strong>{{ course.title }}</strong> — {{ course.school }} ({{ course.period }})</p>
+            <p class="cv-edu"><strong>{{ course.title }}</strong> — {{ course.school }} · {{ course.period }}</p>
           }
         </section>
 
-        <section>
-          <h2>{{ c.education.skillsEyebrow }}</h2>
+        <section class="cv-avoid-break">
+          <h2>{{ c.cv.skillsLabel }}</h2>
           @for (group of c.education.skillGroups; track group.title) {
-            <p class="cv-avoid-break"><strong>{{ group.title }}.</strong> {{ group.skills.join(', ') }}</p>
+            <p class="cv-edu"><strong>{{ group.title }}:</strong> {{ group.skills.join(', ') }}</p>
           }
         </section>
 
-        <section>
+        <section class="cv-avoid-break">
           <h2>{{ c.education.languagesLabel }}</h2>
           @for (lang of c.education.languages; track lang.name) {
-            <p class="cv-lang"><strong>{{ lang.name }}</strong><span>{{ lang.level }}</span></p>
+            <p class="cv-edu"><strong>{{ lang.name }}:</strong> {{ lang.level }}</p>
           }
         </section>
       </article>
@@ -124,4 +102,9 @@ export class CvPrintComponent {
   private readonly cv = inject(CvDownloadService);
 
   readonly data = computed(() => this.cv.printContent() ?? this.portfolio.content());
+
+  siteUrl(content: PortfolioContent): string {
+    const path = this.portfolio.pathFor(content.locale, 'home');
+    return path === '/' ? `${SITE_URL}/` : SITE_URL + path;
+  }
 }

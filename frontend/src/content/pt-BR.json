@@ -7,27 +7,25 @@
     "email": "rubensjr.me@gmail.com",
     "phone": "+5527996939025",
     "phoneDisplay": "(27) 99693-9025",
+    "phoneIntl": "+55 27 99693-9025",
     "whatsappNumber": "5527996939025",
     "linkedin": "https://www.linkedin.com/in/rubens-junior-996696193",
     "linkedinHandle": "rubens-junior",
     "linkedinDisplay": "linkedin.com/in/rubens-junior-996696193",
     "siteDisplay": "https://portfoliocurricular.vercel.app",
-    "github": "https://github.com/RubensJr-ME",
-    "githubDisplay": "github.com/RubensJr-ME",
-    "githubAlt": "https://github.com/rubensjunior95",
-    "githubAltDisplay": "github.com/rubensjunior95",
+    "github": "https://github.com/rubensjunior95",
+    "githubDisplay": "github.com/rubensjunior95",
     "shortName": "Rubens Junior"
   },
   "meta": {
-    "homeTitle": "Rubens Junior | Engenheiro de Software Fullstack (+10 anos)",
-    "homeDescription": "Engenheiro de software fullstack, 10+ anos. Aberto a contratos B2B/CLT e realocação para América do Norte, América do Sul ou Europa.",
+    "homeTitle": "Rubens Junior | Engenheiro de Software Fullstack Sênior",
+    "homeDescription": "Engenheiro de software fullstack sênior, atuando desde 2019. Resultados medidos na RCM, na WEG e na Legacy, e IA em produção. Aberto a CLT e contrato B2B, remoto (BRT).",
     "servicesTitle": "Serviços de IA e Desenvolvimento Fullstack | Rubens Junior",
     "servicesDescription": "Serviços tecnológicos de Rubens Junior e da Kodeskill: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI.",
-    "ogImageAlt": "Rubens Florentino Freitas Junior, engenheiro de software fullstack e fundador da Kodeskill"
+    "ogImageAlt": "Rubens Florentino Freitas Junior, engenheiro de software fullstack sênior"
   },
   "nav": {
     "about": "Sobre",
-    "company": "Kodeskill",
     "services": "Serviços",
     "experience": "Experiência",
     "impact": "Impacto",
@@ -45,207 +43,150 @@
   },
   "hero": {
     "location": "Americana, SP",
-    "role": "Engenheiro de Software Fullstack | +10 Anos de Experiência",
-    "subtitle": "Transformo processos com",
+    "role": "Engenheiro de Software Fullstack Sênior",
+    "subtitle": "Software com resultado medido em operação real, unindo",
     "ai": "Inteligência Artificial",
-    "connector": ", automação e",
+    "connector": ", produto digital e",
     "industry": "Indústria 4.0",
+    "ctaEmail": "Enviar e-mail",
     "ctaTalk": "Falar no WhatsApp",
-    "ctaServices": "Ver serviços",
     "stats": [
       {
         "k": "R$ 1,2 mi+",
-        "v": "em fretes economizados · RCM"
+        "v": "em fretes economizados em 9 meses · RCM"
       },
       {
         "k": "R$ 300 mil/ano",
-        "v": "em ganhos industriais · WEG"
+        "v": "em ganhos industriais estimados · WEG"
       },
       {
         "k": "R$ 125 mil/ano",
-        "v": "em licenças reduzidas · Legacy"
+        "v": "em licenças reduzidas (estimativa) · Legacy"
       },
       {
-        "k": "10+",
-        "v": "anos em tecnologia"
+        "k": "7+ anos",
+        "v": "de atuação profissional, desde 2019"
       }
     ],
-    "photoAlt": "Rubens Florentino Freitas Junior, fundador da Kodeskill",
-    "availability": "Disponível para Contratos B2B/CLT e Realocação (América do Norte, América do Sul ou Europa)."
+    "photoAlt": "Rubens Florentino Freitas Junior",
+    "availability": "Aberto a CLT e contrato B2B, remoto a partir de Americana/SP (fuso BRT). Realocação mediante visto patrocinado pela empresa."
   },
   "about": {
     "eyebrow": "Sobre",
     "title": "Não é só código. É resultado operacional.",
-    "bodyBefore": "Profissional com formação dupla em",
+    "bodyBefore": "Engenheiro de software com formação dupla em",
     "cs": "Ciência da Computação",
     "and": "e",
     "ee": "Engenharia Elétrica",
-    "bodyAfter": ", MBA em Data Science pela USP-Esalq e um repertório construído em operação real, da WEG à liderança de TI. Desde que vim para Americana, esse repertório está a serviço da Kodeskill, minha software house, para gerar resultado e experiência melhores para empresas, empresários e usuários."
-  },
-  "company": {
-    "eyebrow": "Minha empresa",
-    "kind": "Software house própria",
-    "name": "Kodeskill",
-    "role": "Fundador",
-    "period": "03/2025 — Atual",
-    "place": "Americana — SP",
-    "title": "Facilidades para empresas, empresários e usuários.",
-    "lead": "A Kodeskill é minha. Não é um emprego na trajetória: é a software house pela qual levo facilidades a empresas, empresários e usuários. Sistemas e automações fazem parte disso. Cada experiência profissional anterior construiu repertório para entregar mais resultado e uma experiência melhor aos clientes da Kodeskill.",
-    "cvLabel": "Empresa",
-    "cvSummary": "Software house própria. Levo facilidades a empresas, empresários e usuários. O repertório de WEG, Legacy e das demais passagens existe para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill.",
-    "offers": [
-      {
-        "title": "Empresas",
-        "description": "Resultado na operação: sistemas, automações e outras facilidades que tiram esforço manual do caminho."
-      },
-      {
-        "title": "Empresários",
-        "description": "Clareza para conduzir o negócio, com a tecnologia a serviço do que precisa acontecer."
-      },
-      {
-        "title": "Usuários",
-        "description": "Experiência de quem usa no dia a dia, com menos atrito e mais clareza."
-      }
-    ],
-    "tagline": "Código que transforma. IA que impulsiona.",
-    "logoAlt": "Logotipo da Kodeskill"
-  },
-  "servicesSection": {
-    "eyebrow": "Serviços",
-    "title": "Do diagnóstico à execução.",
-    "lead": "Na Kodeskill, o repertório de liderança, engenharia e desenvolvimento vira facilidade para o cliente: menos custo, operação mais rápida e uma experiência melhor para quem usa.",
-    "seeFullPage": "Ver página completa",
-    "items": [
-      {
-        "title": "Implantação de IA",
-        "description": "Diagnóstico, estratégia e implantação de soluções de Inteligência Artificial para otimizar processos e gerar valor real ao negócio."
-      },
-      {
-        "title": "Desenvolvimento Fullstack",
-        "description": "Aplicações web e APIs sob medida com React, Next.js, NestJS e Angular — e 10+ anos de experiência multilinguagem (Java, Python, C#, PHP, Flutter e mais) para entregar com a stack certa do negócio."
-      },
-      {
-        "title": "Mentoria & Gestão",
-        "description": "Mentoria para empresários em Mapa do Negócio, Gestão de Processos e adoção de tecnologia como vantagem competitiva."
-      }
-    ]
+    "bodyAfter": ", MBA em Data Science pela USP-Esalq e repertório construído em operação real: software de logística na RCM, desenvolvimento de software industrial na WEG e liderança de TI na Legacy Eco Group. Hoje sou fundador da Kodeskill, onde construo produtos com IA, filas e dados multi-tenant."
   },
   "experience": {
     "eyebrow": "Experiência",
-    "title": "Repertório a serviço da Kodeskill.",
-    "lead": "WEG, Legacy e as demais passagens não são o ponto de chegada. Cada uma construiu repertório para gerar resultado e experiência melhores para os clientes da Kodeskill.",
+    "title": "Experiência profissional.",
+    "stackLabel": "Stack",
     "items": [
       {
-        "role": "Líder de TI (Contractor B2B)",
+        "role": "Fundador",
+        "company": "Kodeskill (software house própria)",
+        "location": "Americana — SP",
+        "period": "03/2025 — Atual",
+        "paragraphs": [
+          "LevFlow: SaaS financeiro multi-tenant em Next.js (monorepo Turborepo), domínio em arquitetura hexagonal, PostgreSQL no Supabase com Drizzle, filas no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL. O isolamento entre empresas é desenhado com Row-Level Security: cada empresa enxerga apenas os próprios dados.",
+          "Framefy e MasterClass: OpenAI e Claude orquestrados em NestJS com Fastify e CQRS, mensageria em BullMQ, RabbitMQ, Evolution API, ManyChat e Z-API, em containers Docker. Filas e mais de um provedor de IA substituíram o fluxo manual e no-code, e os funis de WhatsApp da MasterClass, que rodavam no n8n, foram unificados em NestJS."
+        ],
+        "stack": [
+          "Next.js",
+          "Supabase",
+          "Drizzle",
+          "PostgreSQL",
+          "NestJS",
+          "BullMQ",
+          "RabbitMQ",
+          "QStash",
+          "OpenAI",
+          "Claude",
+          "Docker"
+        ],
+        "links": [
+          {
+            "label": "Framefy · Demo",
+            "href": "https://www.framefystudio.com"
+          },
+          {
+            "label": "Framefy · GitHub Front",
+            "href": "https://github.com/framefystudio/framefy_frontend"
+          },
+          {
+            "label": "Framefy · GitHub Back",
+            "href": "https://github.com/framefystudio/framefy_backend"
+          }
+        ]
+      },
+      {
+        "role": "Líder de TI e Digitalização (Contractor B2B)",
         "company": "Legacy Eco Group",
         "location": "Americana — SP",
         "period": "03/2025 — 07/2026",
         "paragraphs": [
-          "Arquitetura: estruturei o departamento de TI e consolidei os sistemas do grupo, com dados e processos no mesmo lugar.",
-          "Ação: atuei como contractor B2B, em paralelo à Kodeskill, na digitalização de ponta a ponta, na implantação de IA e em mentorias com gestores e equipes.",
-          "Impacto: redução estimada de R$ 125 mil por ano em licenças, com etapas da operação digitalizadas."
+          "Em paralelo à Kodeskill, estruturei o departamento de TI e consolidei os sistemas do grupo, com dados e processos no mesmo lugar.",
+          "Conduzi a digitalização de etapas da operação, a implantação de IA e mentorias com gestores e equipes.",
+          "Redução estimada de cerca de R$ 125 mil por ano em licenças de software."
         ],
-        "featuredHighlight": "≈ R$ 125 mil/ano economizados em licenças",
-        "highlights": [
-          "Sistemas consolidados e dados centralizados",
-          "Digitalização de etapas da empresa",
-          "Mentorias para gestores e equipes"
-        ]
+        "featuredHighlight": "≈ R$ 125 mil/ano em licenças"
       },
       {
-        "role": "Analista de Processos de Engenharia",
+        "role": "Analista de Processos de Engenharia (desenvolvimento de software industrial)",
         "company": "WEG Equipamentos Elétricos",
         "location": "Linhares — ES",
-        "period": "01/2022 — 02/2025",
+        "period": "02/2021 — 02/2025",
         "paragraphs": [
-          "Arquitetura: centralizei o operacional de 48 linhas em 4 fábricas (Bluffton/EUA, Belém/PA e duas em Linhares/ES), com expansão para Argentina, Argélia e China.",
-          "Ação: desenvolvi aplicações e integrações que entregam os dados de produção à gestão, às filiais e à matriz sem esperar o fechamento manual do dia.",
-          "Impacto: ganhos estimados de cerca de R$ 300 mil por ano em processo, assertividade, manutenção e dados centralizados."
+          "Entrei em 02/2021 como estagiário de Engenharia de Processos no time de Indústria 4.0 e fui promovido a analista em 01/2022.",
+          "Desenvolvi aplicações, integrações e dashboards que centralizaram os dados de 48 linhas em 4 fábricas (Bluffton/EUA, Belém/PA e duas em Linhares/ES) e entregam a produção à gestão, às filiais e à matriz sem o fechamento manual do fim do dia.",
+          "Ganhos estimados de cerca de R$ 300 mil por ano em processo, assertividade, manutenção e dados centralizados, com expansão para Argentina, Argélia e China."
         ],
-        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados",
-        "highlights": [
-          "48 linhas de produção em 4 fábricas",
-          "Redução de processos manuais",
-          "Assertividade na produção",
-          "Centralização dos dados",
-          "Redução de custos com manutenção",
-          "Expansão para Argentina, Argélia e China"
-        ]
+        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados"
       },
       {
-        "role": "Estagiário — Engenharia de Processos",
-        "company": "WEG Equipamentos Elétricos",
-        "location": "Linhares — ES",
-        "period": "02/2021 — 12/2021",
-        "paragraphs": [
-          "Arquitetura: entrei no time de Indústria 4.0 pela coleta e pela visualização dos dados de máquina.",
-          "Ação: contribuí com aplicações, automações e dashboards que substituíram controles espalhados e processos manuais.",
-          "Impacto: as equipes passaram a enxergar a produção com dados mais confiáveis e atualizados."
-        ]
-      },
-      {
-        "role": "Analista Técnico",
+        "role": "Analista Técnico (software de comparação de frete)",
         "company": "RCM Cabos Elétricos",
         "location": "Porto União — SC",
         "period": "03/2019 — 02/2021",
         "paragraphs": [
-          "Arquitetura: um comparador de frete que cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais.",
-          "Ação: a equipe passava a escolher a transportadora de melhor custo-benefício antes de contratar.",
-          "Impacto: em nove meses, redução superior a R$ 1,2 milhão nos custos de transporte."
+          "Nas áreas de Tecnologia e Logística, desenvolvi um comparador de frete que cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais.",
+          "A equipe passou a comparar as transportadoras antes de cada contratação e a escolher a de melhor custo-benefício.",
+          "Em nove meses de uso, a redução nos custos de transporte superou R$ 1,2 milhão."
         ],
-        "featuredHighlight": "R$ 1,2 milhão+ economizados",
-        "highlights": [
-          "9 meses de resultado analisado",
-          "Comparação automatizada de transportadoras",
-          "Maior previsibilidade dos custos logísticos"
-        ]
+        "featuredHighlight": "R$ 1,2 milhão+ em 9 meses"
       }
     ]
   },
   "impact": {
     "eyebrow": "Impacto",
     "title": "Resultado em operação real.",
-    "subtitle": "Do chão de fábrica ao produto digital. Números de operação real e SaaS com isolamento por empresa, filas e IA em produção.",
+    "subtitle": "Três casos, do chão de fábrica ao produto com IA: o problema, o que foi feito e o resultado.",
     "cards": [
       {
         "company": "RCM Cabos Elétricos",
         "title": "Otimização inteligente de fretes",
         "metric": "R$ 1,2 milhão+",
-        "metricNote": "em redução de custos logísticos durante nove meses",
+        "metricNote": "em redução de custos de transporte em nove meses",
         "description": "Aplicação desenvolvida para analisar tabelas, condições e variáveis de transporte, indicando a opção de melhor custo-benefício para cada operação.",
-        "problem": "O frete era contratado sem uma comparação confiável de tabela, destino, peso, volume e taxas.",
+        "problem": "O frete era contratado sem uma comparação confiável de tabela, destino, peso, volume e taxas entre transportadoras.",
         "stack": [],
-        "highlight": "A comparação automática indicava a opção de melhor custo-benefício antes da contratação. Em nove meses, a redução superou R$ 1,2 milhão."
+        "highlight": "Um comparador cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais e indica a transportadora de melhor custo-benefício antes da contratação. Em nove meses, a redução superou R$ 1,2 milhão."
       },
       {
         "company": "WEG Equipamentos Elétricos",
         "title": "Centralização de dados industriais",
         "metric": "≈ R$ 300 mil/ano",
-        "metricNote": "em ganhos estimados com redução de processos, assertividade na produção e manutenção",
-        "description": "Aplicações e integrações que centralizaram os dados de 48 linhas de produção em 4 fábricas, no Brasil e nos Estados Unidos, antecipando manutenções e liberando a gestão do fechamento manual de dados ao fim do dia. Projeto em expansão para Argentina, Argélia e China.",
-        "problem": "Os dados de 48 linhas, em 4 fábricas, dependiam do fechamento manual no fim do dia.",
+        "metricNote": "em ganhos estimados com processo, assertividade, manutenção e dados centralizados",
+        "description": "Aplicações e integrações que centralizaram os dados de 48 linhas de produção em 4 fábricas, no Brasil e nos Estados Unidos.",
+        "problem": "Os dados de 48 linhas, em 4 fábricas no Brasil e nos EUA, dependiam do fechamento manual no fim do dia.",
         "stack": [],
-        "highlight": "Integrações passaram a entregar o operacional para a gestão, as filiais e a matriz, e a antecipar manutenção. Ganhos estimados de cerca de R$ 300 mil por ano, com expansão para Argentina, Argélia e China."
+        "highlight": "Aplicações e integrações passaram a entregar o operacional à gestão, às filiais e à matriz e a antecipar manutenções. Ganhos estimados de cerca de R$ 300 mil por ano, com expansão para Argentina, Argélia e China."
       },
       {
-        "company": "LevFlow",
-        "title": "SaaS financeiro multi-tenant",
-        "metric": "Multi-tenant",
-        "metricNote": "cada empresa enxerga apenas os próprios dados",
-        "description": "Monorepo em Turborepo e Next.js, com domínio em arquitetura hexagonal. PostgreSQL no Supabase com Drizzle e Row-Level Security, filas serverless no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL.",
-        "problem": "Cada empresa precisava ver só os próprios dados financeiros, sem misturar com outro tenant.",
-        "stack": [
-          "Next.js",
-          "Supabase",
-          "Drizzle",
-          "PostgreSQL",
-          "Pagar.me",
-          "Arquitetura hexagonal"
-        ],
-        "highlight": "Monólito modular serverless, domínio hexagonal e isolamento por Row-Level Security."
-      },
-      {
-        "company": "Framefy",
+        "company": "Framefy · Kodeskill",
         "title": "Conteúdo e comercial com IA",
         "metric": "Multi-LLM",
         "metricNote": "geração assíncrona no lugar de fluxo manual e no-code",
@@ -256,6 +197,7 @@
           "Fastify",
           "CQRS",
           "BullMQ",
+          "RabbitMQ",
           "OpenAI",
           "Claude",
           "Docker",
@@ -279,28 +221,28 @@
       }
     ],
     "problemLabel": "Problema",
-    "stackLabel": "Arquitetura e stack",
-    "highlightLabel": "Destaque de engenharia"
+    "stackLabel": "Stack",
+    "highlightLabel": "Solução e resultado"
   },
   "education": {
     "eyebrow": "Formação",
     "title": "Base acadêmica sólida.",
     "skillsEyebrow": "Stack",
-    "skillsTitle": "Núcleo em produção.",
+    "skillsTitle": "Competências técnicas.",
     "languagesLabel": "Idiomas",
     "coursesLabel": "Cursos complementares",
     "languages": [
       {
         "name": "Português",
-        "level": "Nativo."
+        "level": "Nativo"
       },
       {
         "name": "Inglês",
-        "level": "Intermediário (B1) — leitura técnica e escrita de documentação; comunicação efetiva em ritos ágeis e trabalho assíncrono."
+        "level": "Intermediário (B1)"
       },
       {
         "name": "Espanhol",
-        "level": "Intermediário (B1) — leitura e redação técnica; comunicação efetiva em ambientes ágeis."
+        "level": "Intermediário (B1)"
       }
     ],
     "items": [
@@ -308,11 +250,6 @@
         "title": "MBA em Data Science & Analytics",
         "school": "USP-Esalq — Piracicaba/SP",
         "period": "2021 — 2023"
-      },
-      {
-        "title": "Pós-Graduação em Docência no Ensino Superior",
-        "school": "UniCesumar — União da Vitória/PR",
-        "period": "2019 — 2021"
       },
       {
         "title": "Bacharel em Engenharia Elétrica",
@@ -323,149 +260,71 @@
         "title": "Bacharel em Ciência da Computação",
         "school": "UnC — Porto União/SC",
         "period": "2013 — 2016"
+      },
+      {
+        "title": "Pós-Graduação em Docência no Ensino Superior",
+        "school": "UniCesumar — União da Vitória/PR",
+        "period": "2019 — 2021"
       }
     ],
     "courses": [
       {
-        "title": "Especialização em Machine Learning",
+        "title": "Especialização em Machine Learning (3 cursos)",
         "school": "Stanford Online · DeepLearning.AI",
-        "period": "04/2024 — 06/2024",
-        "parts": [
-          {
-            "title": "Supervised Machine Learning: Regression and Classification",
-            "period": "abr/2024"
-          },
-          {
-            "title": "Advanced Learning Algorithms",
-            "period": "mai/2024"
-          },
-          {
-            "title": "Unsupervised Learning, Recommenders, Reinforcement Learning",
-            "period": "jun/2024"
-          }
-        ]
-      },
-      {
-        "title": "Deep Learning and Reinforcement Learning",
-        "school": "IBM · Coursera",
-        "period": "jul/2024"
-      },
-      {
-        "title": "Exploratory Data Analysis for Machine Learning",
-        "school": "IBM · Coursera",
-        "period": "abr/2024"
-      },
-      {
-        "title": "Managing Machine Learning Projects",
-        "school": "Duke University · Coursera",
-        "period": "abr/2024"
-      },
-      {
-        "title": "Generative AI for Everyone",
-        "school": "DeepLearning.AI · Coursera",
-        "period": "mar/2024"
-      },
-      {
-        "title": "Digital Business Models",
-        "school": "Lund University · Coursera",
-        "period": "abr/2024"
+        "period": "04/2024 — 06/2024"
       },
       {
         "title": "Lean Six Sigma Green Belt",
         "school": "MF Treinamentos",
         "period": "60 horas · 01/2022"
-      },
-      {
-        "title": "Lean Six Sigma Yellow Belt",
-        "school": "MF Treinamentos",
-        "period": "20 horas · 12/2021 — 01/2022"
-      },
-      {
-        "title": "Lean Six Sigma White Belt",
-        "school": "MF Treinamentos",
-        "period": "4 horas · 01/2021"
       }
     ],
     "skillGroups": [
       {
-        "title": "Frontend e arquitetura de interface",
+        "title": "Núcleo em produção",
         "skills": [
           "TypeScript",
-          "React 19",
+          "React",
           "Next.js",
-          "Angular 18+",
-          "Tailwind & shadcn/ui",
-          "TanStack",
-          "Turborepo",
-          "Flutter",
-          "Dart"
+          "NestJS",
+          "Angular",
+          "PostgreSQL",
+          "Supabase",
+          "Drizzle",
+          "Filas (BullMQ, RabbitMQ, QStash)",
+          "Docker",
+          "IA aplicada (OpenAI, Claude)"
         ]
       },
       {
-        "title": "Backend e APIs distribuídas",
+        "title": "Práticas de engenharia",
         "skills": [
-          "Java 21",
-          "Spring Boot 3",
-          "NestJS & Fastify",
+          "Arquitetura hexagonal",
+          "CQRS",
+          "Multi-tenant com RLS",
+          "Vitest e Playwright",
+          "CodeQL"
+        ]
+      },
+      {
+        "title": "Também entreguei com",
+        "skills": [
+          "Java",
+          "Spring Boot",
           "Python",
           "Django",
           "C#",
           "PHP",
           "Laravel",
-          "Delphi",
-          "C / C++",
-          "OpenAPI & Zod",
-          "Argon2, TOTP & OAuth",
-          "OpenAI, Claude & Gemini",
-          "Agentes & MCP",
-          "AssemblyAI & Azure Speech",
-          "Stripe & Pagar.me",
-          "Evolution API, Z-API & ManyChat",
-          "Puppeteer, PDFKit & SheetJS"
+          "Flutter"
         ]
       },
       {
-        "title": "Bancos e modelagem de dados",
-        "skills": [
-          "SQL",
-          "PostgreSQL",
-          "Supabase (Auth, SSR & RLS)",
-          "Redis & Upstash",
-          "Prisma & Drizzle",
-          "TypeORM",
-          "Data Science & Analytics"
-        ]
-      },
-      {
-        "title": "Cloud, DevOps e engenharia",
-        "skills": [
-          "Docker hardening",
-          "CI/CD",
-          "TDD",
-          "Vitest, Jest & Playwright",
-          "Testcontainers",
-          "Sentry",
-          "CodeQL & Dependency Cruiser",
-          "Caddy, Nginx & Traefik",
-          "Arquitetura em nuvem",
-          "Clean Architecture",
-          "Arquitetura hexagonal",
-          "DDD & SOLID",
-          "CQRS & Outbox",
-          "SaaS multi-tenant",
-          "Event-driven",
-          "BullMQ, RabbitMQ & QStash",
-          "Indústria 4.0 & IoT"
-        ]
-      },
-      {
-        "title": "Liderança e estratégia",
+        "title": "Liderança e processos",
         "skills": [
           "Liderança de TI",
           "Gestão de processos",
-          "Digitalização de processos",
-          "Mentoria de empresários",
-          "Engenharia elétrica"
+          "Indústria 4.0"
         ]
       }
     ]
@@ -473,7 +332,7 @@
   "contact": {
     "eyebrow": "Contato",
     "title": "Vamos construir algo juntos?",
-    "body": "Disponível para contratos B2B ou CLT e para realocação na América do Norte, América do Sul ou Europa. Entre em contato pelo canal que preferir.",
+    "body": "Aberto a CLT e contrato B2B, remoto a partir de Americana/SP (fuso BRT). Realocação mediante visto patrocinado pela empresa. Escreva pelo canal que preferir.",
     "email": "E-mail",
     "location": "Localização",
     "locationValue": "Americana — SP",
@@ -484,20 +343,20 @@
     "qrAlt": "QR Code para WhatsApp de Rubens Florentino"
   },
   "cv": {
-    "headline": "Engenheiro de Software Fullstack | +10 Anos de Experiência",
-    "profileLabel": "Perfil",
-    "resultsLabel": "Resultados em destaque",
-    "summary": "Fundador da Kodeskill, software house própria em Americana desde 03/2025. Levo facilidades a empresas, empresários e usuários. A trajetória em Indústria 4.0 (WEG), liderança de TI na Legacy Eco Group e nas demais empresas formou o repertório que uso para gerar mais resultado e uma experiência melhor para os clientes da Kodeskill. Formação em Ciência da Computação e Engenharia Elétrica, MBA em Data Science (USP-Esalq) e 10+ anos em tecnologia.",
+    "headline": "Engenheiro de Software Fullstack Sênior | TypeScript · React · Next.js · NestJS · PostgreSQL · IA aplicada",
+    "profileLabel": "Resumo",
+    "skillsLabel": "Competências",
+    "summary": "Engenheiro de software fullstack com atuação profissional desde 2019. Na RCM Cabos Elétricos, um comparador de frete reduziu os custos de transporte em mais de R$ 1,2 milhão em nove meses. Na WEG, aplicações e integrações centralizaram os dados de 48 linhas em 4 fábricas, com ganhos estimados de cerca de R$ 300 mil por ano. Na Legacy Eco Group, como líder de TI, a redução estimada em licenças foi de cerca de R$ 125 mil por ano. Hoje, como fundador da Kodeskill, construo SaaS multi-tenant e produtos com IA em TypeScript, Next.js, NestJS e PostgreSQL. Bacharel em Ciência da Computação e em Engenharia Elétrica, MBA em Data Science (USP-Esalq).",
     "emailLabel": "E-mail",
-    "phoneLabel": "Tel",
+    "phoneLabel": "Telefone",
     "locationLabel": "Local",
     "linkedinLabel": "LinkedIn",
-    "webLabel": "Web",
+    "webLabel": "Portfólio",
     "githubLabel": "GitHub"
   },
   "whatsapp": {
     "floatingAria": "Conversar no WhatsApp",
-    "plainMsg": "Olá, Rubens Florentino!\n\nEncontrei seu portfólio e fiquei impressionado(a) com a Kodeskill, a software house que leva facilidades a empresas, empresários e usuários — e com o repertório de operação real por trás desse trabalho.\n\nGostaria de conversar sobre uma oportunidade de contratação (CLT ou PJ) alinhada ao seu perfil. Quando você teria disponibilidade para uma conversa rápida esta semana?"
+    "plainMsg": "Olá, Rubens! Vi seu portfólio e gostaria de conversar com você."
   },
   "footer": {
     "rights": "Rubens Florentino Freitas Junior."
@@ -524,12 +383,12 @@
       },
       {
         "title": "Desenvolvimento Fullstack",
-        "description": "Aplicações web e APIs sob medida com foco em React, Next.js, NestJS e Angular — além de 10+ anos em outras stacks quando o negócio exige.",
+        "description": "Aplicações web e APIs sob medida com foco em React, Next.js, NestJS e Angular — além de outras stacks quando o negócio exige.",
         "bullets": [
           "Sistemas internos, dashboards e portais",
           "APIs, integrações e webhooks",
           "Stack JS moderna (React, Nest, Next, Angular)",
-          "Polyglot sob demanda (Java, Python, C#, PHP, Flutter…)",
+          "Outras stacks sob demanda (Java, Python, C#, PHP, Flutter…)",
           "Aplicações industriais (Indústria 4.0)",
           "Manutenção evolutiva e refatoração"
         ]
