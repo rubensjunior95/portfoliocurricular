@@ -92,7 +92,9 @@
         "period": "03/2025 — Present",
         "paragraphs": [
           "LevFlow: multi-tenant financial SaaS on Next.js (Turborepo monorepo), with a hexagonal domain, PostgreSQL on Supabase with Drizzle, queues on Upstash QStash, billing on Pagar.me, and a pipeline with Playwright, Vitest, and CodeQL. Tenant isolation is designed with row-level security: each company sees only its own data.",
-          "Framefy and MasterClass: OpenAI and Claude orchestrated with NestJS, Fastify, and CQRS, messaging on BullMQ, RabbitMQ, Evolution API, ManyChat, and Z-API, in Docker containers. Queues and more than one AI provider replaced manual and no-code flows, and the MasterClass WhatsApp funnels that ran on n8n were unified in NestJS."
+          "Framefy: SaaS for AI-generated Instagram carousels and posts, multi-user and multi-company, with plans, subscriptions, and credits. The backend is NestJS with Fastify and CQRS; text and image jobs go through BullMQ queues, with OpenAI, Claude, and Gemini, in Docker containers.",
+          "MasterClass: a separate system that automates WhatsApp funnels. One NestJS app (Express) unified the six flows that ran on n8n — group creation and cleanup, message and video dispatch, individual signup, and conversation processing. WhatsApp goes through Z-API, webhooks through ManyChat, the lead queue through RabbitMQ, and replies through Claude. Google Sheets remains the source for events and copy.",
+          "Framefy and MasterClass use similar tools (NestJS, queues, and AI) and remain separate systems."
         ],
         "stack": [
           "Next.js",
@@ -105,7 +107,10 @@
           "QStash",
           "OpenAI",
           "Claude",
-          "Docker"
+          "Gemini",
+          "Docker",
+          "Z-API",
+          "ManyChat"
         ],
         "links": [
           {
@@ -163,7 +168,7 @@
   "impact": {
     "eyebrow": "Impact",
     "title": "Results in real operations.",
-    "subtitle": "Three cases, from the factory floor to AI products: the problem, what was done, and the result.",
+    "subtitle": "Three cases, from the factory floor to an AI product: the problem, what was done, and the result.",
     "cards": [
       {
         "company": "RCM Cabos Elétricos",
@@ -187,23 +192,22 @@
       },
       {
         "company": "Framefy · Kodeskill",
-        "title": "AI content and commercial automation",
+        "title": "AI carousels and posts",
         "metric": "Multi-LLM",
-        "metricNote": "asynchronous generation in place of manual and no-code flows",
-        "description": "On Framefy and MasterClass, OpenAI and Claude orchestrated with NestJS, Fastify, and CQRS. Messaging on BullMQ, RabbitMQ, Evolution API, and ManyChat, in lean Docker containers.",
-        "problem": "Content generation and commercial operations depended on manual work and no-code platforms.",
+        "metricNote": "async text and image generation",
+        "description": "SaaS for Instagram carousels and posts. OpenAI, Claude, and Gemini on NestJS with Fastify and CQRS, BullMQ queues, and Docker containers.",
+        "problem": "Creating AI Instagram carousels and posts for many companies requires plans, credits, and async text and image generation.",
         "stack": [
           "NestJS",
           "Fastify",
           "CQRS",
           "BullMQ",
-          "RabbitMQ",
           "OpenAI",
           "Claude",
-          "Docker",
-          "Z-API"
+          "Gemini",
+          "Docker"
         ],
-        "highlight": "Queues and more than one AI provider replaced the manual flow. MasterClass moved the WhatsApp funnels that ran on n8n into NestJS.",
+        "highlight": "BullMQ queues and the OpenAI, Claude, and Gemini providers generate text and images. The backend is NestJS with Fastify and CQRS, in Docker containers.",
         "links": [
           {
             "label": "Live demo",

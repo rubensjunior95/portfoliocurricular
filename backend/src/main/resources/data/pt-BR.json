@@ -92,7 +92,9 @@
         "period": "03/2025 — Atual",
         "paragraphs": [
           "LevFlow: SaaS financeiro multi-tenant em Next.js (monorepo Turborepo), domínio em arquitetura hexagonal, PostgreSQL no Supabase com Drizzle, filas no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL. O isolamento entre empresas é desenhado com Row-Level Security: cada empresa enxerga apenas os próprios dados.",
-          "Framefy e MasterClass: OpenAI e Claude orquestrados em NestJS com Fastify e CQRS, mensageria em BullMQ, RabbitMQ, Evolution API, ManyChat e Z-API, em containers Docker. Filas e mais de um provedor de IA substituíram o fluxo manual e no-code, e os funis de WhatsApp da MasterClass, que rodavam no n8n, foram unificados em NestJS."
+          "Framefy: SaaS de geração de carrosséis e posts para Instagram com IA, multiusuário e multiempresa, com planos, assinaturas e créditos. O backend é NestJS com Fastify e CQRS; texto e imagem entram em filas BullMQ, com OpenAI, Claude e Gemini, em containers Docker.",
+          "MasterClass: sistema distinto de automação dos funis de WhatsApp. Um app NestJS (Express) unificou os seis fluxos que rodavam no n8n — criação e limpeza de grupos, disparo de mensagens e de vídeos, cadastro individual e processamento de conversas. O WhatsApp sai pela Z-API, os webhooks pelo ManyChat, a fila de leads pelo RabbitMQ e as respostas pelo Claude. A planilha do Google continua como fonte dos eventos e dos textos.",
+          "Framefy e MasterClass usam ferramentas parecidas (NestJS, filas e IA) e seguem como sistemas separados."
         ],
         "stack": [
           "Next.js",
@@ -105,7 +107,10 @@
           "QStash",
           "OpenAI",
           "Claude",
-          "Docker"
+          "Gemini",
+          "Docker",
+          "Z-API",
+          "ManyChat"
         ],
         "links": [
           {
@@ -187,23 +192,22 @@
       },
       {
         "company": "Framefy · Kodeskill",
-        "title": "Conteúdo e comercial com IA",
+        "title": "Carrosséis e posts com IA",
         "metric": "Multi-LLM",
-        "metricNote": "geração assíncrona no lugar de fluxo manual e no-code",
-        "description": "No Framefy e na MasterClass, OpenAI e Claude orquestrados em NestJS com Fastify e CQRS. Mensageria em BullMQ, RabbitMQ, Evolution API e ManyChat, em containers Docker enxutos.",
-        "problem": "A geração de conteúdo e a operação comercial dependiam de fluxo manual e de plataformas no-code.",
+        "metricNote": "geração assíncrona de texto e imagem",
+        "description": "SaaS de carrosséis e posts para Instagram. OpenAI, Claude e Gemini no NestJS com Fastify e CQRS, filas BullMQ e containers Docker.",
+        "problem": "Criar carrosséis e posts de Instagram com IA, para várias empresas, exige planos, créditos e geração assíncrona de texto e imagem.",
         "stack": [
           "NestJS",
           "Fastify",
           "CQRS",
           "BullMQ",
-          "RabbitMQ",
           "OpenAI",
           "Claude",
-          "Docker",
-          "Z-API"
+          "Gemini",
+          "Docker"
         ],
-        "highlight": "Filas e mais de um provedor de IA substituíram o fluxo manual. A MasterClass unificou em NestJS os funis de WhatsApp que rodavam no n8n.",
+        "highlight": "Filas BullMQ e os provedores OpenAI, Claude e Gemini geram texto e imagem. O backend é NestJS com Fastify e CQRS, em containers Docker.",
         "links": [
           {
             "label": "Demo",
