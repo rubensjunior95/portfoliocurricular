@@ -10,6 +10,7 @@
     "prebuild": "npm run sync:content",
     "build": "ng build",
     "postbuild": "node scripts/check-prerender.mjs",
+    "cv:pdf": "npm run sync:content && ng build && node scripts/build-resume-pdf.mjs",
     "watch": "ng build --watch --configuration development"
   },
   "engines": {

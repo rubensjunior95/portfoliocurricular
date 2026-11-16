@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const out = join('dist', 'portfolio-frontend', 'browser');
@@ -30,11 +30,14 @@ for (const page of pages) {
     hreflang: (html.match(/hreflang="/g) ?? []).length,
     h1: pick(html, /<h1[^>]*>\s*([^<]*?)\s*</),
   };
+  // A imagem de compartilhamento precisa existir no build (o ?v= só invalida cache).
+  const ogFile = result.ogImage ? new URL(result.ogImage, 'https://localhost/').pathname.slice(1) : null;
   const ok =
     result.lang === page.lang &&
     !!result.title &&
     !!result.canonical &&
-    !!result.ogImage &&
+    !!ogFile &&
+    existsSync(join(out, ogFile)) &&
     result.hreflang >= 4 &&
     (!page.h1 || result.h1 === page.h1);
   if (!ok) failed = true;
@@ -45,6 +48,16 @@ for (const file of ['robots.txt', 'sitemap.xml', 'favicon.ico', 'og-image.png', 
   const present = existsSync(join(out, file));
   if (!present) failed = true;
   console.log(present ? 'ok  ' : 'FAIL', file);
+}
+
+// Currículos ATS gerados por `npm run cv:pdf` e versionados em public/.
+for (const file of ['resume-en.pdf', 'resume-pt.pdf', 'resume-es.pdf']) {
+  const path = join(out, file);
+  const present = existsSync(path);
+  const valid = present && readFileSync(path).subarray(0, 5).toString('latin1') === '%PDF-';
+  if (!valid) failed = true;
+  const detail = !present ? '(ausente: rode npm run cv:pdf)' : valid ? `${(statSync(path).size / 1024).toFixed(1)} KB` : '(não é PDF)';
+  console.log(valid ? 'ok  ' : 'FAIL', file, detail);
 }
 
 process.exit(failed ? 1 : 0);

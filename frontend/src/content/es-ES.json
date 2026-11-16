@@ -44,24 +44,24 @@
   "hero": {
     "location": "Americana, SP · Brasil",
     "role": "Ingeniero de Software Full Stack Sénior",
-    "subtitle": "Software con resultados medidos en operación real, uniendo",
-    "ai": "Inteligencia Artificial",
-    "connector": ", producto digital e",
-    "industry": "Industria 4.0",
+    "subtitle": "Software con resultados medidos en operación real, construido con",
+    "ai": "React · Node.js · Java · PostgreSQL · Docker",
+    "connector": " e",
+    "industry": "IA aplicada",
     "ctaEmail": "Enviar correo",
     "ctaTalk": "Hablar por WhatsApp",
     "stats": [
       {
-        "k": "R$ 1,2 M+",
-        "v": "en fletes ahorrados en 9 meses (≈ US$221K) · RCM"
+        "k": "≈ US$221K",
+        "v": "en fletes ahorrados en 9 meses (R$ 1,2 M+) · RCM"
       },
       {
-        "k": "R$ 300 mil/año",
-        "v": "en ganancias industriales estimadas (≈ US$55K/año) · WEG"
+        "k": "≈ US$55K/año",
+        "v": "en ganancias industriales estimadas (R$ 300 mil/año) · WEG"
       },
       {
-        "k": "R$ 125 mil/año",
-        "v": "en licencias reducidas, estimado (≈ US$23K/año) · Legacy"
+        "k": "≈ US$23K/año",
+        "v": "en licencias reducidas, estimado (R$ 125 mil/año) · Legacy"
       },
       {
         "k": "7+ años",
@@ -94,18 +94,30 @@
           "LevFlow: SaaS financiero multi-tenant en Next.js (monorepo Turborepo), dominio en arquitectura hexagonal, PostgreSQL en Supabase con Drizzle, colas en Upstash QStash, cobro en Pagar.me y pipeline con Playwright, Vitest y CodeQL. El aislamiento entre empresas está diseñado con Row-Level Security: cada empresa ve solo sus propios datos.",
           "Framefy: SaaS multiusuario y multiempresa que genera carruseles y posts para Instagram con IA, con planes, suscripciones y créditos. El backend NestJS (Fastify y CQRS) procesa texto e imagen en colas BullMQ, con OpenAI, Claude y Gemini, en contenedores Docker.",
           "MasterClass: sistema separado de automatización de los embudos de WhatsApp. Unifiqué en una app NestJS (Express) los seis flujos que corrían en n8n (creación y limpieza de grupos, envío de mensajes y de videos, registro individual y procesamiento de conversaciones), con WhatsApp por Z-API, webhooks por ManyChat, cola de leads en RabbitMQ y respuestas por Claude. La hoja de Google sigue como fuente de los eventos y de los textos.",
+          "Otros lenguajes en uso: Go, Python, Java (Spring Boot), C# y Dart (Flutter); bases de datos: PostgreSQL, MySQL y Redis.",
           "Directorio digital (arquitectura y especificación; construcción planificada): listado de negocios y servicios, en modelo marketplace, para una red de ~100 congregaciones, diseñado para ~20 mil proveedores y ~1 millón de búsquedas/mes. Lideré la arquitectura y redacté los ADR: API REST en Go (OpenAPI 3.1 generado desde el código, gate de contrato en CI); PostgreSQL con PostGIS, búsqueda full-text y RLS deny-by-default; outbox con River; Zitadel (OIDC); PWA en Next.js; React Native/Expo; Turborepo. Metas: p95 ≤ 300 ms, WCAG 2.2 AA; privacy by design para datos sensibles (LGPD art. 11, RGPD art. 9). Orquesté 10 agentes de IA (Claude Code, Cursor) para producir la especificación."
         ],
         "stack": [
           "TypeScript",
+          "JavaScript",
           "React",
           "Next.js",
+          "Angular",
           "Node.js",
           "NestJS",
           "Fastify",
+          "Go",
+          "Java",
+          "Spring Boot",
+          "Python",
+          "C#",
+          "Dart",
+          "Flutter",
           "PostgreSQL",
+          "MySQL",
           "Supabase",
           "Drizzle",
+          "Redis",
           "BullMQ",
           "RabbitMQ",
           "QStash",
@@ -122,6 +134,10 @@
         ],
         "links": [
           {
+            "label": "LevFlow · App en vivo (login)",
+            "href": "https://levflow.vercel.app"
+          },
+          {
             "label": "Framefy · Demo",
             "href": "https://www.framefystudio.com"
           },
@@ -132,6 +148,10 @@
           {
             "label": "Framefy · GitHub Back",
             "href": "https://github.com/framefystudio/framefy_backend"
+          },
+          {
+            "label": "MasterClass · App en vivo (login)",
+            "href": "https://masterclassanalytics.iamcontrol.com.br"
           }
         ]
       },
@@ -143,9 +163,28 @@
         "paragraphs": [
           "En paralelo a Kodeskill, estructuré el departamento de TI y consolidé los sistemas del grupo, con datos y procesos en el mismo lugar.",
           "Conduje la digitalización de etapas de la operación, la implantación de IA y mentorías con gestores y equipos.",
+          "Sistemas e integraciones en JavaScript/TypeScript (React, Next.js, Angular, Node.js, NestJS) y Go, con PostgreSQL y MySQL, y LLM (OpenAI, Claude, Gemini) en la implantación de IA.",
           "Reducción estimada de cerca de R$ 125 mil al año (≈ US$23K) en licencias de software."
         ],
-        "featuredHighlight": "≈ R$ 125 mil/año (≈ US$23K) en licencias"
+        "featuredHighlight": "≈ R$ 125 mil/año (≈ US$23K) en licencias",
+        "stack": [
+          "TypeScript",
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "Go",
+          "PostgreSQL",
+          "MySQL",
+          "Supabase",
+          "Drizzle",
+          "Redis",
+          "OpenAI",
+          "Claude",
+          "Gemini"
+        ]
       },
       {
         "role": "Analista de Procesos de Ingeniería (desarrollo de software industrial)",
@@ -155,9 +194,34 @@
         "paragraphs": [
           "Ingresé en 02/2021 como pasante de Ingeniería de Procesos en el equipo de Industria 4.0 y fui promovido a analista en 01/2022.",
           "Desarrollé aplicaciones, integraciones y dashboards que centralizaron los datos de 48 líneas en 4 fábricas (Bluffton/EE. UU., Belém/PA y dos en Linhares/ES) y entregan la producción a la gestión, a las filiales y a la matriz sin el cierre manual del final del día.",
+          "Aplicaciones e integraciones en C#, Delphi, Python y JavaScript/TypeScript (React, Next.js, Angular, Node.js, NestJS), con SQL Server, MySQL, PostgreSQL y Firebase, y Node-RED en los flujos de integración industrial.",
           "Ganancias estimadas de cerca de R$ 300 mil al año (≈ US$55K) en proceso, asertividad, mantenimiento y datos centralizados, con expansión hacia Argentina, Argelia y China."
         ],
-        "featuredHighlight": "≈ R$ 300 mil/año (≈ US$55K) en ganancias estimadas"
+        "featuredHighlight": "≈ R$ 300 mil/año (≈ US$55K) en ganancias estimadas",
+        "stack": [
+          "TypeScript",
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "C#",
+          "Python",
+          "Delphi",
+          "SQL Server",
+          "MySQL",
+          "PostgreSQL",
+          "Supabase",
+          "Drizzle",
+          "Redis",
+          "Firebase",
+          "Microsoft Access",
+          "Node-RED",
+          "OpenAI",
+          "Claude",
+          "Gemini"
+        ]
       },
       {
         "role": "Analista Técnico (software de comparación de fletes)",
@@ -166,10 +230,19 @@
         "period": "03/2019 — 02/2021",
         "paragraphs": [
           "En las áreas de Tecnología y Logística, desarrollé un comparador de fletes que cruza tabla, destino, peso, volumen, tipo de carga, tasas y condiciones comerciales.",
+          "El comparador y el trabajo relacionado usaron Java, PHP (Laravel), Visual Basic (VB), MySQL y PostgreSQL.",
           "El equipo pasó a comparar los transportistas antes de cada contratación y a elegir el de mejor costo-beneficio.",
           "En nueve meses de uso, la reducción en los costos de transporte superó R$ 1,2 millones (≈ US$221K)."
         ],
-        "featuredHighlight": "R$ 1,2 M+ (≈ US$221K) en 9 meses"
+        "featuredHighlight": "R$ 1,2 M+ (≈ US$221K) en 9 meses",
+        "stack": [
+          "Java",
+          "PHP",
+          "Laravel",
+          "Visual Basic",
+          "MySQL",
+          "PostgreSQL"
+        ]
       }
     ]
   },
@@ -185,7 +258,14 @@
         "metricNote": "≈ US$221K en reducción de costos de transporte en nueve meses",
         "description": "Aplicación desarrollada para analizar tablas, condiciones y variables de transporte, indicando la opción de mejor costo-beneficio para cada operación.",
         "problem": "El flete se contrataba sin una comparación confiable de tabla, destino, peso, volumen y tasas entre transportistas.",
-        "stack": [],
+        "stack": [
+          "Java",
+          "PHP",
+          "Laravel",
+          "Visual Basic",
+          "MySQL",
+          "PostgreSQL"
+        ],
         "highlight": "Un comparador cruza tabla, destino, peso, volumen, tipo de carga, tasas y condiciones comerciales e indica el transportista de mejor costo-beneficio antes de contratar. En nueve meses, la reducción superó R$ 1,2 millones (≈ US$221K)."
       },
       {
@@ -195,7 +275,22 @@
         "metricNote": "≈ US$55K/año en ganancias estimadas con proceso, asertividad, mantenimiento y datos centralizados",
         "description": "Aplicaciones e integraciones que centralizaron los datos de 48 líneas de producción en 4 fábricas, en Brasil y Estados Unidos.",
         "problem": "Los datos de 48 líneas, en 4 fábricas en Brasil y EE. UU., dependían del cierre manual al final del día.",
-        "stack": [],
+        "stack": [
+          "C#",
+          "Delphi",
+          "Python",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "SQL Server",
+          "MySQL",
+          "PostgreSQL",
+          "Firebase",
+          "Node-RED"
+        ],
         "highlight": "Las aplicaciones e integraciones pasaron a entregar la operación a la gestión, las filiales y la matriz, y a anticipar el mantenimiento. Ganancias estimadas de cerca de R$ 300 mil al año (≈ US$55K), con expansión hacia Argentina, Argelia y China."
       },
       {
@@ -299,10 +394,11 @@
           "JavaScript",
           "Java",
           "Python",
-          "SQL",
+          "Go",
           "C#",
           "PHP",
-          "Dart"
+          "Dart",
+          "SQL"
         ]
       },
       {
@@ -321,10 +417,8 @@
         "skills": [
           "Node.js",
           "NestJS",
-          "APIs REST",
           "Spring Boot",
-          "Django",
-          "Laravel",
+          "APIs REST",
           "Fastify",
           "Webhooks e integraciones",
           "Colas de mensajes (BullMQ, RabbitMQ, QStash)"
@@ -334,10 +428,14 @@
         "title": "Datos y bases de datos",
         "skills": [
           "PostgreSQL",
+          "MySQL",
+          "SQL Server",
+          "Redis",
           "Supabase",
+          "Firebase",
           "Drizzle ORM",
           "Row-Level Security (RLS)",
-          "Integración de datos industriales",
+          "Integración de datos industriales (Node-RED)",
           "Dashboards y analítica"
         ]
       },
@@ -367,14 +465,23 @@
         "skills": [
           "System design",
           "Arquitectura hexagonal y monolito modular",
+          "Arquitectura orientada a eventos (colas, outbox transaccional)",
           "SaaS multi-tenant",
           "CQRS",
-          "Colas, eventos y outbox transaccional",
           "Diseño de APIs (OpenAPI 3.1)",
           "ADR",
-          "Go (diseño de API, antes de la construcción)",
           "Pruebas y análisis de seguridad (Vitest, Playwright, CodeQL)",
           "Privacy by design (LGPD)"
+        ]
+      },
+      {
+        "title": "También trabajé con",
+        "skills": [
+          "Delphi",
+          "Visual Basic",
+          "Microsoft Access",
+          "Laravel",
+          "Django"
         ]
       },
       {
@@ -390,7 +497,7 @@
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "¿Construimos algo juntos?",
+    "title": "¿Contratando o necesita un ingeniero sénior? Hablemos.",
     "body": "Ciudadano brasileño. Abierto a empleo a tiempo completo (directo o vía Employer of Record) o contrato B2B, remoto desde Brasil (BRT, con solapamiento con el horario del Este de EE. UU.). Reubicación solo con visa patrocinada por el empleador. Escríbame por el canal que prefiera.",
     "email": "Correo",
     "location": "Ubicación",
@@ -405,7 +512,7 @@
     "headline": "Ingeniero de Software Full Stack Sénior | React · Node.js · Java · PostgreSQL · Docker · IA aplicada",
     "profileLabel": "Resumen",
     "skillsLabel": "Competencias",
-    "summary": "Ingeniero full stack desde 2019: front en React, Next.js y Angular; back en Node.js (NestJS), Java (Spring Boot) y Python; PostgreSQL, Docker e IA generativa en producción. En RCM, mi comparador de fletes recortó R$ 1,2 M+ (≈ US$221K) en transporte en nueve meses; en WEG, centralicé datos de 48 líneas en 4 fábricas (Brasil y EE. UU.), con ganancia estimada de R$ 300 mil/año (≈ US$55K). Líder de TI en Legacy Eco Group: ahorro estimado de R$ 125 mil/año (≈ US$23K) en licencias. Fundador de Kodeskill, conduzco arquitectura y system design de SaaS multi-tenant y productos con IA. Licenciado en Computación e Ingeniería Eléctrica; MBA en Data Science.",
+    "summary": "Ingeniero full stack desde 2019: front en React, Next.js y Angular; back en Node.js (NestJS), Java (Spring Boot), Go y Python; PostgreSQL, Redis, Docker e IA generativa en producción. En RCM, mi comparador de fletes recortó R$ 1,2 M+ (≈ US$221K) en transporte en nueve meses; en WEG, centralicé datos de 48 líneas en 4 fábricas (Brasil y EE. UU.), con ganancia estimada de R$ 300 mil/año (≈ US$55K). Líder de TI en Legacy Eco Group: ahorro estimado de R$ 125 mil/año (≈ US$23K) en licencias. Fundador de Kodeskill, conduzco arquitectura y system design de SaaS multi-tenant y productos con IA. Licenciado en Computación e Ingeniería Eléctrica; MBA en Data Science.",
     "emailLabel": "Correo",
     "phoneLabel": "Teléfono",
     "locationLabel": "Ubicación",

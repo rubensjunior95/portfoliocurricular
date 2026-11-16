@@ -17,11 +17,18 @@ let nextId = 0;
         <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
         <div class="cv-menu-stack">
           @for (l of locales; track l) {
-            <button type="button" class="cv-menu-item" [disabled]="cv.busy()" (click)="pick(l)">
+            <a
+              class="cv-menu-item"
+              [href]="cv.href(l)"
+              [attr.download]="cv.fileName(l)"
+              [attr.hreflang]="l"
+              type="application/pdf"
+              (click)="pick(l)"
+            >
               <app-icon name="download" [size]="14" />
               <span class="cv-menu-flag">{{ labels[l] }}</span>
               <span>{{ native[l] }}</span>
-            </button>
+            </a>
           }
         </div>
       } @else {
@@ -32,7 +39,6 @@ let nextId = 0;
           [class.compact]="variant === 'compact'"
           [attr.aria-expanded]="open()"
           [attr.aria-controls]="panelId"
-          [disabled]="cv.busy()"
           (click)="toggle()"
         >
           <app-icon name="download" />
@@ -42,10 +48,17 @@ let nextId = 0;
           <div #panel class="cv-menu-panel" [id]="panelId">
             <p class="cv-menu-label">{{ c.nav.chooseCvLanguage }}</p>
             @for (l of locales; track l) {
-              <button type="button" class="cv-menu-item" [disabled]="cv.busy()" (click)="pick(l)">
+              <a
+                class="cv-menu-item"
+                [href]="cv.href(l)"
+                [attr.download]="cv.fileName(l)"
+                [attr.hreflang]="l"
+                type="application/pdf"
+                (click)="pick(l)"
+              >
                 <span class="cv-menu-flag">{{ labels[l] }}</span>
                 <span>{{ native[l] }}</span>
-              </button>
+              </a>
             }
           </div>
         }
@@ -71,14 +84,16 @@ export class DownloadCvMenuComponent {
   toggle(): void {
     this.open.update((value) => !value);
     if (this.open()) {
-      setTimeout(() => this.panel?.nativeElement.querySelector<HTMLButtonElement>('button')?.focus());
+      setTimeout(() => this.panel?.nativeElement.querySelector<HTMLAnchorElement>('a')?.focus());
     }
   }
 
+  /** O link faz o download; fechar depois do clique não interrompe a ação padrão dele. */
   pick(locale: Locale): void {
-    this.close(true);
-    this.picked.emit(locale);
-    void this.cv.download(locale);
+    setTimeout(() => {
+      this.close(true);
+      this.picked.emit(locale);
+    });
   }
 
   onFocusOut(event: FocusEvent): void {

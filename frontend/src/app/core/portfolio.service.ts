@@ -10,6 +10,9 @@ export type Page = 'home' | 'services';
 
 export const SITE_URL = 'https://portfoliocurricular.vercel.app';
 
+/** Suba `v` ao trocar a imagem mantendo o nome, para as redes sociais buscarem a nova. */
+const OG_IMAGE = `${SITE_URL}/og-image.png?v=2`;
+
 const LOCALES: Locale[] = ['en-US', 'pt-BR', 'es-ES'];
 
 const CONTENT: Record<Locale, PortfolioContent> = {
@@ -98,7 +101,7 @@ export class PortfolioService {
     const title = page === 'services' ? c.meta.servicesTitle : c.meta.homeTitle;
     const description = page === 'services' ? c.meta.servicesDescription : c.meta.homeDescription;
     const url = SITE_URL + this.pathFor(locale, page);
-    const image = `${SITE_URL}/og-image.png`;
+    const image = OG_IMAGE;
 
     this.title.setTitle(title);
     this.meta.updateTag({ name: 'description', content: description });

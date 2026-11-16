@@ -1,5 +1,4 @@
 import { Component, computed, inject } from '@angular/core';
-import { CvDownloadService } from '../core/cv-download.service';
 import { PortfolioContent } from '../core/portfolio.models';
 import { PortfolioService, SITE_URL } from '../core/portfolio.service';
 
@@ -99,9 +98,9 @@ import { PortfolioService, SITE_URL } from '../core/portfolio.service';
 })
 export class CvPrintComponent {
   private readonly portfolio = inject(PortfolioService);
-  private readonly cv = inject(CvDownloadService);
 
-  readonly data = computed(() => this.cv.printContent() ?? this.portfolio.content());
+  /** Idioma da página: é a fonte dos PDFs de `npm run cv:pdf` e da impressão do navegador (Ctrl+P). */
+  readonly data = computed(() => this.portfolio.content());
 
   siteUrl(content: PortfolioContent): string {
     const path = this.portfolio.pathFor(content.locale, 'home');

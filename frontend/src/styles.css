@@ -774,7 +774,6 @@ button { font: inherit; }
 }
 .btn-cv:hover { border-color: var(--primary); background: var(--surface-2); }
 .btn-cv.compact { min-height: 2.25rem; padding: 0.45rem 0.85rem; font-size: 0.8rem; }
-.btn-cv:disabled { opacity: 0.65; cursor: wait; }
 .cv-menu-panel {
   position: absolute;
   top: calc(100% + 0.45rem);
@@ -806,7 +805,6 @@ button { font: inherit; }
   cursor: pointer;
 }
 .cv-menu-item:hover { background: var(--surface-2); }
-.cv-menu-item:disabled { opacity: 0.65; cursor: wait; }
 .cv-menu-flag {
   display: inline-flex;
   align-items: center;
@@ -973,6 +971,7 @@ button { font: inherit; }
   .header-nav a:focus-visible { outline-offset: -3px; }
   .header-nav a:first-child { border-top: none; }
   .header-nav-cv { display: block; padding: 0.8rem 1.25rem 1.1rem; border-top: 1px solid var(--border); }
+  .header-nav .cv-menu-item { padding: 0.5rem 0.6rem; border-top: none; font-size: 0.86rem; }
   .menu-toggle { display: flex; }
   .hide-mobile { display: none; }
 }

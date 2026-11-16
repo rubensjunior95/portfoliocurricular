@@ -44,10 +44,10 @@
   "hero": {
     "location": "Americana, SP",
     "role": "Engenheiro de Software Fullstack Sênior",
-    "subtitle": "Software com resultado medido em operação real, unindo",
-    "ai": "Inteligência Artificial",
-    "connector": ", produto digital e",
-    "industry": "Indústria 4.0",
+    "subtitle": "Software com resultado medido em operação real, construído com",
+    "ai": "React · Node.js · Java · PostgreSQL · Docker",
+    "connector": " e",
+    "industry": "IA aplicada",
     "ctaEmail": "Enviar e-mail",
     "ctaTalk": "Falar no WhatsApp",
     "stats": [
@@ -94,18 +94,30 @@
           "LevFlow: SaaS financeiro multi-tenant em Next.js (monorepo Turborepo), domínio em arquitetura hexagonal, PostgreSQL no Supabase com Drizzle, filas no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL. O isolamento entre empresas é desenhado com Row-Level Security: cada empresa enxerga apenas os próprios dados.",
           "Framefy: SaaS multiusuário e multiempresa que gera carrosséis e posts para Instagram com IA, com planos, assinaturas e créditos. O backend NestJS (Fastify e CQRS) processa texto e imagem em filas BullMQ, com OpenAI, Claude e Gemini, em containers Docker.",
           "MasterClass: sistema separado de automação dos funis de WhatsApp. Unifiquei num app NestJS (Express) os seis fluxos que rodavam no n8n (criação e limpeza de grupos, disparo de mensagens e de vídeos, cadastro individual e processamento de conversas), com WhatsApp pela Z-API, webhooks pelo ManyChat, fila de leads no RabbitMQ e respostas pelo Claude. A planilha do Google continua como fonte dos eventos e dos textos.",
+          "Outras linguagens em uso: Go, Python, Java (Spring Boot), C# e Dart (Flutter); bancos de dados: PostgreSQL, MySQL e Redis.",
           "Listagem digital (arquitetura e especificação; construção planejada): listagem de negócios e serviços, no modelo marketplace, para uma rede de ~100 congregações, desenhada para ~20 mil prestadores e ~1 milhão de buscas/mês. Liderei a arquitetura e escrevi as ADRs: API REST em Go (OpenAPI 3.1 gerado do código, gate de contrato no CI); PostgreSQL com PostGIS, busca full-text e RLS deny-by-default; outbox com River; Zitadel (OIDC); PWA em Next.js; React Native/Expo; Turborepo. Metas: p95 ≤ 300 ms, WCAG 2.2 AA; privacy by design para dado sensível (LGPD art. 11, GDPR art. 9). Orquestrei 10 agentes de IA (Claude Code, Cursor) para produzir a especificação."
         ],
         "stack": [
           "TypeScript",
+          "JavaScript",
           "React",
           "Next.js",
+          "Angular",
           "Node.js",
           "NestJS",
           "Fastify",
+          "Go",
+          "Java",
+          "Spring Boot",
+          "Python",
+          "C#",
+          "Dart",
+          "Flutter",
           "PostgreSQL",
+          "MySQL",
           "Supabase",
           "Drizzle",
+          "Redis",
           "BullMQ",
           "RabbitMQ",
           "QStash",
@@ -122,6 +134,10 @@
         ],
         "links": [
           {
+            "label": "LevFlow · App ao vivo (login)",
+            "href": "https://levflow.vercel.app"
+          },
+          {
             "label": "Framefy · Demo",
             "href": "https://www.framefystudio.com"
           },
@@ -132,6 +148,10 @@
           {
             "label": "Framefy · GitHub Back",
             "href": "https://github.com/framefystudio/framefy_backend"
+          },
+          {
+            "label": "MasterClass · App ao vivo (login)",
+            "href": "https://masterclassanalytics.iamcontrol.com.br"
           }
         ]
       },
@@ -143,9 +163,28 @@
         "paragraphs": [
           "Em paralelo à Kodeskill, estruturei o departamento de TI e consolidei os sistemas do grupo, com dados e processos no mesmo lugar.",
           "Conduzi a digitalização de etapas da operação, a implantação de IA e mentorias com gestores e equipes.",
+          "Sistemas e integrações em JavaScript/TypeScript (React, Next.js, Angular, Node.js, NestJS) e Go, com PostgreSQL e MySQL, e LLMs (OpenAI, Claude, Gemini) na implantação de IA.",
           "Redução estimada de cerca de R$ 125 mil por ano em licenças de software."
         ],
-        "featuredHighlight": "≈ R$ 125 mil/ano em licenças"
+        "featuredHighlight": "≈ R$ 125 mil/ano em licenças",
+        "stack": [
+          "TypeScript",
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "Go",
+          "PostgreSQL",
+          "MySQL",
+          "Supabase",
+          "Drizzle",
+          "Redis",
+          "OpenAI",
+          "Claude",
+          "Gemini"
+        ]
       },
       {
         "role": "Analista de Processos de Engenharia (desenvolvimento de software industrial)",
@@ -155,9 +194,34 @@
         "paragraphs": [
           "Entrei em 02/2021 como estagiário de Engenharia de Processos no time de Indústria 4.0 e fui promovido a analista em 01/2022.",
           "Desenvolvi aplicações, integrações e dashboards que centralizaram os dados de 48 linhas em 4 fábricas (Bluffton/EUA, Belém/PA e duas em Linhares/ES) e entregam a produção à gestão, às filiais e à matriz sem o fechamento manual do fim do dia.",
+          "Aplicações e integrações em C#, Delphi, Python e JavaScript/TypeScript (React, Next.js, Angular, Node.js, NestJS), com SQL Server, MySQL, PostgreSQL e Firebase, e Node-RED nos fluxos de integração industrial.",
           "Ganhos estimados de cerca de R$ 300 mil por ano em processo, assertividade, manutenção e dados centralizados, com expansão para Argentina, Argélia e China."
         ],
-        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados"
+        "featuredHighlight": "≈ R$ 300 mil/ano em ganhos estimados",
+        "stack": [
+          "TypeScript",
+          "JavaScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "C#",
+          "Python",
+          "Delphi",
+          "SQL Server",
+          "MySQL",
+          "PostgreSQL",
+          "Supabase",
+          "Drizzle",
+          "Redis",
+          "Firebase",
+          "Microsoft Access",
+          "Node-RED",
+          "OpenAI",
+          "Claude",
+          "Gemini"
+        ]
       },
       {
         "role": "Analista Técnico (software de comparação de frete)",
@@ -166,10 +230,19 @@
         "period": "03/2019 — 02/2021",
         "paragraphs": [
           "Nas áreas de Tecnologia e Logística, desenvolvi um comparador de frete que cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais.",
+          "O comparador e o trabalho relacionado usaram Java, PHP (Laravel), Visual Basic (VB), MySQL e PostgreSQL.",
           "A equipe passou a comparar as transportadoras antes de cada contratação e a escolher a de melhor custo-benefício.",
           "Em nove meses de uso, a redução nos custos de transporte superou R$ 1,2 milhão."
         ],
-        "featuredHighlight": "R$ 1,2 milhão+ em 9 meses"
+        "featuredHighlight": "R$ 1,2 milhão+ em 9 meses",
+        "stack": [
+          "Java",
+          "PHP",
+          "Laravel",
+          "Visual Basic",
+          "MySQL",
+          "PostgreSQL"
+        ]
       }
     ]
   },
@@ -185,7 +258,14 @@
         "metricNote": "em redução de custos de transporte em nove meses",
         "description": "Aplicação desenvolvida para analisar tabelas, condições e variáveis de transporte, indicando a opção de melhor custo-benefício para cada operação.",
         "problem": "O frete era contratado sem uma comparação confiável de tabela, destino, peso, volume e taxas entre transportadoras.",
-        "stack": [],
+        "stack": [
+          "Java",
+          "PHP",
+          "Laravel",
+          "Visual Basic",
+          "MySQL",
+          "PostgreSQL"
+        ],
         "highlight": "Um comparador cruza tabela, destino, peso, volume, tipo de carga, taxas e condições comerciais e indica a transportadora de melhor custo-benefício antes da contratação. Em nove meses, a redução superou R$ 1,2 milhão."
       },
       {
@@ -195,7 +275,22 @@
         "metricNote": "em ganhos estimados com processo, assertividade, manutenção e dados centralizados",
         "description": "Aplicações e integrações que centralizaram os dados de 48 linhas de produção em 4 fábricas, no Brasil e nos Estados Unidos.",
         "problem": "Os dados de 48 linhas, em 4 fábricas no Brasil e nos EUA, dependiam do fechamento manual no fim do dia.",
-        "stack": [],
+        "stack": [
+          "C#",
+          "Delphi",
+          "Python",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "Angular",
+          "Node.js",
+          "NestJS",
+          "SQL Server",
+          "MySQL",
+          "PostgreSQL",
+          "Firebase",
+          "Node-RED"
+        ],
         "highlight": "Aplicações e integrações passaram a entregar o operacional à gestão, às filiais e à matriz e a antecipar manutenções. Ganhos estimados de cerca de R$ 300 mil por ano, com expansão para Argentina, Argélia e China."
       },
       {
@@ -299,10 +394,11 @@
           "JavaScript",
           "Java",
           "Python",
-          "SQL",
+          "Go",
           "C#",
           "PHP",
-          "Dart"
+          "Dart",
+          "SQL"
         ]
       },
       {
@@ -321,10 +417,8 @@
         "skills": [
           "Node.js",
           "NestJS",
-          "APIs REST",
           "Spring Boot",
-          "Django",
-          "Laravel",
+          "APIs REST",
           "Fastify",
           "Webhooks e integrações",
           "Filas de mensagens (BullMQ, RabbitMQ, QStash)"
@@ -334,10 +428,14 @@
         "title": "Dados e bancos de dados",
         "skills": [
           "PostgreSQL",
+          "MySQL",
+          "SQL Server",
+          "Redis",
           "Supabase",
+          "Firebase",
           "Drizzle ORM",
           "Row-Level Security (RLS)",
-          "Integração de dados industriais",
+          "Integração de dados industriais (Node-RED)",
           "Dashboards e analytics"
         ]
       },
@@ -367,14 +465,23 @@
         "skills": [
           "System design",
           "Arquitetura hexagonal e monólito modular",
+          "Arquitetura orientada a eventos (filas, outbox transacional)",
           "SaaS multi-tenant",
           "CQRS",
-          "Filas, eventos e outbox transacional",
           "Design de APIs (OpenAPI 3.1)",
           "ADRs",
-          "Go (desenho de API, antes da construção)",
           "Testes e análise de segurança (Vitest, Playwright, CodeQL)",
           "Privacy by design (LGPD)"
+        ]
+      },
+      {
+        "title": "Também trabalhei com",
+        "skills": [
+          "Delphi",
+          "Visual Basic",
+          "Microsoft Access",
+          "Laravel",
+          "Django"
         ]
       },
       {
@@ -390,7 +497,7 @@
   },
   "contact": {
     "eyebrow": "Contato",
-    "title": "Vamos construir algo juntos?",
+    "title": "Contratando ou precisa de um engenheiro sênior? Vamos conversar.",
     "body": "Aberto a CLT e contrato B2B, remoto a partir de Americana/SP (fuso BRT). Realocação mediante visto patrocinado pela empresa. Escreva pelo canal que preferir.",
     "email": "E-mail",
     "location": "Localização",
@@ -405,7 +512,7 @@
     "headline": "Engenheiro de Software Fullstack Sênior | React · Node.js · Java · PostgreSQL · Docker · IA aplicada",
     "profileLabel": "Resumo",
     "skillsLabel": "Competências",
-    "summary": "Engenheiro de software fullstack desde 2019: React, Next.js e Angular no front; Node.js (NestJS), Java (Spring Boot) e Python no back; PostgreSQL, Docker e IA generativa em produção. Na RCM, um comparador de frete que criei cortou mais de R$ 1,2 milhão em transporte em nove meses; na WEG, centralizei dados de 48 linhas em 4 fábricas (Brasil e EUA), com ganho estimado de R$ 300 mil/ano. Como líder de TI na Legacy Eco Group, economia estimada de R$ 125 mil/ano em licenças. Fundador da Kodeskill, conduzo arquitetura e system design de SaaS multi-tenant e produtos com IA. Bacharel em Ciência da Computação e Engenharia Elétrica; MBA em Data Science.",
+    "summary": "Engenheiro de software fullstack desde 2019: React, Next.js e Angular no front; Node.js (NestJS), Java (Spring Boot), Go e Python no back; PostgreSQL, Redis, Docker e IA generativa em produção. Na RCM, um comparador de frete que criei cortou mais de R$ 1,2 milhão em transporte em nove meses; na WEG, centralizei dados de 48 linhas em 4 fábricas (Brasil e EUA), com ganho estimado de R$ 300 mil/ano. Como líder de TI na Legacy Eco Group, economia estimada de R$ 125 mil/ano em licenças. Fundador da Kodeskill, conduzo arquitetura e system design de SaaS multi-tenant e produtos com IA. Bacharel em Ciência da Computação e Engenharia Elétrica; MBA em Data Science.",
     "emailLabel": "E-mail",
     "phoneLabel": "Telefone",
     "locationLabel": "Local",
