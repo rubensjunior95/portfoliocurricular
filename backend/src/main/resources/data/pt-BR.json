@@ -19,7 +19,7 @@
   },
   "meta": {
     "homeTitle": "Rubens Junior | Engenheiro de Software Fullstack Sênior",
-    "homeDescription": "Engenheiro de software fullstack sênior, atuando desde 2019. Resultados medidos na RCM, na WEG e na Legacy, e IA em produção. Aberto a CLT e contrato B2B, remoto (BRT).",
+    "homeDescription": "Engenheiro fullstack sênior: React, Node.js, Java, PostgreSQL, Docker e IA aplicada. Resultados medidos na RCM, WEG e Legacy. Aberto a CLT ou B2B, remoto.",
     "servicesTitle": "Serviços de IA e Desenvolvimento Fullstack | Rubens Junior",
     "servicesDescription": "Serviços tecnológicos de Rubens Junior e da Kodeskill: implantação de IA, desenvolvimento fullstack, automação industrial, mentoria e gestão de TI.",
     "ogImageAlt": "Rubens Florentino Freitas Junior, engenheiro de software fullstack sênior"
@@ -78,7 +78,7 @@
     "cs": "Ciência da Computação",
     "and": "e",
     "ee": "Engenharia Elétrica",
-    "bodyAfter": ", MBA em Data Science pela USP-Esalq e repertório construído em operação real: software de logística na RCM, desenvolvimento de software industrial na WEG e liderança de TI na Legacy Eco Group. Hoje sou fundador da Kodeskill, onde construo produtos com IA, filas e dados multi-tenant."
+    "bodyAfter": ", MBA em Data Science pela USP-Esalq e repertório construído em operação real: software de logística na RCM, desenvolvimento de software industrial na WEG e liderança de TI na Legacy Eco Group. Hoje sou fundador da Kodeskill, onde conduzo a arquitetura e construo SaaS e produtos com IA de ponta a ponta: interfaces, APIs, dados em PostgreSQL, filas e deploy."
   },
   "experience": {
     "eyebrow": "Experiência",
@@ -92,23 +92,31 @@
         "period": "03/2025 — Atual",
         "paragraphs": [
           "LevFlow: SaaS financeiro multi-tenant em Next.js (monorepo Turborepo), domínio em arquitetura hexagonal, PostgreSQL no Supabase com Drizzle, filas no Upstash QStash, cobrança no Pagar.me e esteira com Playwright, Vitest e CodeQL. O isolamento entre empresas é desenhado com Row-Level Security: cada empresa enxerga apenas os próprios dados.",
-          "Framefy: SaaS de geração de carrosséis e posts para Instagram com IA, multiusuário e multiempresa, com planos, assinaturas e créditos. O backend é NestJS com Fastify e CQRS; texto e imagem entram em filas BullMQ, com OpenAI, Claude e Gemini, em containers Docker.",
-          "MasterClass: sistema distinto de automação dos funis de WhatsApp. Um app NestJS (Express) unificou os seis fluxos que rodavam no n8n — criação e limpeza de grupos, disparo de mensagens e de vídeos, cadastro individual e processamento de conversas. O WhatsApp sai pela Z-API, os webhooks pelo ManyChat, a fila de leads pelo RabbitMQ e as respostas pelo Claude. A planilha do Google continua como fonte dos eventos e dos textos.",
-          "Framefy e MasterClass usam ferramentas parecidas (NestJS, filas e IA) e seguem como sistemas separados."
+          "Framefy: SaaS multiusuário e multiempresa que gera carrosséis e posts para Instagram com IA, com planos, assinaturas e créditos. O backend NestJS (Fastify e CQRS) processa texto e imagem em filas BullMQ, com OpenAI, Claude e Gemini, em containers Docker.",
+          "MasterClass: sistema separado de automação dos funis de WhatsApp. Unifiquei num app NestJS (Express) os seis fluxos que rodavam no n8n (criação e limpeza de grupos, disparo de mensagens e de vídeos, cadastro individual e processamento de conversas), com WhatsApp pela Z-API, webhooks pelo ManyChat, fila de leads no RabbitMQ e respostas pelo Claude. A planilha do Google continua como fonte dos eventos e dos textos.",
+          "Listagem digital (arquitetura e especificação; construção planejada): listagem de negócios e serviços, no modelo marketplace, para uma rede de ~100 congregações, desenhada para ~20 mil prestadores e ~1 milhão de buscas/mês. Liderei a arquitetura e escrevi as ADRs: API REST em Go (OpenAPI 3.1 gerado do código, gate de contrato no CI); PostgreSQL com PostGIS, busca full-text e RLS deny-by-default; outbox com River; Zitadel (OIDC); PWA em Next.js; React Native/Expo; Turborepo. Metas: p95 ≤ 300 ms, WCAG 2.2 AA; privacy by design para dado sensível (LGPD art. 11, GDPR art. 9). Orquestrei 10 agentes de IA (Claude Code, Cursor) para produzir a especificação."
         ],
         "stack": [
+          "TypeScript",
+          "React",
           "Next.js",
+          "Node.js",
+          "NestJS",
+          "Fastify",
+          "PostgreSQL",
           "Supabase",
           "Drizzle",
-          "PostgreSQL",
-          "NestJS",
           "BullMQ",
           "RabbitMQ",
           "QStash",
+          "Docker",
+          "Turborepo",
+          "Vitest",
+          "Playwright",
+          "CodeQL",
           "OpenAI",
           "Claude",
           "Gemini",
-          "Docker",
           "Z-API",
           "ManyChat"
         ],
@@ -285,49 +293,96 @@
     ],
     "skillGroups": [
       {
-        "title": "Núcleo em produção",
+        "title": "Linguagens",
         "skills": [
           "TypeScript",
-          "React",
-          "Next.js",
-          "NestJS",
-          "Angular",
-          "PostgreSQL",
-          "Supabase",
-          "Drizzle",
-          "Filas (BullMQ, RabbitMQ, QStash)",
-          "Docker",
-          "IA aplicada (OpenAI, Claude)"
-        ]
-      },
-      {
-        "title": "Práticas de engenharia",
-        "skills": [
-          "Arquitetura hexagonal",
-          "CQRS",
-          "Multi-tenant com RLS",
-          "Vitest e Playwright",
-          "CodeQL"
-        ]
-      },
-      {
-        "title": "Também entreguei com",
-        "skills": [
+          "JavaScript",
           "Java",
-          "Spring Boot",
           "Python",
-          "Django",
+          "SQL",
           "C#",
           "PHP",
-          "Laravel",
+          "Dart"
+        ]
+      },
+      {
+        "title": "Frontend e mobile",
+        "skills": [
+          "React",
+          "Next.js",
+          "Angular",
+          "Tailwind CSS",
+          "SSR/SSG e i18n",
           "Flutter"
+        ]
+      },
+      {
+        "title": "Backend e APIs",
+        "skills": [
+          "Node.js",
+          "NestJS",
+          "APIs REST",
+          "Spring Boot",
+          "Django",
+          "Laravel",
+          "Fastify",
+          "Webhooks e integrações",
+          "Filas de mensagens (BullMQ, RabbitMQ, QStash)"
+        ]
+      },
+      {
+        "title": "Dados e bancos de dados",
+        "skills": [
+          "PostgreSQL",
+          "Supabase",
+          "Drizzle ORM",
+          "Row-Level Security (RLS)",
+          "Integração de dados industriais",
+          "Dashboards e analytics"
+        ]
+      },
+      {
+        "title": "Cloud e DevOps",
+        "skills": [
+          "Docker",
+          "CI/CD",
+          "GitHub Actions",
+          "Vercel",
+          "Render",
+          "Upstash"
+        ]
+      },
+      {
+        "title": "IA e Machine Learning",
+        "skills": [
+          "Integração de LLMs (OpenAI, Claude, Gemini)",
+          "Pipelines assíncronos de IA",
+          "Machine Learning (Stanford/DeepLearning.AI)",
+          "Data Science (MBA, USP-Esalq)",
+          "Engenharia assistida por IA (Claude Code, Cursor, fluxos multiagentes)"
+        ]
+      },
+      {
+        "title": "Arquitetura e práticas",
+        "skills": [
+          "System design",
+          "Arquitetura hexagonal e monólito modular",
+          "SaaS multi-tenant",
+          "CQRS",
+          "Filas, eventos e outbox transacional",
+          "Design de APIs (OpenAPI 3.1)",
+          "ADRs",
+          "Go (desenho de API, antes da construção)",
+          "Testes e análise de segurança (Vitest, Playwright, CodeQL)",
+          "Privacy by design (LGPD)"
         ]
       },
       {
         "title": "Liderança e processos",
         "skills": [
           "Liderança de TI",
-          "Gestão de processos",
+          "Mentoria",
+          "Melhoria de processos (Lean Six Sigma)",
           "Indústria 4.0"
         ]
       }
@@ -347,10 +402,10 @@
     "qrAlt": "QR Code para WhatsApp de Rubens Florentino"
   },
   "cv": {
-    "headline": "Engenheiro de Software Fullstack Sênior | TypeScript · React · Next.js · NestJS · PostgreSQL · IA aplicada",
+    "headline": "Engenheiro de Software Fullstack Sênior | React · Node.js · Java · PostgreSQL · Docker · IA aplicada",
     "profileLabel": "Resumo",
     "skillsLabel": "Competências",
-    "summary": "Engenheiro de software fullstack com atuação profissional desde 2019. Na RCM Cabos Elétricos, um comparador de frete reduziu os custos de transporte em mais de R$ 1,2 milhão em nove meses. Na WEG, aplicações e integrações centralizaram os dados de 48 linhas em 4 fábricas, com ganhos estimados de cerca de R$ 300 mil por ano. Na Legacy Eco Group, como líder de TI, a redução estimada em licenças foi de cerca de R$ 125 mil por ano. Hoje, como fundador da Kodeskill, construo SaaS multi-tenant e produtos com IA em TypeScript, Next.js, NestJS e PostgreSQL. Bacharel em Ciência da Computação e em Engenharia Elétrica, MBA em Data Science (USP-Esalq).",
+    "summary": "Engenheiro de software fullstack desde 2019: React, Next.js e Angular no front; Node.js (NestJS), Java (Spring Boot) e Python no back; PostgreSQL, Docker e IA generativa em produção. Na RCM, um comparador de frete que criei cortou mais de R$ 1,2 milhão em transporte em nove meses; na WEG, centralizei dados de 48 linhas em 4 fábricas (Brasil e EUA), com ganho estimado de R$ 300 mil/ano. Como líder de TI na Legacy Eco Group, economia estimada de R$ 125 mil/ano em licenças. Fundador da Kodeskill, conduzo arquitetura e system design de SaaS multi-tenant e produtos com IA. Bacharel em Ciência da Computação e Engenharia Elétrica; MBA em Data Science.",
     "emailLabel": "E-mail",
     "phoneLabel": "Telefone",
     "locationLabel": "Local",
