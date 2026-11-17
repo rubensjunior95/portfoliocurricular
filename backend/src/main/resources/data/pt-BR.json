@@ -134,8 +134,8 @@
         ],
         "links": [
           {
-            "label": "LevFlow · App ao vivo (login)",
-            "href": "https://levflow.vercel.app"
+            "label": "LevFlow · Site ao vivo",
+            "href": "https://levflow-web.vercel.app"
           },
           {
             "label": "Framefy · Demo",

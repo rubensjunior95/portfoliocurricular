@@ -133,7 +133,7 @@ Mídia sugerida: links do LevFlow, do MasterClass e da demo do Framefy.
 
 ```text
 Own software house: I lead architecture and build multi-tenant SaaS and AI products end to end.
-• LevFlow: multi-tenant financial SaaS (Next.js, Turborepo, hexagonal domain, PostgreSQL on Supabase with Drizzle, QStash queues, Pagar.me billing, row-level security; CI with Playwright, Vitest, CodeQL). Live app (login): https://levflow.vercel.app
+• LevFlow: multi-tenant financial SaaS (Next.js, Turborepo, hexagonal domain, PostgreSQL on Supabase with Drizzle, QStash queues, Pagar.me billing, row-level security; CI with Playwright, Vitest, CodeQL). Live site: https://levflow-web.vercel.app
 • Framefy: multi-company SaaS that generates Instagram carousels and posts with AI, with plans, subscriptions, and credits. NestJS (Fastify, CQRS), BullMQ queues on Redis, OpenAI, Claude, and Gemini, in Docker. Demo: https://www.framefystudio.com · GitHub: https://github.com/framefystudio/framefy_frontend · https://github.com/framefystudio/framefy_backend
 • MasterClass: consolidated six n8n WhatsApp funnel flows into one NestJS app with Z-API, ManyChat webhooks, a RabbitMQ lead queue, and Claude. Live app (login): https://masterclassanalytics.iamcontrol.com.br
 • Digital directory (architecture and specification; build planned): marketplace for a network of ~100 congregations, designed for ~20K providers and ~1M searches/month. Led architecture and wrote ADRs (Go REST API with OpenAPI 3.1 and a CI contract gate, PostgreSQL with PostGIS and RLS, River outbox, Next.js PWA, React Native/Expo); produced the spec with 10 orchestrated AI agents (Claude Code, Cursor).
@@ -144,7 +144,7 @@ Stack: TypeScript · React · Next.js · Angular · Node.js · NestJS · Go · J
 
 ```text
 Software house própria: conduzo a arquitetura e construo SaaS multi-tenant e produtos com IA de ponta a ponta.
-• LevFlow: SaaS financeiro multi-tenant (Next.js, Turborepo, domínio hexagonal, PostgreSQL no Supabase com Drizzle, filas QStash, cobrança no Pagar.me, Row-Level Security; CI com Playwright, Vitest e CodeQL). App ao vivo (login): https://levflow.vercel.app
+• LevFlow: SaaS financeiro multi-tenant (Next.js, Turborepo, domínio hexagonal, PostgreSQL no Supabase com Drizzle, filas QStash, cobrança no Pagar.me, Row-Level Security; CI com Playwright, Vitest e CodeQL). Site ao vivo: https://levflow-web.vercel.app
 • Framefy: SaaS multiempresa que gera carrosséis e posts para Instagram com IA, com planos, assinaturas e créditos. NestJS (Fastify, CQRS), filas BullMQ sobre Redis, OpenAI, Claude e Gemini, em Docker. Demo: https://www.framefystudio.com · GitHub: https://github.com/framefystudio/framefy_frontend · https://github.com/framefystudio/framefy_backend
 • MasterClass: unifiquei num app NestJS os seis fluxos de funis de WhatsApp que rodavam no n8n, com Z-API, webhooks do ManyChat, fila de leads no RabbitMQ e Claude. App ao vivo (login): https://masterclassanalytics.iamcontrol.com.br
 • Listagem digital (arquitetura e especificação; construção planejada): marketplace para uma rede de ~100 congregações, desenhado para ~20 mil prestadores e ~1 milhão de buscas/mês. Liderei a arquitetura e escrevi as ADRs (API REST em Go com OpenAPI 3.1 e gate de contrato no CI, PostgreSQL com PostGIS e RLS, outbox com River, PWA em Next.js, React Native/Expo); produzi a especificação com 10 agentes de IA orquestrados (Claude Code, Cursor).
